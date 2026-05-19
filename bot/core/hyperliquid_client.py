@@ -19,12 +19,16 @@ import logging
 from dataclasses import dataclass
 from typing import Optional
 
-from eth_account import Account
-from hyperliquid.exchange import Exchange
-from hyperliquid.info import Info
-from hyperliquid.utils import constants
-
 log = logging.getLogger(__name__)
+
+
+def _lazy_import():
+    """Import du SDK Hyperliquid uniquement quand nécessaire (paper mode s'en passe)."""
+    from eth_account import Account  # type: ignore
+    from hyperliquid.exchange import Exchange  # type: ignore
+    from hyperliquid.info import Info  # type: ignore
+    from hyperliquid.utils import constants  # type: ignore
+    return Account, Exchange, Info, constants
 
 
 @dataclass
@@ -58,6 +62,7 @@ class HyperliquidClient:
         if not account_address or not account_address.startswith("0x"):
             raise ValueError("HYPERLIQUID_ACCOUNT_ADDRESS doit commencer par 0x")
 
+        Account, Exchange, Info, constants = _lazy_import()
         self.account_address = account_address
         self.network = network
         self.base_url = (

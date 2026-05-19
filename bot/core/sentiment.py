@@ -62,8 +62,13 @@ def _score_with_gemini(text: str, api_key: str, model: str = "gemini-2.5-flash")
         import google.generativeai as genai
         genai.configure(api_key=api_key)
         m = genai.GenerativeModel(model, system_instruction=SYSTEM_PROMPT)
-        resp = m.generate_content(text, generation_config={"temperature": 0.0, "max_output_tokens": 8})
-        return _parse_float((resp.text or "").strip())
+        # Gemini 2.5 thinking utilise des tokens internes : prévoir 64+ tokens
+        resp = m.generate_content(text, generation_config={"temperature": 0.0, "max_output_tokens": 128})
+        # Reconstruire le texte depuis les parts (plus robuste que resp.text)
+        out = ""
+        if resp.candidates and resp.candidates[0].content.parts:
+            out = "".join(p.text for p in resp.candidates[0].content.parts if hasattr(p, "text"))
+        return _parse_float(out.strip())
     except Exception as e:
         log.warning("gemini score err: %s", e)
         return None

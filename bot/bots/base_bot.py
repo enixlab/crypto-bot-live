@@ -13,7 +13,10 @@ from typing import Optional
 from ..core.state import BotState, OpenPosition, ClosedTrade, StateStore
 from ..core.strategy import StrategyParams, EntryDecision, ExitDecision, ExitReason, evaluate_entries, evaluate_exits, compute_position_size
 from ..core.kill_switch import check_kill_switch, send_telegram_alert
-from ..core.hyperliquid_client import HyperliquidClient
+
+# Hyperliquid SDK importé en lazy uniquement quand on est en live mode
+if False:  # type-checking only
+    from ..core.hyperliquid_client import HyperliquidClient
 
 log = logging.getLogger(__name__)
 
@@ -31,7 +34,7 @@ class BaseBot(ABC):
         universe: list[str],
         params: StrategyParams,
         store: StateStore,
-        hl_client: Optional[HyperliquidClient] = None,
+        hl_client=None,  # Optional[HyperliquidClient]
         paper_mode: bool = True,
     ):
         self.universe = universe
