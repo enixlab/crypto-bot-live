@@ -69,12 +69,15 @@ body{font-feature-settings:'cv02','cv11','ss01';line-height:1.5}
 .wrap{max-width:1440px;margin:0 auto;padding:32px 24px;position:relative;z-index:10}
 
 /* ===== HERO ENIX BIG ===== */
-.hero{padding:60px 0 40px;text-align:center;position:relative}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:var(--green-glow-bg);border:1px solid var(--border-green);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--green);text-transform:uppercase;letter-spacing:2px;margin-bottom:24px;backdrop-filter:blur(20px)}
+.hero{padding:20px 0 40px;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center;gap:18px}
+.hero-name{order:1;margin:0!important}
+.hero-tag{order:2;display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:var(--green-glow-bg);border:1px solid var(--border-green);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--green);text-transform:uppercase;letter-spacing:2px;backdrop-filter:blur(20px)}
+.hero-sub-title{order:3}
+.hero-stats{order:4}
 .hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green-glow-1);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 12px var(--green-glow-1)}50%{opacity:0.5;box-shadow:0 0 24px var(--green-glow-1)}}
 
-.hero-name{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(80px,16vw,200px);font-weight:900;line-height:0.9;letter-spacing:-8px;margin-bottom:16px;position:relative;display:inline-block}
+.hero-name{font-family:'Space Grotesk','Inter',sans-serif;font-size:clamp(90px,18vw,220px);font-weight:900;line-height:1;letter-spacing:-10px;position:relative;display:inline-block;text-align:center}
 .hero-name .letter{display:inline-block;background:linear-gradient(180deg,#fff 0%, var(--green) 40%, var(--green-bright) 50%, var(--green) 60%, var(--green-deep) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 80px var(--green-glow-2);filter:drop-shadow(0 0 30px var(--green-glow-2));animation:enixGlow 3s ease-in-out infinite}
 .hero-name .letter:nth-child(1){animation-delay:0s}
 .hero-name .letter:nth-child(2){animation-delay:0.2s}
@@ -278,12 +281,12 @@ body{font-feature-settings:'cv02','cv11','ss01';line-height:1.5}
 
 <div class="wrap">
 
-  <!-- ===== HERO ENIX ===== -->
+  <!-- ===== HERO ENIX EN HAUT CENTRÉ ===== -->
   <div class="hero">
-    <div class="hero-tag">Crypto Trading Fleet · Live</div>
     <h1 class="hero-name">
       <span class="letter">E</span><span class="letter">N</span><span class="letter">I</span><span class="letter">X</span>
     </h1>
+    <div class="hero-tag">Crypto Trading Fleet · Live</div>
     <div class="hero-sub-title">Hyperliquid · DeepSeek <span>IA</span> · Cycle 4h · Leverage 3×</div>
     <div class="hero-stats">
       <span>EQUITY <b id="hero-equity">--</b></span><i></i>
