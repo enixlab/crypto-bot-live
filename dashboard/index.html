@@ -84,10 +84,12 @@ function renderBotCard(bot) {
   var state = bot.state || {};
   var equity = state.equity || 0;
   var cap = state.initial_capital || 0;
+  var isInactive = cap === 0;  // bot pas encore financé
   var gain = equity - cap;
   var gainPct = cap > 0 ? (gain / cap * 100) : 0;
-  var peak = state.peak_equity || equity || 1;
+  var peak = state.peak_equity || equity;
   var dd = peak > 0 ? ((equity - peak) / peak * 100) : 0;
+  if (isInactive) { gain = 0; gainPct = 0; dd = 0; }
   var closed = state.closed_trades || [];
   var wins = closed.filter(function(t) { return t.realized_pnl > 0; }).length;
   var winRate = closed.length > 0 ? (wins / closed.length * 100) : 0;

@@ -31,9 +31,12 @@ class StrategyParams:
     short_threshold: float = 0.40
     max_hold_hours: int = 72
     exit_band_pct: float = 0.01           # ±1 %
-    tp_pct: float = 0.05                  # +5 %
+    # Multi-stage take-profit (système Zahid 15 mai)
+    tp1_pct: float = 0.02                 # +2 % → ferme 1/3 de la position
+    tp2_pct: float = 0.035                # +3.5 % → ferme 1/3 supplémentaire
+    tp_pct: float = 0.05                  # +5 % → ferme le reste (hard TP)
     sl_pct: float = -0.08                 # -8 %
-    trailing_pct: float = 0.03            # +3 % trailing une fois TP1 touché
+    trailing_pct: float = 0.03            # trailing stop +3 % après TP1
     veto_pct: float = 0.03                # annule entry si déjà bougé > 3 % contre
     cooldown_hours: int = 48
     max_positions: int = 8
@@ -45,8 +48,27 @@ class StrategyParams:
         return cls(max_hold_hours=24, exit_band_pct=0.005)
 
 
+# ===== DÉTECTION RÉGIME DE MARCHÉ (Zahid 15 mai) =====
+
+def detect_market_regime(btc_24h_change_pct: float, fear_greed_index: int | None = None) -> str:
+    """Détecte le régime de marché : RISK_ON / RISK_OFF / NEUTRAL.
+
+    Critères (heuristique simple, à raffiner) :
+    - RISK_ON  : BTC > +3 % sur 24h OU F&G > 70
+    - RISK_OFF : BTC < -3 % sur 24h OU F&G < 30
+    - NEUTRAL  : entre les deux
+    """
+    if btc_24h_change_pct > 3 or (fear_greed_index is not None and fear_greed_index > 70):
+        return "RISK_ON"
+    if btc_24h_change_pct < -3 or (fear_greed_index is not None and fear_greed_index < 30):
+        return "RISK_OFF"
+    return "NEUTRAL"
+
+
 class ExitReason(str, Enum):
-    HARD_TP = "HARD_TP"
+    TP1 = "TP1_PARTIAL"            # +2% : ferme 1/3
+    TP2 = "TP2_PARTIAL"            # +3.5% : ferme 1/3 de plus
+    HARD_TP = "HARD_TP"            # +5% : ferme le restant
     STOP_LOSS = "STOP_LOSS"
     TRAILING_STOP = "TRAILING_STOP"
     MAX_HOLD = "MAX_HOLD"
@@ -145,25 +167,35 @@ def evaluate_exits(state: BotState, params: StrategyParams) -> list[ExitDecision
 
 def _evaluate_single_exit(pos: OpenPosition, params: StrategyParams) -> Optional[ExitDecision]:
     direction = "long" if pos.side == "buy" else "short"
-    # PnL % sur le notional (sans leverage), pour aligner avec les seuils
     if direction == "long":
         pnl_pct = (pos.current_price - pos.entry_price) / pos.entry_price
     else:
         pnl_pct = (pos.entry_price - pos.current_price) / pos.entry_price
 
-    # 1. HARD TP
+    tp1_done = pos.metadata.get("tp1_done", False)
+    tp2_done = pos.metadata.get("tp2_done", False)
+
+    # 1. HARD TP (+5%) → ferme tout
     if pnl_pct >= params.tp_pct:
         return ExitDecision(pos, ExitReason.HARD_TP, f"+{pnl_pct*100:.1f}%")
-    # 2. HARD SL
+    # 2. TP2 (+3.5%) — ferme 1/3 supplémentaire (à gérer comme partial dans base_bot)
+    if not tp2_done and pnl_pct >= params.tp2_pct:
+        return ExitDecision(pos, ExitReason.TP2, f"+{pnl_pct*100:.1f}% partial")
+    # 3. TP1 (+2%) — ferme 1/3
+    if not tp1_done and pnl_pct >= params.tp1_pct:
+        return ExitDecision(pos, ExitReason.TP1, f"+{pnl_pct*100:.1f}% partial")
+    # 4. TRAILING (après TP1) : si on retombe sous +trailing_pct depuis le peak
+    if tp1_done:
+        peak_pnl = pos.metadata.get("peak_pnl_pct", pnl_pct)
+        if pnl_pct < peak_pnl - params.trailing_pct:
+            return ExitDecision(pos, ExitReason.TRAILING_STOP, f"peak +{peak_pnl*100:.1f}% → {pnl_pct*100:.1f}%")
+    # 5. SL
     if pnl_pct <= params.sl_pct:
         return ExitDecision(pos, ExitReason.STOP_LOSS, f"{pnl_pct*100:.1f}%")
-    # 3. MAX_HOLD conditionnel
+    # 6. MAX_HOLD conditionnel
     if _hours_since(pos.opened_at) >= params.max_hold_hours:
         if abs(pnl_pct) <= params.exit_band_pct:
             return ExitDecision(pos, ExitReason.MAX_HOLD, f"in_band pnl={pnl_pct*100:.2f}%")
-    # 4. Trailing stop (si la position a touché TP1 / mid-target)
-    # Simplifié : si on est passé > tp_pct/2 puis on retombe sous trailing_pct → sortie
-    # (le trailing détaillé sera géré par metadata.tp1_done dans le bot)
     return None
 
 

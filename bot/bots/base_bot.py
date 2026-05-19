@@ -70,10 +70,17 @@ class BaseBot(ABC):
             self.store.save_state(self.state)
             return
 
-        # 3. Exits (TP/SL/MAX_HOLD)
+        # 3. Exits (TP1/TP2/TP3/SL/MAX_HOLD/TRAILING)
         exits = evaluate_exits(self.state, self.params)
         for exit in exits:
-            self._close_position(exit.position, exit.reason, exit.detail)
+            if exit.reason == ExitReason.TP1:
+                self._partial_close(exit.position, fraction=1/3, reason=exit.reason, detail=exit.detail)
+                exit.position.metadata["tp1_done"] = True
+            elif exit.reason == ExitReason.TP2:
+                self._partial_close(exit.position, fraction=1/2, reason=exit.reason, detail=exit.detail)  # 1/2 du restant = 1/3 de l'original
+                exit.position.metadata["tp2_done"] = True
+            else:
+                self._close_position(exit.position, exit.reason, exit.detail)
 
         # 4. Signaux
         sentiment_by_coin = self.fetch_signals()
@@ -186,6 +193,37 @@ class BaseBot(ABC):
         self.state.cash -= (margin + fee)
         self.state.open_positions.append(pos)
         log.info("OPEN %s %s qty=%.4f @ %.4f notional=$%.0f", pos.symbol, side, quantity, price, notional)
+
+    def _partial_close(self, pos: OpenPosition, fraction: float, reason: ExitReason, detail: str) -> None:
+        """Ferme `fraction` de la position. Garde le reste ouvert avec un nouveau quantity/size."""
+        price = self._get_price(pos.metadata.get("ticker", pos.symbol.replace("SHORT-", "")))
+        direction_mult = 1 if pos.side == "buy" else -1
+        qty_to_close = pos.quantity * fraction
+        partial_size = qty_to_close * price
+        realized = (price - pos.entry_price) * qty_to_close * direction_mult
+        fee_exit = partial_size * 0.0002
+
+        # Log un trade fermé pour la portion
+        self.state.cash += partial_size / pos.leverage + realized - fee_exit
+        self.state.total_fees += fee_exit
+        self.state.closed_trades.append(ClosedTrade(
+            id=pos.id + f"-{reason.value}",
+            symbol=pos.symbol, entry_price=pos.entry_price, exit_price=price,
+            quantity=qty_to_close, size_usd=partial_size,
+            realized_pnl=realized, pnl_pct=(realized / partial_size) * 100,
+            fee_entry=pos.fee_paid * fraction, fee_exit=fee_exit,
+            total_fees=(pos.fee_paid * fraction) + fee_exit,
+            opened_at=pos.opened_at, closed_at=_now(),
+            hold_reason=pos.reason, close_reason=f"{reason.value} ({detail})",
+        ))
+        # Met à jour la position restante
+        pos.quantity -= qty_to_close
+        pos.size_usd -= partial_size
+        pos.margin_locked -= partial_size / pos.leverage
+        # Update peak_pnl pour le trailing
+        cur_pnl_pct = ((price - pos.entry_price) / pos.entry_price) * direction_mult
+        pos.metadata["peak_pnl_pct"] = max(pos.metadata.get("peak_pnl_pct", 0), cur_pnl_pct)
+        log.info("PARTIAL CLOSE %s (%s) %.1f%% qty=%.4f pnl=$%.2f", pos.symbol, reason.value, fraction*100, qty_to_close, realized)
 
     def _close_position(self, pos: OpenPosition, reason: ExitReason, detail: str) -> None:
         price = self._get_price(pos.metadata.get("ticker", pos.symbol.replace("SHORT-", "")))
