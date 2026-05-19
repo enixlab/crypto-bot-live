@@ -103,8 +103,9 @@ function renderBotCard(bot) {
     isOnline = ageSec < 1800;
   }
 
+  var accentColor = bot.color || '#22d3ee';
   var html = '<div class="bot-card">'
-    + '<div class="bot-card-accent"></div>'
+    + '<div class="bot-card-accent" style="background:' + accentColor + '"></div>'
     + '<div class="bot-card-body">'
     + '<div class="bot-card-header">'
     + '<div class="bot-name">' + (bot.name || bot.key || 'Bot') + '</div>'

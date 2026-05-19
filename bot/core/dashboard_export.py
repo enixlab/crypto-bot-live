@@ -11,10 +11,25 @@ from pathlib import Path
 from typing import Iterable
 
 
+# Mapping noms + couleurs identiques à la flotte Zahid observée dans la vidéo 2026-05-15
+BOT_DISPLAY = {
+    "sentiment_ls_v3":    {"name": "LS V3",       "color": "#eab308"},  # yellow
+    "ultimate_v2":        {"name": "Ultimate V2", "color": "#8b5cf6"},  # purple
+    "sentiment_ls_v3_tp": {"name": "LS V3 TP",    "color": "#ca8a04"},  # amber
+    "confluence":         {"name": "CONFLUENCE",  "color": "#16a34a"},  # green
+    "forex_v1":           {"name": "FOREX V1",    "color": "#0ea5e9"},  # sky
+    "tsla_v1":            {"name": "TESLA",       "color": "#e11d48"},  # rose
+    "pltr_v1":            {"name": "PALANTIR",    "color": "#06b6d4"},  # cyan
+    "amd_v1":             {"name": "AMD",         "color": "#84cc16"},  # lime
+    "sentiment_v1":       {"name": "Sentiment V1","color": "#22d3ee"},  # cyan-bright
+}
+
+
 def export_dashboard_data(bot_keys: Iterable[str], data_dir: str, dashboard_dir: str) -> str:
     bots_payload = []
     for key in bot_keys:
-        bot_entry = {"key": key, "name": key.replace("_", " ").title()}
+        meta = BOT_DISPLAY.get(key, {"name": key.replace("_", " ").title(), "color": "#22d3ee"})
+        bot_entry = {"key": key, "name": meta["name"], "color": meta["color"]}
         for kind, suffix in [("state", "_state.json"), ("equity_curve", "_equity.json"), ("heartbeat", None)]:
             if kind == "heartbeat":
                 fname = f"heartbeat_{key}.json"
