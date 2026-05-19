@@ -38,6 +38,7 @@ DEFAULT_UNIVERSE = [
     "DOGE",                        # memecoin pricé sur news
     "FET", "RNDR",                 # narratif AI
     "FIL", "ONDO",                 # storage + RWA
+    "HBAR",                        # Hedera Hashgraph (ajout Enix)
 ]
 
 
