@@ -57,7 +57,7 @@ def _score_with_deepseek(text: str, api_key: str, model: str = "deepseek-chat") 
         return None
 
 
-def _score_with_gemini(text: str, api_key: str, model: str = "gemini-2.5-flash") -> Optional[float]:
+def _score_with_gemini(text: str, api_key: str, model: str = "gemini-2.5-flash-lite") -> Optional[float]:
     try:
         import google.generativeai as genai
         genai.configure(api_key=api_key)
