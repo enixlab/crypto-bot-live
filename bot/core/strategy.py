@@ -37,12 +37,14 @@ class StrategyParams:
     max_hold_hours: int = 72              # 72h pour bots standard
     hold_minimal_hours: int = 24          # PDF planche VIII : hold minimal 24h
     exit_band_pct: float = 0.01           # ferme dans ±1 % après MAX_HOLD
-    # Multi-stage take-profit (Zahid 15 mai)
-    tp1_pct: float = 0.02                 # +2 % → ferme 1/3 (tp1_done flag)
-    tp2_pct: float = 0.035                # +3.5 % → ferme 1/3 (tp2_done flag)
-    tp_pct: float = 0.05                  # +5 % → ferme le reste (HARD TP, PDF)
-    sl_pct: float = -0.08                 # -8 % SL (PDF planche VIII)
-    trailing_pct: float = 0.03            # trailing 3 % après TP1 (Zahid)
+    # ⭐ RATIO 3:1 — méthode Zahid vidéo 20 avril 13:00-14:30
+    # "Je me prends mes profits à 3%. Quand je perds, je perds max 1%."
+    # Avec ce ratio, même 40% WR = RENTABLE
+    tp1_pct: float = 0.01                 # +1% → ferme 1/3
+    tp2_pct: float = 0.02                 # +2% → ferme 1/3 supplémentaire
+    tp_pct: float = 0.03                  # +3% → ferme le reste (HARD TP)
+    sl_pct: float = -0.01                 # -1% SL (max perte par trade)
+    trailing_pct: float = 0.005           # trailing 0.5% après TP1
     # Garde-fous (PDF planche VI)
     veto_pct: float = 0.03                # ±3 % move contre = annule
     cooldown_hours: int = 48              # 48h après 3 pertes consécutives

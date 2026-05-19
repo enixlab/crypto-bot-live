@@ -34,7 +34,9 @@ body{font-family:'Inter',sans-serif;background:#0a0e1a;color:#e5e7eb;min-height:
 .bot-status-text{color:#9ca3af}
 .bot-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px}
 .bot-kpi{background:#232d45;padding:8px;border-radius:6px}
-.bot-kpi-label{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;font-family:'JetBrains Mono',monospace;margin-bottom:4px}
+.bot-kpi-label{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;font-family:'JetBrains Mono',monospace;margin-bottom:4px;line-height:1.4}
+.hint{color:#22d3ee;font-weight:400;text-transform:none;letter-spacing:0;margin-left:4px;font-size:9px}
+.bot-subtitle{font-size:10px;color:#22d3ee;font-family:'JetBrains Mono',monospace;text-transform:none;letter-spacing:0;margin-top:2px}
 .bot-kpi-value{font-size:16px;font-weight:700;font-family:'JetBrains Mono',monospace;color:#e5e7eb}
 .bot-kpi-value.positive{color:#34d399}
 .bot-kpi-value.negative{color:#f87171}
@@ -66,17 +68,17 @@ body{font-family:'Inter',sans-serif;background:#0a0e1a;color:#e5e7eb;min-height:
 <div class="bot-grid" id="bot-grid"></div>
 
 <!-- ===== POSITIONS OUVERTES ===== -->
-<h2 style="margin:32px 0 12px;font-size:20px;font-weight:800">📈 Positions ouvertes</h2>
+<h2 style="margin:32px 0 12px;font-size:20px;font-weight:800">📈 Positions ouvertes <span style="font-size:13px;color:#22d3ee;font-weight:400">(les paris en cours du bot)</span></h2>
 <div id="positions-container">
   <div style="color:#6b7280;font-size:13px;padding:16px;background:#1a2035;border-radius:8px;border:1px dashed #2a3550">Aucune position ouverte pour le moment. Le bot attend des signaux clairs (sentiment ≤ 0.40 ou ≥ 0.65) pour ouvrir.</div>
 </div>
 
 <!-- ===== CRYPTOS SURVEILLÉES ===== -->
-<h2 style="margin:32px 0 12px;font-size:20px;font-weight:800">🌐 Cryptos surveillées (20)</h2>
+<h2 style="margin:32px 0 12px;font-size:20px;font-weight:800">🌐 Cryptos surveillées (20) <span style="font-size:13px;color:#22d3ee;font-weight:400">(les 20 cryptos que les bots peuvent acheter/vendre. Clique sur une pour voir détails)</span></h2>
 <div id="cryptos-container" class="crypto-grid"></div>
 
 <!-- ===== TRADES FERMÉS RÉCENTS ===== -->
-<h2 style="margin:32px 0 12px;font-size:20px;font-weight:800">📜 Trades fermés récents</h2>
+<h2 style="margin:32px 0 12px;font-size:20px;font-weight:800">📜 Trades fermés récents <span style="font-size:13px;color:#22d3ee;font-weight:400">(les paris terminés - gains et pertes)</span></h2>
 <div id="trades-container">
   <div style="color:#6b7280;font-size:13px;padding:16px;background:#1a2035;border-radius:8px;border:1px dashed #2a3550">Aucun trade fermé pour le moment.</div>
 </div>
@@ -136,6 +138,19 @@ body{font-family:'Inter',sans-serif;background:#0a0e1a;color:#e5e7eb;min-height:
 <script>
 window.BOT_DATA = window.BOT_DATA || { bots: [], updated_at: null };
 
+// ===== EXPLICATIONS DES BOTS (mémo-technique pour débutant) =====
+const BOT_DESCRIPTIONS = {
+  'sentiment_ls_v3':    'Bot CRYPTO standard - achète/vend selon les news',
+  'sentiment_v1':       'Bot CRYPTO standard - achète/vend selon les news',
+  'ultimate_v2':        'Bot CRYPTO PRUDENT - trade seulement si SUPER sûr',
+  'sentiment_ls_v3_tp': 'Bot CRYPTO RAPIDE - achète et revend dans la journée',
+  'confluence':         'Bot CRYPTO MÉFIANT - exige beaucoup de preuves',
+  'forex_v1':           'Bot FOREX (euro/dollar) - INACTIF (pas crypto)',
+  'tsla_v1':            'Bot ACTION TESLA - INACTIF (pas crypto)',
+  'pltr_v1':            'Bot ACTION PALANTIR - INACTIF (pas crypto)',
+  'amd_v1':             'Bot ACTION AMD - INACTIF (pas crypto)',
+};
+
 function fmt$(n, sign) {
   if (n === undefined || n === null || isNaN(n)) return '--';
   return (sign && n > 0 ? '+' : '') + '$' + n.toLocaleString('en-US', {maximumFractionDigits: 0});
@@ -175,27 +190,28 @@ function renderBotCard(bot) {
     + '<div class="bot-card-accent" style="background:' + accentColor + '"></div>'
     + '<div class="bot-card-body">'
     + '<div class="bot-card-header">'
-    + '<div class="bot-name">' + (bot.name || bot.key || 'Bot') + '</div>'
+    + '<div><div class="bot-name">' + (bot.name || bot.key || 'Bot') + '</div>'
+    + '<div class="bot-subtitle">' + BOT_DESCRIPTIONS[bot.key || bot.name || ''] + '</div></div>'
     + '<div class="bot-status">'
     + '<span class="bot-status-dot ' + (isOnline ? 'online' : 'offline') + '"></span>'
     + '<span class="bot-status-text">' + (isOnline ? 'ONLINE' : 'OFFLINE') + '</span>'
     + '</div></div>'
     + '<div class="bot-kpis">'
-    + '<div class="bot-kpi"><div class="bot-kpi-label">Equity</div>'
+    + '<div class="bot-kpi" title="L\'argent total du bot maintenant. Ça monte s\'il gagne, descend s\'il perd."><div class="bot-kpi-label">Equity <span class="hint">(argent)</span></div>'
     +   '<div class="bot-kpi-value ' + (gain>=0?'positive':'negative') + '">' + fmt$(equity) + '</div>'
     +   '<div class="bot-kpi-sub">' + fmt$(gain, true) + ' (' + fmtPct(gainPct) + ')</div></div>'
-    + '<div class="bot-kpi"><div class="bot-kpi-label">Win Rate</div>'
+    + '<div class="bot-kpi" title="Pourcentage de trades gagnés. 70% = 7 trades sur 10 ont gagné."><div class="bot-kpi-label">Win Rate <span class="hint">(% gagnés)</span></div>'
     +   '<div class="bot-kpi-value">' + fmtPct(winRate) + '</div>'
-    +   '<div class="bot-kpi-sub">' + closed.length + ' / ' + openCount + '</div></div>'
-    + '<div class="bot-kpi"><div class="bot-kpi-label">Drawdown</div>'
+    +   '<div class="bot-kpi-sub">' + closed.length + ' / ' + openCount + ' trades</div></div>'
+    + '<div class="bot-kpi" title="La pire chute depuis le pic. -5% = a perdu 5% depuis le maximum atteint."><div class="bot-kpi-label">Drawdown <span class="hint">(pire chute)</span></div>'
     +   '<div class="bot-kpi-value ' + (dd<0?'negative':'') + '">' + fmtPct(dd) + '</div></div>'
     + '</div>'
     + '<div class="bot-kpis">'
-    + '<div class="bot-kpi"><div class="bot-kpi-label">Profit Factor</div>'
+    + '<div class="bot-kpi" title="Total gainé divisé par total perdu. >1.0 = rentable, >1.5 = excellent."><div class="bot-kpi-label">Profit Factor <span class="hint">(rentabilité)</span></div>'
     +   '<div class="bot-kpi-value">' + pf.toFixed(2) + '</div></div>'
-    + '<div class="bot-kpi"><div class="bot-kpi-label">Avg Trade</div>'
+    + '<div class="bot-kpi" title="Gain moyen par trade. Positif = rentable en moyenne."><div class="bot-kpi-label">Avg Trade <span class="hint">(gain moyen)</span></div>'
     +   '<div class="bot-kpi-value ' + (avgTrade>=0?'positive':'negative') + '">' + fmt$(avgTrade, true) + '</div></div>'
-    + '<div class="bot-kpi"><div class="bot-kpi-label">Cycles</div>'
+    + '<div class="bot-kpi" title="Nombre de fois où le bot a scanné le marché. 1 cycle toutes les 10 min."><div class="bot-kpi-label">Cycles <span class="hint">(scans)</span></div>'
     +   '<div class="bot-kpi-value">' + (state.cycle_count || 0) + '</div></div>'
     + '</div>'
     + '<div class="sparkline-container"><canvas class="sparkline-canvas" id="spark-' + bot.key + '"></canvas></div>'
@@ -401,20 +417,20 @@ function showCryptoDetail(sym) {
 
   // Sentiment + articles
   html += '<div class="modal-section ' + decisionColor + '">'
-    + '<h4>Sentiment courant</h4>'
+    + '<h4>Sentiment courant <span style="color:#22d3ee;text-transform:none;font-weight:400;letter-spacing:0">(note de 0 à 1, 0=catastrophe, 1=euphorie)</span></h4>'
     + '<div class="value">' + (sent ? sent.score.toFixed(2) : '--') + '</div>'
-    + '<div style="margin-top:6px;font-size:13px;color:#9ca3af">' + (sent ? sent.articles + ' articles analysés' : 'Aucune donnée') + '</div>'
+    + '<div style="margin-top:6px;font-size:13px;color:#9ca3af">' + (sent ? sent.articles + ' article(s) analysé(s) par DeepSeek IA' : 'Aucune donnée encore') + '</div>'
     + '<div style="margin-top:10px;padding:8px 10px;background:#0a0e1a;border-radius:4px;font-size:12px;color:#9ca3af">' + decision + '</div>'
     + '</div>';
 
   // Décision IA
   html += '<div class="modal-section">'
-    + '<h4>Règle d\'entrée</h4>'
-    + '<div style="font-size:13px;color:#9ca3af;line-height:1.6">'
-    + '• Sentiment ≥ <b style="color:#34d399">0.65</b> → ▲ LONG<br>'
-    + '• Sentiment ≤ <b style="color:#f87171">0.40</b> → ▼ SHORT<br>'
-    + '• Entre les deux → pas d\'action (neutre)<br>'
-    + '• Minimum <b>2 articles</b> requis pour décider'
+    + '<h4>Règle d\'entrée <span style="color:#22d3ee;text-transform:none;font-weight:400;letter-spacing:0">(comment le bot décide d\'acheter ou vendre)</span></h4>'
+    + '<div style="font-size:13px;color:#9ca3af;line-height:1.7">'
+    + '• Note ≥ <b style="color:#34d399">0.65</b> (news positives) → ▲ <b>LONG</b> (le bot ACHÈTE, parie sur la hausse)<br>'
+    + '• Note ≤ <b style="color:#f87171">0.40</b> (news négatives) → ▼ <b>SHORT</b> (le bot VEND À DÉCOUVERT, parie sur la baisse)<br>'
+    + '• Entre les deux → <b>pas d\'action</b> (le bot attend un signal plus clair)<br>'
+    + '• Il faut <b>au moins 2 articles</b> trouvés (sécurité anti-fausse-alerte)'
     + '</div></div>';
 
   // Trades fermés sur cette crypto
