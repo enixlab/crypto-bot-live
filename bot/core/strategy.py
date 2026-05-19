@@ -27,21 +27,35 @@ log = logging.getLogger(__name__)
 
 @dataclass
 class StrategyParams:
-    long_threshold: float = 0.65
-    short_threshold: float = 0.40
-    max_hold_hours: int = 72
-    exit_band_pct: float = 0.01           # ±1 %
-    # Multi-stage take-profit (système Zahid 15 mai)
-    tp1_pct: float = 0.02                 # +2 % → ferme 1/3 de la position
-    tp2_pct: float = 0.035                # +3.5 % → ferme 1/3 supplémentaire
-    tp_pct: float = 0.05                  # +5 % → ferme le reste (hard TP)
-    sl_pct: float = -0.08                 # -8 %
-    trailing_pct: float = 0.03            # trailing stop +3 % après TP1
-    veto_pct: float = 0.03                # annule entry si déjà bougé > 3 % contre
-    cooldown_hours: int = 48
-    max_positions: int = 8
-    leverage: int = 3                     # CRYPTO LIVE = 3x conservateur
-    notional_per_trade_pct: float = 0.10  # 10 % du equity par position
+    """Paramètres validés par PDF Sentiment Cartography + système Zahid 15 mai."""
+    # Seuils sentiment (PDF planche III)
+    long_threshold: float = 0.65          # ≥ 0.65 → LONG
+    short_threshold: float = 0.40         # ≤ 0.40 → SHORT
+    # Article minimum par coin (PDF planche IV)
+    min_articles_per_coin: int = 2
+    # MAX_HOLD conditionnel (Zahid 15 mai)
+    max_hold_hours: int = 72              # 72h pour bots standard
+    hold_minimal_hours: int = 24          # PDF planche VIII : hold minimal 24h
+    exit_band_pct: float = 0.01           # ferme dans ±1 % après MAX_HOLD
+    # Multi-stage take-profit (Zahid 15 mai)
+    tp1_pct: float = 0.02                 # +2 % → ferme 1/3 (tp1_done flag)
+    tp2_pct: float = 0.035                # +3.5 % → ferme 1/3 (tp2_done flag)
+    tp_pct: float = 0.05                  # +5 % → ferme le reste (HARD TP, PDF)
+    sl_pct: float = -0.08                 # -8 % SL (PDF planche VIII)
+    trailing_pct: float = 0.03            # trailing 3 % après TP1 (Zahid)
+    # Garde-fous (PDF planche VI)
+    veto_pct: float = 0.03                # ±3 % move contre = annule
+    cooldown_hours: int = 48              # 48h après 3 pertes consécutives
+    # Capital + positions
+    max_positions: int = 8                # PDF planche VIII : max 8
+    leverage: int = 3                     # CRYPTO LIVE 3x (PDF disait 10x paper, on est conservateur)
+    notional_per_trade_pct: float = 0.10  # 10 % equity par position
+    reserve_liquidity_pct: float = 0.10   # PDF planche VIII : 10 % réserve liquidité
+    # Cycles
+    cycle_minutes: int = 240              # PDF planche IV : cycle 4h
+    # Coûts (PDF planche IV)
+    slippage_bps: int = 2                 # 2 bps slippage simulé
+    fee_bps: int = 2                      # 2 bps fee Hyperliquid maker
 
     @classmethod
     def scalp(cls) -> "StrategyParams":

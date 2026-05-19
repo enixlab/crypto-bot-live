@@ -28,8 +28,17 @@ class Article:
     published_ts: int   # unix epoch
 
 
-# Tickers crypto suivis par défaut (alignés avec ton paper bot)
-DEFAULT_UNIVERSE = ["BTC", "ETH", "LINK", "SUI", "INJ", "FIL", "AAVE", "UNI", "XRP", "AVAX", "NEAR", "APT", "ARB", "OP", "DOGE", "FET", "RNDR", "LDO", "ONDO"]
+# Tickers crypto — univers OFFICIEL du PDF Sentiment Cartography (planche V)
+# 19 mid-caps news-driven : assez gros pour être liquides, assez petits pour que les news impactent
+DEFAULT_UNIVERSE = [
+    "BTC", "ETH", "XRP",          # large caps de référence
+    "AAVE", "SUI", "INJ",          # DeFi + L1 narratifs
+    "LDO", "AVAX", "LINK", "UNI",  # DeFi blue chips
+    "NEAR", "APT", "ARB", "OP",    # L1/L2 next-gen
+    "DOGE",                        # memecoin pricé sur news
+    "FET", "RNDR",                 # narratif AI
+    "FIL", "ONDO",                 # storage + RWA
+]
 
 
 def fetch_cryptopanic(coin: str, api_key: str, lookback_hours: int = 6) -> list[Article]:
