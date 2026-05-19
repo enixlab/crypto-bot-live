@@ -41,7 +41,9 @@ def build_fleet(mode: str, network: str, gcs_bucket: str | None) -> list:
         log.info("HL check: %s", check)
 
     fleet = []
-    universe = os.environ.get("BOT_UNIVERSE", "LINK,SUI,INJ").split(",")
+    # Univers par défaut = 19 cryptos du PDF Sentiment Cartography
+    DEFAULT_19 = "BTC,ETH,XRP,AAVE,SUI,INJ,LDO,AVAX,LINK,UNI,NEAR,APT,ARB,OP,DOGE,FET,RNDR,FIL,ONDO"
+    universe = os.environ.get("BOT_UNIVERSE", DEFAULT_19).split(",")
     bot1 = SentimentV1Bot(
         universe=universe,
         params=params,
