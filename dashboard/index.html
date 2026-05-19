@@ -1,75 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ENIX CRYPTO FLEET — Command Center</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
-
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg-primary:#0a0e1a;
-  --bg-secondary:#111827;
-  --bg-card:#1a2035;
-  --bg-card-hover:#1f2847;
-  --bg-elevated:#232d45;
-  --border:#2a3550;
-  --border-light:#334166;
-  --text-primary:#e5e7eb;
-  --text-secondary:#9ca3af;
-  --text-muted:#6b7280;
-  --green:#10b981;
-  --green-bright:#34d399;
-  --green-dim:#064e3b;
-  --red:#ef4444;
-  --red-bright:#f87171;
-  --red-dim:#7f1d1d;
-  --blue:#3b82f6;
-  --cyan:#06b6d4;
-  --cyan-bright:#22d3ee;
-}
-body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-primary);min-height:100vh;padding:24px}
-.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+body{font-family:'Inter',sans-serif;background:#0a0e1a;color:#e5e7eb;min-height:100vh;padding:24px}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #2a3550;flex-wrap:wrap;gap:16px}
 .header h1{font-weight:800;font-size:24px;letter-spacing:-0.5px}
-.header .subtitle{color:var(--text-secondary);font-size:13px;font-family:'JetBrains Mono',monospace;margin-top:4px}
-.fleet-summary{display:flex;gap:24px;align-items:center}
-.fleet-summary .item{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--text-secondary)}
-.fleet-summary .item strong{color:var(--text-primary);font-size:16px;margin-left:6px}
-.fleet-summary .item.positive strong{color:var(--green-bright)}
-.fleet-summary .item.negative strong{color:var(--red-bright)}
+.header .subtitle{color:#9ca3af;font-size:13px;font-family:'JetBrains Mono',monospace;margin-top:4px}
+.fleet-summary{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.fleet-summary .item{font-family:'JetBrains Mono',monospace;font-size:13px;color:#9ca3af}
+.fleet-summary .item strong{font-size:16px;margin-left:6px;color:#e5e7eb}
+.fleet-summary .item.positive strong{color:#34d399}
+.fleet-summary .item.negative strong{color:#f87171}
+.banner{background:linear-gradient(135deg,#1e3a8a 0%,#1e40af 100%);padding:16px 24px;border-radius:12px;margin-bottom:24px;border:1px solid #3b82f6;font-size:14px;color:#bfdbfe;line-height:1.5;display:none}
+.banner.show{display:block}
+.banner strong{color:white}
+.banner code{background:rgba(0,0,0,0.3);padding:2px 6px;border-radius:3px;font-family:'JetBrains Mono',monospace}
 .bot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px}
-.bot-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;position:relative;overflow:hidden;transition:all 0.2s}
-.bot-card:hover{background:var(--bg-card-hover);border-color:var(--border-light)}
-.bot-card-accent{position:absolute;top:0;left:0;right:0;height:3px}
-.bot-card-accent.cyan{background:var(--cyan-bright)}
-.bot-card-accent.purple{background:#a78bfa}
-.bot-card-accent.green{background:var(--green-bright)}
-.bot-card-accent.pink{background:#f472b6}
-.bot-card-accent.blue{background:#60a5fa}
-.bot-card-accent.amber{background:#fbbf24}
-.bot-card-accent.yellow{background:#fde047}
+.bot-card{background:#1a2035;border:1px solid #2a3550;border-radius:12px;position:relative;overflow:hidden;transition:all 0.2s}
+.bot-card:hover{background:#1f2847;border-color:#334166}
+.bot-card-accent{position:absolute;top:0;left:0;right:0;height:3px;background:#22d3ee}
 .bot-card-body{padding:16px}
 .bot-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
 .bot-name{font-weight:700;font-size:15px;letter-spacing:0.3px}
 .bot-status{display:flex;align-items:center;gap:6px;font-size:11px;font-family:'JetBrains Mono',monospace;text-transform:uppercase}
-.bot-status-dot{width:8px;height:8px;border-radius:50%;background:var(--text-muted)}
-.bot-status-dot.online{background:var(--green-bright);box-shadow:0 0 8px var(--green-bright)}
-.bot-status-dot.offline{background:var(--red-bright)}
-.bot-status-text{color:var(--text-secondary)}
+.bot-status-dot{width:8px;height:8px;border-radius:50%;background:#6b7280}
+.bot-status-dot.online{background:#34d399;box-shadow:0 0 8px #34d399}
+.bot-status-dot.offline{background:#f87171}
+.bot-status-text{color:#9ca3af}
 .bot-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px}
-.bot-kpi{background:var(--bg-elevated);padding:8px;border-radius:6px;border:1px solid transparent}
-.bot-kpi-label{font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;font-family:'JetBrains Mono',monospace;margin-bottom:4px}
-.bot-kpi-value{font-size:16px;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--text-primary)}
-.bot-kpi-value.positive{color:var(--green-bright)}
-.bot-kpi-value.negative{color:var(--red-bright)}
-.bot-kpi-sub{font-size:10px;color:var(--text-muted);font-family:'JetBrains Mono',monospace;margin-top:2px}
-.bot-kpi-sub.positive{color:var(--green)}
-.bot-kpi-sub.negative{color:var(--red)}
-.flash{animation:flash 0.3s}
-@keyframes flash{0%{background:var(--blue)}100%{background:var(--bg-elevated)}}
-.sparkline-container{height:48px;margin-top:12px;background:var(--bg-elevated);border-radius:6px;padding:6px}
+.bot-kpi{background:#232d45;padding:8px;border-radius:6px}
+.bot-kpi-label{font-size:9px;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;font-family:'JetBrains Mono',monospace;margin-bottom:4px}
+.bot-kpi-value{font-size:16px;font-weight:700;font-family:'JetBrains Mono',monospace;color:#e5e7eb}
+.bot-kpi-value.positive{color:#34d399}
+.bot-kpi-value.negative{color:#f87171}
+.bot-kpi-sub{font-size:10px;color:#6b7280;font-family:'JetBrains Mono',monospace;margin-top:2px}
+.sparkline-container{height:48px;margin-top:12px;background:#232d45;border-radius:6px;padding:6px}
 .sparkline-canvas{width:100%;height:100%;display:block}
+.refresh-info{text-align:center;color:#6b7280;font-size:12px;font-family:'JetBrains Mono',monospace;margin-top:32px}
 </style>
 </head>
 <body>
@@ -83,80 +55,89 @@ body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--tex
     <div class="item">Total Equity <strong id="total-equity">--</strong></div>
     <div class="item" id="total-pnl-item">Total PnL <strong id="total-pnl">--</strong></div>
     <div class="item">Open <strong id="total-open">--</strong></div>
+    <div class="item">Cycles <strong id="total-cycles">--</strong></div>
   </div>
 </div>
 
-<div class="bot-grid"></div>
+<div class="banner" id="banner">
+  💡 <strong>Aucune donnée trouvée.</strong> Lance d'abord le bot en double-cliquant sur <code>LANCER_BOT_PAPER.bat</code> dans le dossier parent. Le bot va créer les données. Reviens ici et rafraîchis (F5).
+</div>
 
+<div class="bot-grid" id="bot-grid"></div>
+
+<div class="refresh-info">⟳ Auto-refresh 30s · <span id="last-refresh">--</span></div>
+
+<script src="dashboard_data.js" onerror="window.BOT_DATA = window.BOT_DATA || {bots: []};"></script>
 <script>
-const BOTS = [
-  { key:'sentiment_v1', name:'Sentiment V1', color:'#06b6d4', initialCapital: 2000 },
-  // Ajouter d'autres bots ici quand on étend la flotte
-];
-const HEARTBEAT_TIMEOUT = 300; // 5 min
-
-(function() {
-  var grid = document.querySelector('.bot-grid');
-  var colors = {'#06b6d4':'cyan','#8b5cf6':'purple','#10b981':'green','#ec4899':'pink','#1d9bf0':'blue','#eab308':'yellow','#ca8a04':'amber','#16a34a':'green'};
-  for (var i = 0; i < BOTS.length; i++) {
-    var b = BOTS[i], cls = colors[b.color] || 'cyan';
-    grid.innerHTML +=
-      '<div class="bot-card" id="card-' + b.key + '">'
-      + '<div class="bot-card-accent ' + cls + '"></div>'
-      + '<div class="bot-card-body">'
-      + '<div class="bot-card-header">'
-      + '<div class="bot-name">' + b.name + '</div>'
-      + '<div class="bot-status"><span class="bot-status-dot" id="status-dot-' + b.key + '"></span>'
-      + '<span class="bot-status-text" id="status-text-' + b.key + '">--</span></div></div>'
-      + '<div class="bot-kpis">'
-      + '<div class="bot-kpi"><div class="bot-kpi-label">Equity</div><div class="bot-kpi-value" id="equity-' + b.key + '">--</div><div class="bot-kpi-sub" id="pnl-' + b.key + '"></div></div>'
-      + '<div class="bot-kpi"><div class="bot-kpi-label">Win Rate</div><div class="bot-kpi-value" id="winrate-' + b.key + '">--</div><div class="bot-kpi-sub" id="trades-' + b.key + '"></div></div>'
-      + '<div class="bot-kpi"><div class="bot-kpi-label">Drawdown</div><div class="bot-kpi-value" id="dd-' + b.key + '">--</div></div>'
-      + '</div>'
-      + '<div class="bot-kpis">'
-      + '<div class="bot-kpi"><div class="bot-kpi-label">Profit Factor</div><div class="bot-kpi-value" id="pf-' + b.key + '">--</div></div>'
-      + '<div class="bot-kpi"><div class="bot-kpi-label">Avg Trade</div><div class="bot-kpi-value" id="avg-' + b.key + '">--</div></div>'
-      + '<div class="bot-kpi"><div class="bot-kpi-label">Open Pos</div><div class="bot-kpi-value" id="open-' + b.key + '">--</div></div>'
-      + '</div>'
-      + '<div class="sparkline-container"><canvas class="sparkline-canvas" id="spark-' + b.key + '"></canvas></div>'
-      + '</div></div>';
-  }
-})();
+window.BOT_DATA = window.BOT_DATA || { bots: [], updated_at: null };
 
 function fmt$(n, sign) {
   if (n === undefined || n === null || isNaN(n)) return '--';
-  var s = (sign && n > 0 ? '+' : '') + '$' + n.toLocaleString('en-US', {maximumFractionDigits: 0});
-  return s;
+  return (sign && n > 0 ? '+' : '') + '$' + n.toLocaleString('en-US', {maximumFractionDigits: 0});
 }
 function fmtPct(n, dec) {
   if (n === undefined || n === null || isNaN(n)) return '--';
   return n.toFixed(dec || 1) + '%';
 }
-function animateValue(id, val, cls) {
-  var el = document.getElementById(id);
-  if (!el) return;
-  if (el.textContent !== val) {
-    el.textContent = val;
-    el.classList.add('flash');
-    setTimeout(function() { el.classList.remove('flash'); }, 300);
-  }
-  if (cls !== undefined) {
-    el.classList.remove('positive', 'negative');
-    if (cls) el.classList.add(cls);
-  }
-}
 
-async function fetchJSON(file) {
-  try {
-    var r = await fetch('/api/data?file=' + encodeURIComponent(file) + '&t=' + Date.now());
-    if (!r.ok) return null;
-    return await r.json();
-  } catch (e) { return null; }
+function renderBotCard(bot) {
+  var state = bot.state || {};
+  var equity = state.equity || 0;
+  var cap = state.initial_capital || 0;
+  var gain = equity - cap;
+  var gainPct = cap > 0 ? (gain / cap * 100) : 0;
+  var peak = state.peak_equity || equity || 1;
+  var dd = peak > 0 ? ((equity - peak) / peak * 100) : 0;
+  var closed = state.closed_trades || [];
+  var wins = closed.filter(function(t) { return t.realized_pnl > 0; }).length;
+  var winRate = closed.length > 0 ? (wins / closed.length * 100) : 0;
+  var pfW = closed.filter(function(t) { return t.realized_pnl > 0; }).reduce(function(a,t){return a+t.realized_pnl;}, 0);
+  var pfL = Math.abs(closed.filter(function(t) { return t.realized_pnl < 0; }).reduce(function(a,t){return a+t.realized_pnl;}, 0));
+  var pf = pfL > 0 ? (pfW / pfL) : 0;
+  var avgTrade = closed.length > 0 ? (closed.reduce(function(a,t){return a+t.realized_pnl;}, 0) / closed.length) : 0;
+  var openCount = (state.open_positions || []).length;
+
+  var isOnline = false;
+  if (bot.heartbeat && bot.heartbeat.ts) {
+    var ageSec = Date.now()/1000 - bot.heartbeat.ts;
+    isOnline = ageSec < 1800;
+  }
+
+  var html = '<div class="bot-card">'
+    + '<div class="bot-card-accent"></div>'
+    + '<div class="bot-card-body">'
+    + '<div class="bot-card-header">'
+    + '<div class="bot-name">' + (bot.name || bot.key || 'Bot') + '</div>'
+    + '<div class="bot-status">'
+    + '<span class="bot-status-dot ' + (isOnline ? 'online' : 'offline') + '"></span>'
+    + '<span class="bot-status-text">' + (isOnline ? 'ONLINE' : 'OFFLINE') + '</span>'
+    + '</div></div>'
+    + '<div class="bot-kpis">'
+    + '<div class="bot-kpi"><div class="bot-kpi-label">Equity</div>'
+    +   '<div class="bot-kpi-value ' + (gain>=0?'positive':'negative') + '">' + fmt$(equity) + '</div>'
+    +   '<div class="bot-kpi-sub">' + fmt$(gain, true) + ' (' + fmtPct(gainPct) + ')</div></div>'
+    + '<div class="bot-kpi"><div class="bot-kpi-label">Win Rate</div>'
+    +   '<div class="bot-kpi-value">' + fmtPct(winRate) + '</div>'
+    +   '<div class="bot-kpi-sub">' + closed.length + ' / ' + openCount + '</div></div>'
+    + '<div class="bot-kpi"><div class="bot-kpi-label">Drawdown</div>'
+    +   '<div class="bot-kpi-value ' + (dd<0?'negative':'') + '">' + fmtPct(dd) + '</div></div>'
+    + '</div>'
+    + '<div class="bot-kpis">'
+    + '<div class="bot-kpi"><div class="bot-kpi-label">Profit Factor</div>'
+    +   '<div class="bot-kpi-value">' + pf.toFixed(2) + '</div></div>'
+    + '<div class="bot-kpi"><div class="bot-kpi-label">Avg Trade</div>'
+    +   '<div class="bot-kpi-value ' + (avgTrade>=0?'positive':'negative') + '">' + fmt$(avgTrade, true) + '</div></div>'
+    + '<div class="bot-kpi"><div class="bot-kpi-label">Cycles</div>'
+    +   '<div class="bot-kpi-value">' + (state.cycle_count || 0) + '</div></div>'
+    + '</div>'
+    + '<div class="sparkline-container"><canvas class="sparkline-canvas" id="spark-' + bot.key + '"></canvas></div>'
+    + '</div></div>';
+  return { html: html, equity: equity, cap: cap, gain: gain, openCount: openCount, cycles: state.cycle_count || 0 };
 }
 
 function drawSparkline(canvasId, points, color) {
   var canvas = document.getElementById(canvasId);
-  if (!canvas) return;
+  if (!canvas || !points || points.length < 2) return;
   var ctx = canvas.getContext('2d');
   var dpr = window.devicePixelRatio || 1;
   var rect = canvas.parentElement.getBoundingClientRect();
@@ -167,7 +148,6 @@ function drawSparkline(canvasId, points, color) {
   ctx.scale(dpr, dpr);
   var W = rect.width, H = rect.height, pad = 4;
   ctx.clearRect(0, 0, W, H);
-  if (!points || points.length < 2) return;
   var data = points.slice(-50).map(function(p) { return p[1]; });
   var min = Math.min.apply(null, data), max = Math.max.apply(null, data);
   if (min === max) max = min + 1;
@@ -177,73 +157,62 @@ function drawSparkline(canvasId, points, color) {
   data.forEach(function(v, i) {
     var x = pad + (i / (data.length - 1)) * (W - 2 * pad);
     var y = H - pad - ((v - min) / (max - min)) * (H - 2 * pad);
-    if (i === 0) ctx.moveTo(x, y);
-    else ctx.lineTo(x, y);
+    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
   });
   ctx.stroke();
 }
 
-async function refreshBot(bot) {
-  var state = await fetchJSON(bot.key + '_state.json');
-  var equity = await fetchJSON(bot.key + '_equity.json');
-  var hb = await fetchJSON('heartbeat_' + bot.key + '.json');
+function render() {
+  var grid = document.getElementById('bot-grid');
+  var banner = document.getElementById('banner');
+  var bots = (window.BOT_DATA && window.BOT_DATA.bots) || [];
 
-  // Online/offline
-  var isOnline = false;
-  if (hb && hb.ts && (Date.now() / 1000 - hb.ts < HEARTBEAT_TIMEOUT)) isOnline = true;
-  document.getElementById('status-dot-' + bot.key).className = 'bot-status-dot ' + (isOnline ? 'online' : 'offline');
-  document.getElementById('status-text-' + bot.key).textContent = isOnline ? 'ONLINE' : 'OFFLINE';
-
-  if (!state) return;
-  var eq = state.equity || 0;
-  var cap = state.initial_capital || bot.initialCapital || 0;
-  var gain = eq - cap;
-  var gainPct = cap > 0 ? (gain / cap * 100) : 0;
-  var peak = state.peak_equity || eq;
-  var dd = peak > 0 ? ((eq - peak) / peak * 100) : 0;
-
-  var closed = state.closed_trades || [];
-  var wins = closed.filter(function(t) { return t.realized_pnl > 0; }).length;
-  var winRate = closed.length > 0 ? (wins / closed.length * 100) : 0;
-  var pfSumW = closed.filter(function(t) { return t.realized_pnl > 0; }).reduce(function(a, t) { return a + t.realized_pnl; }, 0);
-  var pfSumL = Math.abs(closed.filter(function(t) { return t.realized_pnl < 0; }).reduce(function(a, t) { return a + t.realized_pnl; }, 0));
-  var pf = pfSumL > 0 ? (pfSumW / pfSumL) : 0;
-  var avgTrade = closed.length > 0 ? (closed.reduce(function(a, t) { return a + t.realized_pnl; }, 0) / closed.length) : 0;
-  var openCount = (state.open_positions || []).length;
-
-  animateValue('equity-' + bot.key, fmt$(eq), gain >= 0 ? 'positive' : 'negative');
-  animateValue('pnl-' + bot.key, fmt$(gain, true) + ' (' + fmtPct(gainPct) + ')', gain >= 0 ? 'positive' : 'negative');
-  animateValue('winrate-' + bot.key, fmtPct(winRate));
-  animateValue('trades-' + bot.key, closed.length + ' closed / ' + openCount + ' open');
-  animateValue('dd-' + bot.key, fmtPct(dd), dd < 0 ? 'negative' : null);
-  animateValue('pf-' + bot.key, pf.toFixed(2));
-  animateValue('avg-' + bot.key, fmt$(avgTrade, true), avgTrade >= 0 ? 'positive' : 'negative');
-  animateValue('open-' + bot.key, openCount);
-
-  drawSparkline('spark-' + bot.key, equity, gain >= 0 ? '#34d399' : '#f87171');
-}
-
-async function refreshAll() {
-  var totalEq = 0, totalCap = 0, totalOpen = 0;
-  for (var i = 0; i < BOTS.length; i++) {
-    await refreshBot(BOTS[i]);
-    var state = await fetchJSON(BOTS[i].key + '_state.json');
-    if (state) {
-      totalEq += state.equity || 0;
-      totalCap += state.initial_capital || BOTS[i].initialCapital;
-      totalOpen += (state.open_positions || []).length;
-    }
+  if (bots.length === 0) {
+    banner.classList.add('show');
+    grid.innerHTML = '';
+    return;
   }
-  var totalPnL = totalEq - totalCap;
+
+  banner.classList.remove('show');
+  var totalEq = 0, totalCap = 0, totalOpen = 0, totalCycles = 0;
+  var htmlParts = [];
+  var sparkData = [];
+  bots.forEach(function(bot) {
+    var r = renderBotCard(bot);
+    htmlParts.push(r.html);
+    totalEq += r.equity;
+    totalCap += r.cap;
+    totalOpen += r.openCount;
+    totalCycles += r.cycles;
+    sparkData.push({key: bot.key, points: bot.equity_curve, gain: r.gain});
+  });
+  grid.innerHTML = htmlParts.join('');
+  sparkData.forEach(function(s) {
+    drawSparkline('spark-' + s.key, s.points, s.gain >= 0 ? '#34d399' : '#f87171');
+  });
+
+  var totalGain = totalEq - totalCap;
+  var totalGainPct = totalCap > 0 ? (totalGain / totalCap * 100) : 0;
   document.getElementById('total-equity').textContent = fmt$(totalEq);
-  document.getElementById('total-pnl').textContent = fmt$(totalPnL, true) + ' (' + fmtPct((totalPnL / totalCap) * 100) + ')';
+  document.getElementById('total-pnl').textContent = fmt$(totalGain, true) + ' (' + fmtPct(totalGainPct) + ')';
   document.getElementById('total-pnl-item').classList.remove('positive', 'negative');
-  document.getElementById('total-pnl-item').classList.add(totalPnL >= 0 ? 'positive' : 'negative');
+  document.getElementById('total-pnl-item').classList.add(totalGain >= 0 ? 'positive' : 'negative');
   document.getElementById('total-open').textContent = totalOpen;
+  document.getElementById('total-cycles').textContent = totalCycles;
+
+  var d = new Date();
+  document.getElementById('last-refresh').textContent =
+    'Dernière màj : ' + d.toLocaleTimeString('fr-FR') + (window.BOT_DATA.updated_at ? ' · données : ' + window.BOT_DATA.updated_at : '');
 }
 
-refreshAll();
-setInterval(refreshAll, 30000);
+render();
+setInterval(function() {
+  var n = document.createElement('script');
+  n.src = 'dashboard_data.js?t=' + Date.now();
+  n.onload = function() { render(); };
+  n.onerror = function() { render(); };
+  document.head.appendChild(n);
+}, 30000);
 </script>
 
 </body>

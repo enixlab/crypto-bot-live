@@ -41,8 +41,9 @@ def build_fleet(mode: str, network: str, gcs_bucket: str | None) -> list:
         log.info("HL check: %s", check)
 
     fleet = []
+    universe = os.environ.get("BOT_UNIVERSE", "LINK,SUI,INJ").split(",")
     bot1 = SentimentV1Bot(
-        universe=["LINK", "SUI", "INJ"],
+        universe=universe,
         params=params,
         store=StateStore("sentiment_v1", gcs_bucket=gcs_bucket),
         hl_client=hl,

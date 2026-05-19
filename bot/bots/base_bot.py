@@ -92,6 +92,19 @@ class BaseBot(ABC):
         self.store.append_equity_point(self.state.equity)
         self.store.heartbeat()
 
+        # Export pour dashboard local (double-clic compatible)
+        try:
+            from ..core.dashboard_export import export_dashboard_data
+            from pathlib import Path
+            here = Path(__file__).resolve().parents[2]
+            export_dashboard_data(
+                bot_keys=[self.bot_id],
+                data_dir=str(here / "data"),
+                dashboard_dir=str(here / "dashboard"),
+            )
+        except Exception as e:
+            log.warning("dashboard export err: %s", e)
+
     # ===== HELPERS =====
 
     def _mark_to_market(self) -> None:
