@@ -15,6 +15,7 @@ import sys
 from dotenv import load_dotenv
 
 from .bots.sentiment_v1 import SentimentV1Bot
+from .bots.strategies import LSV3Bot, UltimateV2Bot, ScalpTPBot, ConfluenceBot
 from .core.state import StateStore
 from .core.strategy import StrategyParams
 from .core.hyperliquid_client import HyperliquidClient
@@ -41,17 +42,22 @@ def build_fleet(mode: str, network: str, gcs_bucket: str | None) -> list:
         log.info("HL check: %s", check)
 
     fleet = []
-    # Univers par défaut = 19 cryptos du PDF Sentiment Cartography
     DEFAULT_UNIVERSE_20 = "BTC,ETH,XRP,AAVE,SUI,INJ,LDO,AVAX,LINK,UNI,NEAR,APT,ARB,OP,DOGE,FET,RNDR,FIL,ONDO,HBAR"
     universe = os.environ.get("BOT_UNIVERSE", DEFAULT_UNIVERSE_20).split(",")
-    bot1 = SentimentV1Bot(
-        universe=universe,
-        params=params,
-        store=StateStore("sentiment_v1", gcs_bucket=gcs_bucket),
-        hl_client=hl,
-        paper_mode=paper_mode,
-    )
-    fleet.append(bot1)
+
+    # ===== 4 BOTS AVEC 4 STRATÉGIES DIFFÉRENTES =====
+    leverage = int(os.environ.get("LEVERAGE", "3"))
+    for BotClass in [LSV3Bot, UltimateV2Bot, ScalpTPBot, ConfluenceBot]:
+        bot_params = BotClass.default_params()
+        bot_params.leverage = leverage
+        bot = BotClass(
+            universe=universe,
+            params=bot_params,
+            store=StateStore(BotClass.bot_id, gcs_bucket=gcs_bucket),
+            hl_client=hl,
+            paper_mode=paper_mode,
+        )
+        fleet.append(bot)
     return fleet
 
 

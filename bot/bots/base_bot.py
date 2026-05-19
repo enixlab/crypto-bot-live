@@ -86,6 +86,12 @@ class BaseBot(ABC):
         sentiment_by_coin = self.fetch_signals()
         log.info("Sentiment scores: %s", {c: f"{r.score:.2f}({r.article_count})" for c, r in sentiment_by_coin.items()})
 
+        # Persiste les scores pour le dashboard (par crypto)
+        self.state.custom["last_sentiments"] = {
+            c: {"score": round(r.score, 3), "articles": r.article_count, "ts": _now()}
+            for c, r in sentiment_by_coin.items()
+        }
+
         # 5. Entries
         entries = evaluate_entries(sentiment_by_coin, self.state, self.params)
         for entry in entries:
@@ -105,7 +111,7 @@ class BaseBot(ABC):
             from pathlib import Path
             here = Path(__file__).resolve().parents[2]
             export_dashboard_data(
-                bot_keys=[self.bot_id],
+                bot_keys=["sentiment_ls_v3","ultimate_v2","sentiment_ls_v3_tp","confluence"],
                 data_dir=str(here / "data"),
                 dashboard_dir=str(here / "dashboard"),
             )

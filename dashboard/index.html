@@ -65,7 +65,72 @@ body{font-family:'Inter',sans-serif;background:#0a0e1a;color:#e5e7eb;min-height:
 
 <div class="bot-grid" id="bot-grid"></div>
 
+<!-- ===== POSITIONS OUVERTES ===== -->
+<h2 style="margin:32px 0 12px;font-size:20px;font-weight:800">📈 Positions ouvertes</h2>
+<div id="positions-container">
+  <div style="color:#6b7280;font-size:13px;padding:16px;background:#1a2035;border-radius:8px;border:1px dashed #2a3550">Aucune position ouverte pour le moment. Le bot attend des signaux clairs (sentiment ≤ 0.40 ou ≥ 0.65) pour ouvrir.</div>
+</div>
+
+<!-- ===== CRYPTOS SURVEILLÉES ===== -->
+<h2 style="margin:32px 0 12px;font-size:20px;font-weight:800">🌐 Cryptos surveillées (20)</h2>
+<div id="cryptos-container" class="crypto-grid"></div>
+
+<!-- ===== TRADES FERMÉS RÉCENTS ===== -->
+<h2 style="margin:32px 0 12px;font-size:20px;font-weight:800">📜 Trades fermés récents</h2>
+<div id="trades-container">
+  <div style="color:#6b7280;font-size:13px;padding:16px;background:#1a2035;border-radius:8px;border:1px dashed #2a3550">Aucun trade fermé pour le moment.</div>
+</div>
+
 <div class="refresh-info">⟳ Auto-refresh 30s · <span id="last-refresh">--</span></div>
+
+<!-- ===== MODAL DÉTAIL CRYPTO ===== -->
+<div id="crypto-modal" class="modal" onclick="closeCryptoModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeCryptoModal()">×</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<style>
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:100;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto}
+.modal.open{display:flex}
+.modal-content{background:#1a2035;border:1px solid #2a3550;border-radius:12px;padding:32px;max-width:680px;width:100%;position:relative;color:#e5e7eb}
+.modal-close{position:absolute;top:12px;right:16px;background:transparent;border:none;color:#9ca3af;font-size:28px;cursor:pointer;line-height:1}
+.modal-close:hover{color:#e5e7eb}
+.modal h3{font-size:32px;font-weight:800;margin-bottom:8px}
+.modal .meta{font-family:'JetBrains Mono',monospace;font-size:12px;color:#9ca3af;margin-bottom:24px}
+.modal-section{background:#232d45;border-radius:8px;padding:16px;margin-bottom:12px}
+.modal-section h4{font-size:11px;color:#6b7280;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;font-family:'JetBrains Mono',monospace}
+.modal-section .value{font-size:24px;font-weight:700;font-family:'JetBrains Mono',monospace}
+.modal-section.green .value{color:#34d399}
+.modal-section.red .value{color:#f87171}
+.modal-section.neutral .value{color:#9ca3af}
+.modal-actions{display:flex;gap:12px;margin-top:16px}
+.modal-btn{flex:1;padding:10px 16px;border-radius:6px;text-align:center;font-size:13px;font-weight:600;text-decoration:none;border:1px solid #334166;color:#e5e7eb;background:#1a2035;transition:all 0.2s}
+.modal-btn:hover{background:#22d3ee;color:#0a0e1a;border-color:#22d3ee}
+.crypto-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.crypto-chip{background:#1a2035;border:1px solid #2a3550;border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:4px;cursor:pointer;transition:all 0.15s}
+.crypto-chip:hover{background:#1f2847;border-color:#22d3ee;transform:translateY(-2px)}
+.crypto-chip .sym{font-weight:700;font-size:14px;letter-spacing:0.5px}
+.crypto-chip .pos-tag{font-size:9px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280}
+.crypto-chip.has-position{border-color:#22d3ee;background:linear-gradient(135deg,#1a2035 0%,#1f2847 100%)}
+.crypto-chip.long{border-left:3px solid #34d399}
+.crypto-chip.short{border-left:3px solid #f87171}
+.position-row{background:#1a2035;border:1px solid #2a3550;border-radius:8px;padding:14px 18px;margin-bottom:8px;display:grid;grid-template-columns:80px 100px 1fr 100px 80px;gap:16px;align-items:center;font-family:'JetBrains Mono',monospace;font-size:13px}
+.position-row.long{border-left:4px solid #34d399}
+.position-row.short{border-left:4px solid #f87171}
+.position-row .pos-sym{font-weight:700;font-size:15px;color:#e5e7eb}
+.position-row .pos-dir{font-size:11px;text-transform:uppercase;letter-spacing:0.5px}
+.position-row .pos-dir.long{color:#34d399}
+.position-row .pos-dir.short{color:#f87171}
+.position-row .pos-prices{font-size:11px;color:#9ca3af}
+.position-row .pos-pnl{text-align:right;font-weight:700;font-size:15px}
+.position-row .pos-pnl.positive{color:#34d399}
+.position-row .pos-pnl.negative{color:#f87171}
+.trade-row{background:#1a2035;border:1px solid #2a3550;border-radius:6px;padding:10px 14px;margin-bottom:6px;display:grid;grid-template-columns:80px 80px 1fr 100px 100px;gap:12px;align-items:center;font-family:'JetBrains Mono',monospace;font-size:12px}
+.trade-row .pos-pnl.positive{color:#34d399}
+.trade-row .pos-pnl.negative{color:#f87171}
+</style>
 
 <script src="dashboard_data.js" onerror="window.BOT_DATA = window.BOT_DATA || {bots: []};"></script>
 <script>
@@ -203,10 +268,183 @@ function render() {
   document.getElementById('total-open').textContent = totalOpen;
   document.getElementById('total-cycles').textContent = totalCycles;
 
+  // === Positions ouvertes ===
+  var allOpen = [];
+  var allClosed = [];
+  bots.forEach(function(bot) {
+    var st = bot.state || {};
+    (st.open_positions || []).forEach(function(p) { p._bot = bot.name; allOpen.push(p); });
+    (st.closed_trades || []).forEach(function(t) { t._bot = bot.name; allClosed.push(t); });
+  });
+
+  var posCont = document.getElementById('positions-container');
+  if (allOpen.length === 0) {
+    posCont.innerHTML = '<div style="color:#6b7280;font-size:13px;padding:16px;background:#1a2035;border-radius:8px;border:1px dashed #2a3550">Aucune position ouverte. Le bot attend des signaux clairs (sentiment ≤ 0.40 = short, ≥ 0.65 = long).</div>';
+  } else {
+    posCont.innerHTML = allOpen.map(function(p) {
+      var dir = (p.metadata && p.metadata.direction) || (p.side === 'buy' ? 'long' : 'short');
+      var ticker = (p.metadata && p.metadata.ticker) || (p.symbol || '').replace('SHORT-', '');
+      var pnl = p.unrealized_pnl || 0;
+      var pnlPct = p.size_usd > 0 ? (pnl / p.size_usd * 100) : 0;
+      return '<div class="position-row ' + dir + '">'
+        + '<div class="pos-sym">' + ticker + '</div>'
+        + '<div class="pos-dir ' + dir + '">' + (dir === 'long' ? '▲ LONG' : '▼ SHORT') + '</div>'
+        + '<div class="pos-prices">Entry: $' + Number(p.entry_price).toLocaleString() + ' → Now: $' + Number(p.current_price).toLocaleString() + ' · ' + (p.reason || '') + '</div>'
+        + '<div class="pos-pnl ' + (pnl >= 0 ? 'positive' : 'negative') + '">' + (pnl >= 0 ? '+' : '') + '$' + Math.abs(pnl).toFixed(2) + '</div>'
+        + '<div class="pos-pnl ' + (pnl >= 0 ? 'positive' : 'negative') + '">' + (pnl >= 0 ? '+' : '') + pnlPct.toFixed(2) + '%</div>'
+        + '</div>';
+    }).join('');
+  }
+
+  // === Liste cryptos surveillées (avec indication position + sentiment + cliquable) ===
+  var UNIVERSE = ['BTC','ETH','XRP','AAVE','SUI','INJ','LDO','AVAX','LINK','UNI','NEAR','APT','ARB','OP','DOGE','FET','RNDR','FIL','ONDO','HBAR'];
+  var posByTicker = {};
+  allOpen.forEach(function(p) {
+    var t = (p.metadata && p.metadata.ticker) || (p.symbol || '').replace('SHORT-', '');
+    var dir = (p.metadata && p.metadata.direction) || (p.side === 'buy' ? 'long' : 'short');
+    posByTicker[t] = dir;
+  });
+
+  // Agrege les last_sentiments depuis le state de tous les bots
+  var sentimentByCoin = {};
+  bots.forEach(function(b) {
+    var ls = b.state && b.state.custom && b.state.custom.last_sentiments;
+    if (ls) Object.assign(sentimentByCoin, ls);
+  });
+
+  window._cryptoData = { posByTicker, sentimentByCoin, openPositions: allOpen, closedTrades: allClosed };
+
+  var cryptoCont = document.getElementById('cryptos-container');
+  cryptoCont.innerHTML = UNIVERSE.map(function(sym) {
+    var dir = posByTicker[sym];
+    var sent = sentimentByCoin[sym];
+    var hasPos = dir ? 'has-position ' + dir : '';
+    var tag, scoreColor = '#9ca3af';
+    if (dir) {
+      tag = dir === 'long' ? '▲ LONG' : '▼ SHORT';
+    } else if (sent) {
+      var s = sent.score;
+      tag = s.toFixed(2) + ' (' + sent.articles + ')';
+      if (s >= 0.65) scoreColor = '#34d399';
+      else if (s <= 0.40) scoreColor = '#f87171';
+      else scoreColor = '#9ca3af';
+    } else {
+      tag = 'monitored';
+    }
+    return '<div class="crypto-chip ' + hasPos + '" onclick="showCryptoDetail(\'' + sym + '\')">'
+      + '<div class="sym">' + sym + '</div>'
+      + '<div class="pos-tag" style="color:' + scoreColor + '">' + tag + '</div>'
+      + '</div>';
+  }).join('');
+
+  // === Trades fermés récents ===
+  var tradesCont = document.getElementById('trades-container');
+  if (allClosed.length === 0) {
+    tradesCont.innerHTML = '<div style="color:#6b7280;font-size:13px;padding:16px;background:#1a2035;border-radius:8px;border:1px dashed #2a3550">Aucun trade fermé pour le moment.</div>';
+  } else {
+    var recent = allClosed.slice(-10).reverse();
+    tradesCont.innerHTML = recent.map(function(t) {
+      var sym = (t.symbol || '').replace('SHORT-', '');
+      var dir = (t.symbol || '').indexOf('SHORT-') === 0 ? 'short' : 'long';
+      var pnl = t.realized_pnl || 0;
+      return '<div class="trade-row">'
+        + '<div style="font-weight:700">' + sym + '</div>'
+        + '<div class="' + (dir === 'long' ? 'positive' : 'negative') + '" style="font-size:11px;text-transform:uppercase">' + (dir === 'long' ? '▲ LONG' : '▼ SHORT') + '</div>'
+        + '<div style="color:#9ca3af;font-size:11px">' + (t.close_reason || '') + '</div>'
+        + '<div class="pos-pnl ' + (pnl >= 0 ? 'positive' : 'negative') + '">' + (pnl >= 0 ? '+' : '') + '$' + Math.abs(pnl).toFixed(2) + '</div>'
+        + '<div class="pos-pnl ' + (pnl >= 0 ? 'positive' : 'negative') + '">' + (pnl >= 0 ? '+' : '') + (t.pnl_pct || 0).toFixed(2) + '%</div>'
+        + '</div>';
+    }).join('');
+  }
+
   var d = new Date();
   document.getElementById('last-refresh').textContent =
     'Dernière màj : ' + d.toLocaleTimeString('fr-FR') + (window.BOT_DATA.updated_at ? ' · données : ' + window.BOT_DATA.updated_at : '');
 }
+
+// ===== MODAL HANDLERS =====
+function showCryptoDetail(sym) {
+  var data = window._cryptoData || {};
+  var pos = (data.openPositions || []).find(function(p) {
+    var t = (p.metadata && p.metadata.ticker) || (p.symbol || '').replace('SHORT-', '');
+    return t === sym;
+  });
+  var sent = (data.sentimentByCoin || {})[sym];
+  var closedForSym = (data.closedTrades || []).filter(function(t) {
+    return (t.symbol || '').replace('SHORT-', '') === sym;
+  });
+
+  // Décision du bot
+  var decision = 'En attente de signal';
+  var decisionColor = 'neutral';
+  if (sent) {
+    if (sent.score >= 0.65) { decision = '▲ LONG candidat (sentiment ' + sent.score.toFixed(2) + ')'; decisionColor = 'green'; }
+    else if (sent.score <= 0.40) { decision = '▼ SHORT candidat (sentiment ' + sent.score.toFixed(2) + ')'; decisionColor = 'red'; }
+    else { decision = '— Neutre (sentiment ' + sent.score.toFixed(2) + ')'; decisionColor = 'neutral'; }
+  }
+
+  var html = '<h3>' + sym + '</h3>'
+    + '<div class="meta">' + (sent ? 'Dernière analyse : ' + sent.ts : 'Pas encore analysée') + '</div>';
+
+  // Position si ouverte
+  if (pos) {
+    var dir = (pos.metadata && pos.metadata.direction) || (pos.side === 'buy' ? 'long' : 'short');
+    var pnl = pos.unrealized_pnl || 0;
+    var pnlPct = pos.size_usd > 0 ? (pnl / pos.size_usd * 100) : 0;
+    html += '<div class="modal-section ' + (pnl >= 0 ? 'green' : 'red') + '">'
+      + '<h4>Position ouverte ' + (dir === 'long' ? '▲ LONG' : '▼ SHORT') + '</h4>'
+      + '<div class="value">' + (pnl >= 0 ? '+' : '') + '$' + Math.abs(pnl).toFixed(2) + ' (' + (pnl >= 0 ? '+' : '') + pnlPct.toFixed(2) + '%)</div>'
+      + '<div style="margin-top:8px;font-size:13px;color:#9ca3af">Entry: $' + Number(pos.entry_price).toLocaleString() + ' → Now: $' + Number(pos.current_price).toLocaleString() + '</div>'
+      + '<div style="margin-top:4px;font-size:12px;color:#6b7280">' + (pos.reason || '') + '</div>'
+      + '</div>';
+  }
+
+  // Sentiment + articles
+  html += '<div class="modal-section ' + decisionColor + '">'
+    + '<h4>Sentiment courant</h4>'
+    + '<div class="value">' + (sent ? sent.score.toFixed(2) : '--') + '</div>'
+    + '<div style="margin-top:6px;font-size:13px;color:#9ca3af">' + (sent ? sent.articles + ' articles analysés' : 'Aucune donnée') + '</div>'
+    + '<div style="margin-top:10px;padding:8px 10px;background:#0a0e1a;border-radius:4px;font-size:12px;color:#9ca3af">' + decision + '</div>'
+    + '</div>';
+
+  // Décision IA
+  html += '<div class="modal-section">'
+    + '<h4>Règle d\'entrée</h4>'
+    + '<div style="font-size:13px;color:#9ca3af;line-height:1.6">'
+    + '• Sentiment ≥ <b style="color:#34d399">0.65</b> → ▲ LONG<br>'
+    + '• Sentiment ≤ <b style="color:#f87171">0.40</b> → ▼ SHORT<br>'
+    + '• Entre les deux → pas d\'action (neutre)<br>'
+    + '• Minimum <b>2 articles</b> requis pour décider'
+    + '</div></div>';
+
+  // Trades fermés sur cette crypto
+  if (closedForSym.length > 0) {
+    html += '<div class="modal-section"><h4>Historique trades sur ' + sym + ' (' + closedForSym.length + ')</h4>';
+    closedForSym.slice(-5).reverse().forEach(function(t) {
+      var pnl = t.realized_pnl || 0;
+      html += '<div style="font-size:12px;margin:6px 0;color:#9ca3af">'
+        + '<span style="color:' + (pnl >= 0 ? '#34d399' : '#f87171') + ';font-weight:700">' + (pnl >= 0 ? '+' : '') + '$' + Math.abs(pnl).toFixed(2) + '</span> · '
+        + t.close_reason + ' · ' + (t.closed_at || '').substring(0,16)
+        + '</div>';
+    });
+    html += '</div>';
+  }
+
+  // Liens utiles
+  html += '<div class="modal-actions">'
+    + '<a class="modal-btn" href="https://www.tradingview.com/symbols/' + sym + 'USD/" target="_blank">📊 TradingView</a>'
+    + '<a class="modal-btn" href="https://www.coingecko.com/en/coins/' + sym.toLowerCase() + '" target="_blank">🦎 CoinGecko</a>'
+    + '<a class="modal-btn" href="https://cryptopanic.com/news/' + sym.toLowerCase() + '/" target="_blank">📰 News</a>'
+    + '</div>';
+
+  document.getElementById('modal-body').innerHTML = html;
+  document.getElementById('crypto-modal').classList.add('open');
+}
+function closeCryptoModal(e) {
+  if (e && e.target.id !== 'crypto-modal') return;
+  document.getElementById('crypto-modal').classList.remove('open');
+}
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeCryptoModal(); });
 
 render();
 setInterval(function() {
