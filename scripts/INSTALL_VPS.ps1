@@ -90,13 +90,11 @@ if (Test-Path ".env") {
     Write-Host "  .env existe deja. Reutilisation." -ForegroundColor Yellow
 } else {
     Write-Host ""
-    Write-Host "  Renseigne tes cles API (ou Entree pour ignorer):" -ForegroundColor Yellow
-    $deepseek = Read-Host "  Cle DeepSeek (sk-...)"
-    $gemini = Read-Host "  Cle Gemini (AIza... ou Entree pour skip)"
+    Write-Host "  Colle ta cle DeepSeek (commence par sk-...) :" -ForegroundColor Yellow
+    $deepseek = Read-Host "  DEEPSEEK_API_KEY"
 
     @"
 DEEPSEEK_API_KEY=$deepseek
-GEMINI_API_KEY=$gemini
 SENTIMENT_MODEL=deepseek-chat
 INITIAL_CAPITAL=250
 LEVERAGE=3
