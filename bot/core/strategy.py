@@ -31,8 +31,8 @@ class StrategyParams:
     # Seuils sentiment (PDF planche III)
     long_threshold: float = 0.65          # ≥ 0.65 → LONG
     short_threshold: float = 0.40         # ≤ 0.40 → SHORT
-    # Article minimum par coin (PDF planche IV)
-    min_articles_per_coin: int = 2
+    # Article minimum par coin (assoupli à 1 pour avoir des trades avec RSS publics limités)
+    min_articles_per_coin: int = 1
     # MAX_HOLD conditionnel (Zahid 15 mai)
     max_hold_hours: int = 72              # 72h pour bots standard
     hold_minimal_hours: int = 24          # PDF planche VIII : hold minimal 24h
