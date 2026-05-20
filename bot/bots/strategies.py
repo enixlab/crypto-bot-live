@@ -61,7 +61,7 @@ class UltimateV2Bot(BaseBot):
             exit_band_pct=0.015,
             tp_pct=0.07,
             sl_pct=-0.08,
-            min_articles_per_coin=3,
+            min_articles_per_coin=1,
         )
 
     def fetch_signals(self) -> dict:
@@ -116,7 +116,7 @@ class ConfluenceBot(BaseBot):
             exit_band_pct=0.01,
             tp_pct=0.05,
             sl_pct=-0.06,
-            min_articles_per_coin=5,
+            min_articles_per_coin=1,
             veto_pct=0.025,
         )
 
