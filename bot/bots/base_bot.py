@@ -115,6 +115,12 @@ class BaseBot(ABC):
                 data_dir=str(here / "data"),
                 dashboard_dir=str(here / "dashboard"),
             )
+            # Push vers GitHub pour partage public (rate-limit 5min)
+            try:
+                from ..core.sync_dashboard import push_dashboard_to_github
+                push_dashboard_to_github(here)
+            except Exception:
+                pass
         except Exception as e:
             log.warning("dashboard export err: %s", e)
 
