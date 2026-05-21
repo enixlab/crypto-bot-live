@@ -119,6 +119,15 @@ class ExitDecision:
     detail: str
 
 
+def _enrich_score_safe(coin: str, base: float) -> tuple[float, dict]:
+    """Tente d'enrichir avec market_intel, fallback safe si import échoue."""
+    try:
+        from .market_intel import enriched_score
+        return enriched_score(coin, base)
+    except Exception:
+        return base, {}
+
+
 def evaluate_entries(
     sentiment_by_coin: dict,           # {coin: SentimentResult}
     state: BotState,
@@ -140,11 +149,15 @@ def evaluate_entries(
     for coin, sent in sentiment_by_coin.items():
         if coin in already_open or coin in in_cooldown:
             continue
-        if sent.article_count < 2:        # le PDF dit ≥ 2 articles/coin requis
+        if sent.article_count < params.min_articles_per_coin:
             continue
-        if sent.score >= params.long_threshold:
+        # PRO: enrichir avec Fear&Greed + Funding rate Hyperliquid
+        enriched, breakdown = _enrich_score_safe(coin, sent.score)
+        if breakdown:
+            sent.score = enriched
+        if enriched >= params.long_threshold:
             candidates.append((coin, "long", sent))
-        elif sent.score <= params.short_threshold:
+        elif enriched <= params.short_threshold:
             candidates.append((coin, "short", sent))
 
     # Tri : extrémité du score d'abord (plus la conviction est forte, plus prioritaire)
