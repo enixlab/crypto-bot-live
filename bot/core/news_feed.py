@@ -82,13 +82,73 @@ def fetch_cryptopanic(coin: str, api_key: str, lookback_hours: int = 6) -> list[
     return out
 
 
-# Flux RSS publics utilisés en complément (pas besoin de clé API)
+# Flux RSS publics gratuits — étendu pour couvrir tous les altcoins
 RSS_SOURCES = {
     "cointelegraph": "https://cointelegraph.com/rss",
     "coindesk": "https://www.coindesk.com/arc/outboundfeeds/rss/",
     "decrypt": "https://decrypt.co/feed",
     "thedefiant": "https://thedefiant.io/feed",
+    "cryptonews": "https://cryptonews.com/news/feed",
+    "newsbtc": "https://www.newsbtc.com/feed/",
+    "bitcoinmagazine": "https://bitcoinmagazine.com/feed",
+    "crypto_news": "https://crypto.news/feed/",
+    "theblock": "https://www.theblock.co/rss.xml",
+    "blockworks": "https://blockworks.co/feed/",
+    "cryptopolitan": "https://www.cryptopolitan.com/feed/",
+    "ambcrypto": "https://ambcrypto.com/feed/",
+    "u_today": "https://u.today/rss",
+    "bitcoinist": "https://bitcoinist.com/feed/",
+    "cryptoglobe": "https://www.cryptoglobe.com/feed/",
+    "cryptopotato": "https://cryptopotato.com/feed/",
+    "bitcoinerx": "https://bitcoinerx.com/feed/",
+    "coinspeaker": "https://www.coinspeaker.com/feed/",
+    "beincrypto": "https://beincrypto.com/feed/",
+    "cryptobriefing": "https://cryptobriefing.com/feed/",
 }
+
+
+def fetch_google_news_for_coin(coin: str, lookback_hours: int = 12) -> list[Article]:
+    """Google News RSS — recherche par mot-clé. Gratuit, sans clé API.
+
+    Donne 10-30 articles par crypto, beaucoup plus que les RSS génériques.
+    """
+    import urllib.parse
+    cutoff = time.time() - lookback_hours * 3600
+    out: list[Article] = []
+    # Mapping ticker → nom complet pour meilleure recherche
+    COIN_NAMES = {
+        "BTC": "Bitcoin", "ETH": "Ethereum", "XRP": "Ripple XRP",
+        "AAVE": "Aave crypto", "SUI": "Sui crypto", "INJ": "Injective crypto",
+        "LDO": "Lido finance", "AVAX": "Avalanche AVAX", "LINK": "Chainlink",
+        "UNI": "Uniswap", "NEAR": "Near Protocol", "APT": "Aptos crypto",
+        "ARB": "Arbitrum", "OP": "Optimism crypto", "DOGE": "Dogecoin",
+        "FET": "Fetch.ai", "RNDR": "Render token", "FIL": "Filecoin",
+        "ONDO": "Ondo Finance", "HBAR": "Hedera Hashgraph",
+    }
+    query = COIN_NAMES.get(coin, coin) + " crypto"
+    encoded = urllib.parse.quote(query)
+    url = f"https://news.google.com/rss/search?q={encoded}&hl=en-US&gl=US&ceid=US:en"
+    try:
+        feed = feedparser.parse(url)
+    except Exception as e:
+        log.warning("google news %s err: %s", coin, e)
+        return []
+    for entry in feed.entries[:15]:
+        pub = entry.get("published_parsed") or entry.get("updated_parsed")
+        if not pub:
+            continue
+        pub_ts = time.mktime(pub)
+        if pub_ts < cutoff:
+            continue
+        out.append(Article(
+            coin=coin,
+            title=entry.get("title", ""),
+            summary=entry.get("summary", "")[:300],
+            url=entry.get("link", ""),
+            source="google_news",
+            published_ts=int(pub_ts),
+        ))
+    return out
 
 
 def fetch_rss(coin: str, lookback_hours: int = 6) -> list[Article]:
@@ -128,20 +188,23 @@ def fetch_rss(coin: str, lookback_hours: int = 6) -> list[Article]:
     return out
 
 
-def fetch_articles_for_coin(coin: str, lookback_hours: int = 6, cryptopanic_key: Optional[str] = None) -> list[Article]:
+def fetch_articles_for_coin(coin: str, lookback_hours: int = 12, cryptopanic_key: Optional[str] = None) -> list[Article]:
     cryptopanic_key = cryptopanic_key or os.environ.get("CRYPTOPANIC_API_KEY", "")
     articles: list[Article] = []
     articles += fetch_cryptopanic(coin, cryptopanic_key, lookback_hours)
     articles += fetch_rss(coin, lookback_hours)
-    # Dédoublonnage par URL
-    seen = set()
+    articles += fetch_google_news_for_coin(coin, lookback_hours)  # ← +10-30 articles par crypto !
+    # Dédoublonnage par URL et titre
+    seen_urls, seen_titles = set(), set()
     dedup = []
     for a in articles:
-        if a.url in seen:
+        if a.url in seen_urls or a.title.lower() in seen_titles:
             continue
-        seen.add(a.url)
+        seen_urls.add(a.url)
+        seen_titles.add(a.title.lower())
         dedup.append(a)
-    return dedup
+    # Limiter à max 20 articles par coin (sinon trop de tokens DeepSeek)
+    return dedup[:20]
 
 
 def fetch_articles_for_universe(coins: list[str] | None = None, lookback_hours: int = 6) -> dict[str, list[Article]]:
