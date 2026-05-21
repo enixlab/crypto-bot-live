@@ -410,25 +410,27 @@ body{font-feature-settings:'cv02','cv11','ss01';line-height:1.5}
 </div>
 
 <script>
-// Détection : si on est sur file:// local, on essaie d'abord GitHub raw (pour voir les data VPS)
-// Sinon on charge le fichier local
-(function() {
+// URL des données : GitHub si on est en file:// (PC du user), sinon local (sur VPS)
+// jsDelivr mirror GitHub avec bons MIME types (vs raw.githubusercontent.com bloqué par CORS/ORB)
+window.DATA_URL = (window.location.protocol === 'file:')
+  ? 'https://cdn.jsdelivr.net/gh/enixlab/crypto-bot-live@data-feed/dashboard/dashboard_data.js'
+  : 'dashboard_data.js';
+window.BOT_DATA = window.BOT_DATA || { bots: [], updated_at: null };
+
+function loadData(callback) {
+  // Suppr ancien script
+  var old = document.getElementById('bot-data-script');
+  if (old) old.remove();
   var s = document.createElement('script');
-  if (window.location.protocol === 'file:') {
-    s.src = 'https://raw.githubusercontent.com/enixlab/crypto-bot-live/data-feed/dashboard/dashboard_data.js?t=' + Date.now();
-    s.onerror = function() {
-      // Fallback : charge le local
-      var s2 = document.createElement('script');
-      s2.src = 'dashboard_data.js';
-      s2.onerror = function() { window.BOT_DATA = window.BOT_DATA || {bots: []}; };
-      document.head.appendChild(s2);
-    };
-  } else {
-    s.src = 'dashboard_data.js';
-    s.onerror = function() { window.BOT_DATA = window.BOT_DATA || {bots: []}; };
-  }
+  s.id = 'bot-data-script';
+  s.src = window.DATA_URL + '?t=' + Date.now();
+  s.onload = function() { if (callback) callback(); };
+  s.onerror = function() {
+    console.warn('Failed to load data from', s.src);
+    if (callback) callback();
+  };
   document.head.appendChild(s);
-})();
+}
 </script>
 <script>
 const BOT_DESCRIPTIONS = {
@@ -891,14 +893,10 @@ function closeCryptoModal(e) {
 }
 document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeCryptoModal(); });
 
-render();
-setInterval(function() {
-  var s = document.createElement('script');
-  s.src = 'dashboard_data.js?t=' + Date.now();
-  s.onload = function() { render(); };
-  s.onerror = function() { render(); };
-  document.head.appendChild(s);
-}, 30000);
+// Charge les data depuis GitHub (PC) ou local (VPS) puis render
+loadData(function() { render(); });
+// Auto-refresh toutes les 30s
+setInterval(function() { loadData(function() { render(); }); }, 30000);
 setInterval(function() { var n = new Date(); var el = document.getElementById('hero-time'); if (el) el.textContent = n.toLocaleTimeString('fr-FR'); }, 1000);
 </script>
 </body>
