@@ -723,11 +723,20 @@ function render() {
           + '</div>';
       }).join('') + '</div>';
 
-  // Cryptos
+  // Cryptos — supporte les 2 formats: last_sentiments (anciens bots) et coin_sentiments (Fleet Zaid)
   var sentByCoin = {};
   bots.forEach(function(b) {
-    var ls = b.state && b.state.custom && b.state.custom.last_sentiments;
-    if (ls) Object.assign(sentByCoin, ls);
+    if (!b.state || !b.state.custom) return;
+    var ls = b.state.custom.last_sentiments || b.state.custom.coin_sentiments;
+    if (!ls) return;
+    Object.keys(ls).forEach(function(coin) {
+      var entry = ls[coin];
+      // Format anciens bots: {score, articles}. Format Fleet Zaid: {score, count}
+      sentByCoin[coin] = {
+        score: entry.score,
+        articles: entry.articles || entry.count || 0,
+      };
+    });
   });
   var posByTicker = {};
   allOpen.forEach(function(p) {
