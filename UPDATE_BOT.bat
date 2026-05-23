@@ -20,24 +20,24 @@ echo   OK.
 echo.
 
 echo [3/5] Arret des anciennes taches + reset des state files...
-schtasks /End /TN EnixCryptoBotLO 2>nul | Out-Null
-schtasks /End /TN EnixCryptoBotConfRev 2>nul | Out-Null
-schtasks /End /TN EnixCryptoBotUltRev 2>nul | Out-Null
-timeout /t 2 /nobreak >nul
+schtasks /End /TN EnixCryptoBotLO >nul 2>&1
+schtasks /End /TN EnixCryptoBotConfRev >nul 2>&1
+schtasks /End /TN EnixCryptoBotUltRev >nul 2>&1
+timeout /t 3 /nobreak >nul
 
 REM Supprime les state des 3 bots Zaid (capital change : $10k -> $333) — les autres bots existants INTACTS
-del /Q data\sentiment_ls_v3_lo_state.json 2>nul
-del /Q data\sentiment_ls_v3_lo_equity.json 2>nul
-del /Q data\sentiment_ls_v3_lo_log.json 2>nul
-del /Q data\heartbeat_sentiment_ls_v3_lo.json 2>nul
-del /Q data\confluence_reverse_state.json 2>nul
-del /Q data\confluence_reverse_equity.json 2>nul
-del /Q data\confluence_reverse_log.json 2>nul
-del /Q data\heartbeat_confluence_reverse.json 2>nul
-del /Q data\ultimate_v2_reverse_state.json 2>nul
-del /Q data\ultimate_v2_reverse_equity.json 2>nul
-del /Q data\ultimate_v2_reverse_log.json 2>nul
-del /Q data\heartbeat_ultimate_v2_reverse.json 2>nul
+del /Q data\sentiment_ls_v3_lo_state.json >nul 2>&1
+del /Q data\sentiment_ls_v3_lo_equity.json >nul 2>&1
+del /Q data\sentiment_ls_v3_lo_log.json >nul 2>&1
+del /Q data\heartbeat_sentiment_ls_v3_lo.json >nul 2>&1
+del /Q data\confluence_reverse_state.json >nul 2>&1
+del /Q data\confluence_reverse_equity.json >nul 2>&1
+del /Q data\confluence_reverse_log.json >nul 2>&1
+del /Q data\heartbeat_confluence_reverse.json >nul 2>&1
+del /Q data\ultimate_v2_reverse_state.json >nul 2>&1
+del /Q data\ultimate_v2_reverse_equity.json >nul 2>&1
+del /Q data\ultimate_v2_reverse_log.json >nul 2>&1
+del /Q data\heartbeat_ultimate_v2_reverse.json >nul 2>&1
 echo   OK reset (autres bots data preserves).
 echo.
 
@@ -47,9 +47,9 @@ echo.
 
 echo [5/5] Verification du statut des 3 bots...
 timeout /t 3 /nobreak >nul
-schtasks /Query /TN EnixCryptoBotLO 2>nul | findstr /v "^$"
-schtasks /Query /TN EnixCryptoBotConfRev 2>nul | findstr /v "^$"
-schtasks /Query /TN EnixCryptoBotUltRev 2>nul | findstr /v "^$"
+schtasks /Query /TN EnixCryptoBotLO 2>nul
+schtasks /Query /TN EnixCryptoBotConfRev 2>nul
+schtasks /Query /TN EnixCryptoBotUltRev 2>nul
 echo.
 
 echo ================================================================
