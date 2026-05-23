@@ -111,7 +111,7 @@ class BaseBot(ABC):
             from pathlib import Path
             here = Path(__file__).resolve().parents[2]
             export_dashboard_data(
-                bot_keys=["sentiment_ls_v3","sentiment_ls_v3_lo","ultimate_v2","sentiment_ls_v3_tp","confluence","forex_v1","tsla_v1","pltr_v1","amd_v1"],
+                bot_keys=["sentiment_ls_v3","sentiment_ls_v3_lo","confluence_reverse","ultimate_v2_reverse","ultimate_v2","sentiment_ls_v3_tp","confluence","forex_v1","tsla_v1","pltr_v1","amd_v1"],
                 data_dir=str(here / "data"),
                 dashboard_dir=str(here / "dashboard"),
             )
