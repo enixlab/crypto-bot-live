@@ -228,7 +228,25 @@ class PaperTrader:
         self._position_counter: int = 0
 
         # Try to restore previous state
+        _requested_capital = initial_capital
         self.load_state()
+
+        # Auto-reset if initial_capital changed in config (avoid manual del of state files)
+        if abs(_requested_capital - self.initial_capital) > 0.01:
+            _old = self.initial_capital
+            print(f"[INFO] Capital config changed ${_old:.2f} -> ${_requested_capital:.2f}, resetting state")
+            self.initial_capital = _requested_capital
+            self.cash = _requested_capital
+            self.equity = _requested_capital
+            self.peak_equity = _requested_capital
+            self.open_positions = []
+            self.closed_trades = []
+            self.total_trades = 0
+            self.total_fees = 0.0
+            self.custom = {}
+            self._position_counter = 0
+            self.save_state()
+            self.append_log("RESET", f"Capital reset ${_old:.2f} -> ${_requested_capital:.2f}")
 
     # ------------------------------------------------------------------
     #  TRADING
