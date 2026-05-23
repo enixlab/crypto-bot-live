@@ -14,6 +14,7 @@ from typing import Iterable
 # Mapping noms + couleurs identiques à la flotte Zahid observée dans la vidéo 2026-05-15
 BOT_DISPLAY = {
     "sentiment_ls_v3":    {"name": "LS V3",       "color": "#eab308"},  # yellow
+    "sentiment_ls_v3_lo": {"name": "LS V3 LO",    "color": "#22d3ee"},  # cyan-bright (Long-Only, fix Zaid 22/05/2026)
     "ultimate_v2":        {"name": "Ultimate V2", "color": "#8b5cf6"},  # purple
     "sentiment_ls_v3_tp": {"name": "LS V3 TP",    "color": "#ca8a04"},  # amber
     "confluence":         {"name": "CONFLUENCE",  "color": "#16a34a"},  # green
