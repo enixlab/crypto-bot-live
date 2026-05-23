@@ -15,6 +15,8 @@ from typing import Iterable
 BOT_DISPLAY = {
     "sentiment_ls_v3":    {"name": "LS V3",       "color": "#eab308"},  # yellow
     "sentiment_ls_v3_lo": {"name": "LS V3 LO",    "color": "#22d3ee"},  # cyan-bright (Long-Only, fix Zaid 22/05/2026)
+    "confluence_reverse": {"name": "Conflu Rev",  "color": "#16a34a"},  # green (Confluence reverse-engineered)
+    "ultimate_v2_reverse":{"name": "Ult.V2 Rev",  "color": "#8b5cf6"},  # purple (Ultimate V2 reverse-engineered)
     "ultimate_v2":        {"name": "Ultimate V2", "color": "#8b5cf6"},  # purple
     "sentiment_ls_v3_tp": {"name": "LS V3 TP",    "color": "#ca8a04"},  # amber
     "confluence":         {"name": "CONFLUENCE",  "color": "#16a34a"},  # green
