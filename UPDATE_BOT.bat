@@ -19,7 +19,10 @@ python -m pip install --quiet --upgrade requests python-dotenv
 echo   OK.
 echo.
 
-echo [3/5] Arret des anciennes taches + reset des state files...
+echo [3/5] Arret du bot principal (anciens bots) + arret des 3 bots Fleet Zaid...
+REM Arret + DESACTIVATION de l'ancien bot principal (sentiment_ls_v3, ultimate_v2, etc.)
+schtasks /End /TN EnixCryptoBot >nul 2>&1
+schtasks /Change /TN EnixCryptoBot /DISABLE >nul 2>&1
 schtasks /End /TN EnixCryptoBotLO >nul 2>&1
 schtasks /End /TN EnixCryptoBotConfRev >nul 2>&1
 schtasks /End /TN EnixCryptoBotUltRev >nul 2>&1

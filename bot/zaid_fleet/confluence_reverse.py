@@ -336,9 +336,7 @@ class ConfluenceReverseBot:
                 sys.path.insert(0, str(_root / "bot"))
             from core.dashboard_export import export_dashboard_data
             export_dashboard_data(
-                bot_keys=["sentiment_ls_v3", "sentiment_ls_v3_lo", "confluence_reverse",
-                          "ultimate_v2_reverse", "ultimate_v2", "sentiment_ls_v3_tp",
-                          "confluence", "forex_v1", "tsla_v1", "pltr_v1", "amd_v1"],
+                bot_keys=["sentiment_ls_v3_lo", "confluence_reverse", "ultimate_v2_reverse"],
                 data_dir=str(_root / "data"), dashboard_dir=str(_root / "dashboard"))
         except Exception as e:
             print(f"[WARN] dash export: {e}")
