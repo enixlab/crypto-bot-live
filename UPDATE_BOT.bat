@@ -19,14 +19,17 @@ python -m pip install --quiet --upgrade requests python-dotenv
 echo   OK.
 echo.
 
-echo [3/5] Arret + reactivation du bot principal (pour push GitHub) + arret des 3 bots Fleet Zaid...
-REM EnixCryptoBot reste actif pour pusher dashboard_data.js vers GitHub (anciens bots tournent en background, non affiches)
+echo [3/5] Arret complet + kill des process Python (force reload du code)...
+REM EnixCryptoBot reste actif pour pusher dashboard_data.js vers GitHub
 schtasks /Change /TN EnixCryptoBot /ENABLE >nul 2>&1
 schtasks /End /TN EnixCryptoBot >nul 2>&1
 schtasks /End /TN EnixCryptoBotLO >nul 2>&1
 schtasks /End /TN EnixCryptoBotConfRev >nul 2>&1
 schtasks /End /TN EnixCryptoBotUltRev >nul 2>&1
-timeout /t 3 /nobreak >nul
+REM CRITIQUE: kill TOUS les python.exe pour forcer le reload du nouveau code (sinon les bots continuent avec l'ancien en memoire)
+taskkill /F /IM python.exe >nul 2>&1
+taskkill /F /IM pythonw.exe >nul 2>&1
+timeout /t 5 /nobreak >nul
 
 REM Supprime les state des 3 bots Zaid (capital change : $10k -> $333) — les autres bots existants INTACTS
 del /Q data\sentiment_ls_v3_lo_state.json >nul 2>&1
