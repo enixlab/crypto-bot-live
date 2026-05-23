@@ -19,16 +19,7 @@ echo   OK.
 echo.
 
 echo [3/4] Creation/mise a jour de la tache planifiee EnixCryptoBotLO...
-powershell -ExecutionPolicy Bypass -Command ^
-  "$action = New-ScheduledTaskAction -Execute 'python' -Argument 'bot\zaid_fleet\sentiment_ls_v3_lo.py' -WorkingDirectory 'C:\enix-bot\crypto-bot-live'; ^
-   $trigger = New-ScheduledTaskTrigger -AtStartup; ^
-   $principal = New-ScheduledTaskPrincipal -UserId 'SYSTEM' -LogonType ServiceAccount -RunLevel Highest; ^
-   $settings = New-ScheduledTaskSettingsSet -RestartCount 999 -RestartInterval (New-TimeSpan -Minutes 1); ^
-   Register-ScheduledTask -TaskName 'EnixCryptoBotLO' -Action $action -Trigger $trigger -Principal $principal -Settings $settings -Force | Out-Null; ^
-   schtasks /End /TN EnixCryptoBotLO 2>$null | Out-Null; ^
-   Start-Sleep -Seconds 2; ^
-   schtasks /Run /TN EnixCryptoBotLO | Out-Null; ^
-   Write-Host '  OK. Bot lance.' -ForegroundColor Green"
+powershell -ExecutionPolicy Bypass -File .\setup_task_lsv3lo.ps1
 echo.
 
 echo [4/4] Verification du statut...
@@ -37,13 +28,12 @@ schtasks /Query /TN EnixCryptoBotLO 2>nul
 echo.
 
 echo ================================================================
-echo   TERMINE — le bot LS V3 LO ENIX BOOSTED tourne maintenant 24/7
+echo   TERMINE - le bot LS V3 LO ENIX BOOSTED tourne maintenant 24/7
 echo ================================================================
 echo.
-echo Pour voir les logs en direct, tape :
-echo   Get-Content C:\enix-bot\crypto-bot-live\data\sentiment_ls_v3_lo_log.json -Wait -Tail 20
+echo Pour voir les logs en direct, tape (depuis ce dossier) :
+echo   Get-Content data\sentiment_ls_v3_lo_log.json -Wait -Tail 20
 echo.
-echo Tu peux maintenant fermer cette fenetre et le RDP.
-echo Le bot continue de tourner sur le VPS H24.
+echo Tu peux fermer cette fenetre et le RDP, le bot tourne sur le VPS.
 echo.
 pause
