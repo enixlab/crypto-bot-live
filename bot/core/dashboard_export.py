@@ -11,12 +11,12 @@ from pathlib import Path
 from typing import Iterable
 
 
-# Mapping noms + couleurs identiques à la flotte Zahid observée dans la vidéo 2026-05-15
+# Mapping noms + couleurs des bots du Fleet ENIX
 BOT_DISPLAY = {
     "sentiment_ls_v3":    {"name": "LS V3",       "color": "#eab308"},  # yellow
-    "sentiment_ls_v3_lo": {"name": "LS V3 LO",    "color": "#22d3ee"},  # cyan-bright (Long-Only, fix Zaid 22/05/2026)
-    "confluence_reverse": {"name": "Conflu Rev",  "color": "#16a34a"},  # green (Confluence reverse-engineered)
-    "ultimate_v2_reverse":{"name": "Ult.V2 Rev",  "color": "#8b5cf6"},  # purple (Ultimate V2 reverse-engineered)
+    "sentiment_ls_v3_lo": {"name": "LS V3 LO",    "color": "#22d3ee"},  # cyan-bright
+    "confluence_reverse": {"name": "Conflu Rev",  "color": "#16a34a"},  # green
+    "ultimate_v2_reverse":{"name": "Ult.V2 Rev",  "color": "#8b5cf6"},  # purple
     "ultimate_v2":        {"name": "Ultimate V2", "color": "#8b5cf6"},  # purple
     "sentiment_ls_v3_tp": {"name": "LS V3 TP",    "color": "#ca8a04"},  # amber
     "confluence":         {"name": "CONFLUENCE",  "color": "#16a34a"},  # green
