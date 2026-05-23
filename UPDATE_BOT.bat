@@ -19,10 +19,10 @@ python -m pip install --quiet --upgrade requests python-dotenv
 echo   OK.
 echo.
 
-echo [3/5] Arret du bot principal (anciens bots) + arret des 3 bots Fleet Zaid...
-REM Arret + DESACTIVATION de l'ancien bot principal (sentiment_ls_v3, ultimate_v2, etc.)
+echo [3/5] Arret + reactivation du bot principal (pour push GitHub) + arret des 3 bots Fleet Zaid...
+REM EnixCryptoBot reste actif pour pusher dashboard_data.js vers GitHub (anciens bots tournent en background, non affiches)
+schtasks /Change /TN EnixCryptoBot /ENABLE >nul 2>&1
 schtasks /End /TN EnixCryptoBot >nul 2>&1
-schtasks /Change /TN EnixCryptoBot /DISABLE >nul 2>&1
 schtasks /End /TN EnixCryptoBotLO >nul 2>&1
 schtasks /End /TN EnixCryptoBotConfRev >nul 2>&1
 schtasks /End /TN EnixCryptoBotUltRev >nul 2>&1
@@ -44,7 +44,8 @@ del /Q data\heartbeat_ultimate_v2_reverse.json >nul 2>&1
 echo   OK reset (autres bots data preserves).
 echo.
 
-echo [4/5] Creation/relance des 3 taches planifiees Fleet Zaid...
+echo [4/5] Relance EnixCryptoBot (push GitHub) + 3 taches Fleet Zaid...
+schtasks /Run /TN EnixCryptoBot >nul 2>&1
 powershell -ExecutionPolicy Bypass -File .\setup_tasks_fleet_zaid.ps1
 echo.
 
