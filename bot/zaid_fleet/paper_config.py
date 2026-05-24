@@ -129,7 +129,7 @@ BOT_CONFIGS = {
     "sentiment_ls_v3": {
         "name": "Sentiment LS V3",
         "script": "sentiment_ls_v3.py",
-        "capital": 10000.0,
+        "capital": 200.0,
         "state_file": "sentiment_ls_v3_state.json",
         "log_file": "sentiment_ls_v3_log.json",
         "equity_file": "sentiment_ls_v3_equity.json",
@@ -141,7 +141,7 @@ BOT_CONFIGS = {
     "sentiment_ls_v3_lo": {
         "name": "LS V3 LO",
         "script": "sentiment_ls_v3_lo.py",
-        "capital": 333.34,
+        "capital": 200.0,
         "state_file": "sentiment_ls_v3_lo_state.json",
         "log_file": "sentiment_ls_v3_lo_log.json",
         "equity_file": "sentiment_ls_v3_lo_equity.json",
@@ -152,7 +152,7 @@ BOT_CONFIGS = {
     "confluence_reverse": {
         "name": "Confluence Reverse",
         "script": "confluence_reverse.py",
-        "capital": 333.33,
+        "capital": 200.0,
         "state_file": "confluence_reverse_state.json",
         "log_file": "confluence_reverse_log.json",
         "equity_file": "confluence_reverse_equity.json",
@@ -163,7 +163,7 @@ BOT_CONFIGS = {
     "ultimate_v2_reverse": {
         "name": "Ultimate V2 Reverse",
         "script": "ultimate_v2_reverse.py",
-        "capital": 333.33,
+        "capital": 200.0,
         "state_file": "ultimate_v2_reverse_state.json",
         "log_file": "ultimate_v2_reverse_log.json",
         "equity_file": "ultimate_v2_reverse_equity.json",
@@ -230,7 +230,7 @@ BOT_CONFIGS = {
     "sentiment_ls_v3_tp": {
         "name": "Sentiment LS V3 TP",
         "script": "sentiment_ls_v3_tp.py",
-        "capital": 10000.0,
+        "capital": 200.0,
         "state_file": "sentiment_ls_v3_tp_state.json",
         "log_file": "sentiment_ls_v3_tp_log.json",
         "equity_file": "sentiment_ls_v3_tp_equity.json",

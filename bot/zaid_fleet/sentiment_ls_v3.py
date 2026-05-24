@@ -1,9 +1,11 @@
 """
-SENTIMENT LONG-ONLY V3 ULTRA — 148 SOURCES (RSS + Reddit + APIs + Research)
+SENTIMENT LONG-SHORT V3 ULTRA — 148 SOURCES (RSS + Reddit + APIs + Research)
 ==============================================================================
-LONG-ONLY VERSION: this bot only opens LONG positions on coins with
-high sentiment. No shorts. Uses the same news/scoring stack and
-macro multi-TF + circuit breaker as LS V3.
+LONG-SHORT VERSION: longs the top-sentiment coins AND shorts the
+bottom-sentiment coins (score < 0.40), gated by the macro regime
+(shorts blocked in BULL / longs blocked in STRESS). Same news/scoring
+stack, macro multi-TF + circuit breaker, and partial-TP as LS V3 LO.
+Reproduit la flotte 'LS V3' de Zaid (long-short).
 """
 
 import json
@@ -494,7 +496,7 @@ class SentimentBot:
     def __init__(self, cfg):
         self.cfg = cfg
         self.trader = PaperTrader(
-            bot_id="sentiment_ls_v3_lo",
+            bot_id="sentiment_ls_v3",
             initial_capital=cfg["capital"],
             state_file=cfg["state_file"],
             log_file=cfg["log_file"],
@@ -797,8 +799,52 @@ class SentimentBot:
                     f"Sentiment: {score:.2f} ({count} articles)"
                 ))
 
-        # 6. LONG-ONLY VERSION — short opening disabled (LO bot)
-        self.trader.custom["short_coins"] = []
+        # 6. Open SHORT positions for bottom coins (LONG-SHORT version)
+        short_syms = []
+        if short_ok and not stress_mode:
+            for coin in bottom_coins:
+                if len(self.trader.open_positions) >= MAX_POSITIONS:
+                    break
+                if coin in current_symbols:
+                    continue
+                if coin not in prices or prices[coin]["price"] <= 0:
+                    continue
+                size = per_pos
+                if size < 5:
+                    continue
+                if should_veto_entry(coin, 'short', prices):
+                    self.trader.append_log('VETO', f'SHORT {coin} blocked - strong uptrend')
+                    continue
+                if check_cooldown(self.trader.custom, coin, 'short'):
+                    self.trader.append_log('COOLDOWN', f'SHORT {coin} blocked - 3-loss streak')
+                    continue
+                if _local_check_blacklist(self.trader.custom, coin, 'short'):
+                    self.trader.append_log('BLACKLIST', f'SHORT {coin} blocked - 2-SL blacklist 72h')
+                    continue
+                price = prices[coin]["price"]
+                score = sentiments[coin]["score"]
+                count = sentiments[coin]["count"]
+                pos = self.trader.buy(
+                    symbol=f"SHORT-{coin}",
+                    amount_usd=size,
+                    price=price,
+                    reason=f"SHORT Sentiment: {score:.2f} ({count} articles)",
+                    metadata={
+                        "symbol": coin,
+                        "direction": "short",
+                        "sentiment_score": score,
+                        "article_count": count,
+                        "pair": SYMBOL_MAP[coin][2],
+                    },
+                )
+                if pos:
+                    self.trader.custom["trailing_lows"][pos["id"]] = price
+                    short_syms.append(coin)
+                    self.trader.append_log("BUY", (
+                        f"SHORT {coin} @ ${price:.4f} | Size: ${size:.2f} | "
+                        f"Sentiment: {score:.2f} ({count} articles)"
+                    ))
+        self.trader.custom["short_coins"] = short_syms
 
         # 7. Update state
         self.trader.custom["last_rebalance_ts"] = time.time()
@@ -867,23 +913,23 @@ class SentimentBot:
 # ─────────────────────────────────────────────
 
 def main():
-    cfg = BOT_CONFIGS["sentiment_ls_v3_lo"]
+    cfg = BOT_CONFIGS["sentiment_ls_v3"]
     bot = SentimentBot(cfg)
 
     print("=" * 60)
-    print("  SENTIMENT LONG-ONLY V3 ULTRA — 148 SOURCES")
+    print("  SENTIMENT LONG-SHORT V3 ULTRA — 148 SOURCES")
     print(f"  Capital: ${cfg['capital']:.0f} | Universe: {len(UNIVERSE)} coins")
     print(f"  Rebalance: every {REBALANCE_HOURS}h | Max positions: {MAX_POSITIONS}")
     print(f"  LLM: DeepSeek ({DEEPSEEK_MODEL})")
-    print(f"  Mode: LONG-ONLY")
+    print(f"  Mode: LONG-SHORT")
     print(f"  Stop-loss: {STOP_LOSS_PCT*100:.0f}% | Trailing: {TRAILING_SL_PCT*100:.0f}%")
     print(f"  Equity: ${bot.trader.equity:.2f}")
     print("=" * 60)
 
     bot.trader.append_log("INFO", (
-        f"Sentiment LO V3 ULTRA started | Capital: ${cfg['capital']:.0f} | "
+        f"Sentiment LS V3 ULTRA started | Capital: ${cfg['capital']:.0f} | "
         f"{len(RSS_FEEDS)} RSS + {len(REDDIT_SUBS)} Reddit | DeepSeek | "
-        f"LONG-ONLY mode"
+        f"LONG-SHORT mode"
     ))
 
     # Stagger startup to avoid CoinGecko rate limit (11 bots)
