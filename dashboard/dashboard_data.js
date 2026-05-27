@@ -1,5 +1,5 @@
 window.BOT_DATA = {
-  "updated_at": "2026-05-27T20:13:24Z",
+  "updated_at": "2026-05-27T20:16:27Z",
   "bots": [
     {
       "key": "sentiment_ls_v3_lo",
