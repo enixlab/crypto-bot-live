@@ -1,5 +1,5 @@
 window.BOT_DATA = {
-  "updated_at": "2026-06-06T15:06:12Z",
+  "updated_at": "2026-06-06T15:09:16Z",
   "bots": [
     {
       "key": "sentiment_ls_v3_lo",
@@ -7880,8 +7880,8 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 6224,
-        "ts": 1780758287,
-        "ts_iso": "2026-06-06T15:04:47",
+        "ts": 1780758554,
+        "ts_iso": "2026-06-06T15:09:14",
         "status": "running",
         "bot_id": "sentiment_ls_v3_lo",
         "cycle_count": 1123,
@@ -31457,12 +31457,12 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 6008,
-        "ts": 1780758275,
-        "ts_iso": "2026-06-06T15:04:35",
+        "ts": 1780758554,
+        "ts_iso": "2026-06-06T15:09:14",
         "status": "running",
         "bot_id": "sentiment_ls_v3",
         "cycle_count": 847,
-        "equity": 205.83
+        "equity": 314.09
       }
     },
     {
@@ -46966,12 +46966,12 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 1500,
-        "ts": 1780758226,
-        "ts_iso": "2026-06-06T15:03:46",
+        "ts": 1780758554,
+        "ts_iso": "2026-06-06T15:09:14",
         "status": "running",
         "bot_id": "sentiment_ls_v3_tp",
         "cycle_count": 2104,
-        "equity": 195.12
+        "equity": 254.64
       }
     }
   ]
