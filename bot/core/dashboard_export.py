@@ -41,7 +41,7 @@ def export_dashboard_data(bot_keys: Iterable[str], data_dir: str, dashboard_dir:
             path = Path(data_dir) / fname
             if path.exists():
                 try:
-                    bot_entry[kind] = json.loads(path.read_text())
+                    bot_entry[kind] = json.loads(path.read_text(encoding="utf-8"))
                 except Exception:
                     bot_entry[kind] = None
         bots_payload.append(bot_entry)
