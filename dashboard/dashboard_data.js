@@ -1,614 +1,11 @@
 window.BOT_DATA = {
-  "updated_at": "2026-06-08T20:53:01Z",
+  "updated_at": "2026-06-08T20:56:04Z",
   "bots": [
     {
       "key": "sentiment_ls_v3_lo",
-      "name": "LO V3",
+      "name": "LS V3 LO",
       "color": "#22d3ee",
-      "state": {
-        "bot_id": "sentiment_ls_v3_lo",
-        "cash": 200.0,
-        "equity": 200.0,
-        "peak_equity": 200.0,
-        "initial_capital": 200.0,
-        "open_positions": [],
-        "closed_trades": [],
-        "total_trades": 0,
-        "total_fees": 0.0,
-        "started_at": "2026-05-23T18:00:03",
-        "last_cycle": "2026-06-08T20:52:18",
-        "cycle_count": 1754,
-        "custom": {
-          "last_rebalance_ts": 1780949836.7665539,
-          "rebalance_count": 14,
-          "coin_sentiments": {
-            "BTC": {
-              "score": 0.5593,
-              "count": 123,
-              "scores": [
-                0.65,
-                0.65,
-                0.65,
-                0.25,
-                0.25,
-                0.25,
-                0.15,
-                0.15,
-                0.15,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.5,
-                0.5,
-                0.5,
-                0.25,
-                0.25,
-                0.25,
-                0.65,
-                0.65,
-                0.65,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.75,
-                0.75,
-                0.75,
-                0.5,
-                0.5,
-                0.5,
-                0.72,
-                0.72,
-                0.72,
-                0.5,
-                0.5,
-                0.5,
-                0.45,
-                0.45,
-                0.45,
-                0.65,
-                0.65,
-                0.65,
-                0.25,
-                0.25,
-                0.25,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.35,
-                0.35,
-                0.35,
-                0.75,
-                0.75,
-                0.75,
-                0.65,
-                0.65,
-                0.65,
-                0.35,
-                0.35,
-                0.35,
-                0.45,
-                0.45,
-                0.45,
-                0.72,
-                0.72,
-                0.72,
-                0.85,
-                0.85,
-                0.85,
-                0.55,
-                0.55,
-                0.55,
-                0.75,
-                0.75,
-                0.75,
-                0.25,
-                0.25,
-                0.25,
-                0.72,
-                0.72,
-                0.72,
-                0.65,
-                0.65,
-                0.65,
-                0.72,
-                0.72,
-                0.72,
-                0.65,
-                0.65,
-                0.65,
-                0.75,
-                0.75,
-                0.75,
-                0.55,
-                0.55,
-                0.55,
-                0.05,
-                0.05,
-                0.05,
-                0.72,
-                0.72,
-                0.72,
-                0.85,
-                0.85,
-                0.85,
-                0.65,
-                0.65,
-                0.65,
-                0.15,
-                0.15,
-                0.15,
-                0.35,
-                0.35,
-                0.35
-              ]
-            },
-            "UNI": {
-              "score": 0.6,
-              "count": 6,
-              "scores": [
-                0.55,
-                0.55,
-                0.55,
-                0.65,
-                0.65,
-                0.65
-              ]
-            },
-            "OP": {
-              "score": 0.5016,
-              "count": 93,
-              "scores": [
-                0.55,
-                0.55,
-                0.55,
-                0.5,
-                0.5,
-                0.5,
-                0.55,
-                0.55,
-                0.55,
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.55,
-                0.55,
-                0.55,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.35,
-                0.35,
-                0.35,
-                0.15,
-                0.15,
-                0.15,
-                0.85,
-                0.85,
-                0.85,
-                0.65,
-                0.65,
-                0.65,
-                0.45,
-                0.45,
-                0.45,
-                0.65,
-                0.65,
-                0.65,
-                0.25,
-                0.25,
-                0.25,
-                0.45,
-                0.45,
-                0.45,
-                0.65,
-                0.65,
-                0.65,
-                0.35,
-                0.35,
-                0.35,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.35,
-                0.35,
-                0.35,
-                0.55,
-                0.55,
-                0.55,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.65,
-                0.65,
-                0.65,
-                0.35,
-                0.35,
-                0.35,
-                0.5,
-                0.5,
-                0.5,
-                0.45,
-                0.45,
-                0.45
-              ]
-            },
-            "ETH": {
-              "score": 0.6145,
-              "count": 60,
-              "scores": [
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.75,
-                0.75,
-                0.75,
-                0.72,
-                0.72,
-                0.72,
-                0.82,
-                0.82,
-                0.82,
-                0.45,
-                0.45,
-                0.45,
-                0.75,
-                0.75,
-                0.75,
-                0.72,
-                0.72,
-                0.72,
-                0.65,
-                0.65,
-                0.65,
-                0.7,
-                0.7,
-                0.7,
-                0.55,
-                0.55,
-                0.55,
-                0.72,
-                0.72,
-                0.72,
-                0.65,
-                0.65,
-                0.65,
-                0.5,
-                0.5,
-                0.5,
-                0.72,
-                0.72,
-                0.72,
-                0.65,
-                0.65,
-                0.65,
-                0.25,
-                0.25,
-                0.25,
-                0.75,
-                0.75,
-                0.75
-              ]
-            },
-            "XRP": {
-              "score": 0.5675,
-              "count": 12,
-              "scores": [
-                0.72,
-                0.72,
-                0.72,
-                0.35,
-                0.35,
-                0.35,
-                0.75,
-                0.75,
-                0.75,
-                0.45,
-                0.45,
-                0.45
-              ]
-            },
-            "SOL": {
-              "score": 0.4,
-              "count": 6,
-              "scores": [
-                0.65,
-                0.65,
-                0.65,
-                0.15,
-                0.15,
-                0.15
-              ]
-            },
-            "FIL": {
-              "score": 0.35,
-              "count": 15,
-              "scores": [
-                0.35,
-                0.35,
-                0.35,
-                0.5,
-                0.5,
-                0.5,
-                0.25,
-                0.25,
-                0.25,
-                0.15,
-                0.15,
-                0.15,
-                0.5,
-                0.5,
-                0.5
-              ]
-            },
-            "AAVE": {
-              "score": 0.45,
-              "count": 6,
-              "scores": [
-                0.25,
-                0.25,
-                0.25,
-                0.65,
-                0.65,
-                0.65
-              ]
-            },
-            "NEAR": {
-              "score": 0.55,
-              "count": 18,
-              "scores": [
-                0.85,
-                0.85,
-                0.85,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.55,
-                0.55,
-                0.55,
-                0.55,
-                0.55,
-                0.55,
-                0.35,
-                0.35,
-                0.35
-              ]
-            },
-            "LINK": {
-              "score": 0.375,
-              "count": 6,
-              "scores": [
-                0.25,
-                0.25,
-                0.25,
-                0.5,
-                0.5,
-                0.5
-              ]
-            }
-          },
-          "scored_articles": [
-            {
-              "coin": "OP",
-              "title": "Clear Signing: Making Transaction Approvals Safer on Ethereum",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "Protocol Cluster Updates: May 2026",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "Protocol Cluster Updates: May 2026",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "Sold\u00f8gn Interop Recap \u2600\ufe0f",
-              "llm_score": 0.7,
-              "community_score": null,
-              "final_score": 0.7,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ARB",
-              "title": "Sold\u00f8gn Interop Recap \u2600\ufe0f",
-              "llm_score": 0.55,
-              "community_score": null,
-              "final_score": 0.55,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "Sold\u00f8gn Interop Recap \u2600\ufe0f",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "Announcing Cohort 7 of the Ethereum Protocol Fellowship",
-              "llm_score": 0.55,
-              "community_score": null,
-              "final_score": 0.55,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "Announcing Cohort 7 of the Ethereum Protocol Fellowship",
-              "llm_score": 0.5,
-              "community_score": null,
-              "final_score": 0.5,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "Allocation Update - Q1 2026",
-              "llm_score": 0.72,
-              "community_score": null,
-              "final_score": 0.72,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "ETH Rangers Program Recap",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "Checkpoint #9: Apr 2026",
-              "llm_score": 0.5,
-              "community_score": null,
-              "final_score": 0.5,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "Checkpoint #9: Apr 2026",
-              "llm_score": 0.5,
-              "community_score": null,
-              "final_score": 0.5,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "How L1 and L2s can build the strongest possible Ethereum",
-              "llm_score": 0.72,
-              "community_score": null,
-              "final_score": 0.72,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "How L1 and L2s can build the strongest possible Ethereum",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "The Promise of Ethereum: Introducing the EF Mandate",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "This Is Fine (Until the Grant Runs Out)",
-              "llm_score": 0.25,
-              "community_score": null,
-              "final_score": 0.25,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "This Is Fine (Until the Grant Runs Out)",
-              "llm_score": 0.35,
-              "community_score": null,
-              "final_score": 0.35,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "ERC 4337: account abstraction without Ethereum protocol changes",
-              "llm_score": 0.75,
-              "community_score": null,
-              "final_score": 0.75,
-              "source": "vitalik_medium"
-            },
-            {
-              "coin": "OP",
-              "title": "A Proof of Stake Design Philosophy",
-              "llm_score": 0.5,
-              "community_score": null,
-              "final_score": 0.5,
-              "source": "vitalik_medium"
-            },
-            {
-              "coin": "OP",
-              "title": "The 2025 State of Airdrops Report: How the U.S. Got Sidelined\u200a\u2014\u200aAnd What Comes Next",
-              "llm_score": 0.45,
-              "community_score": null,
-              "final_score": 0.45,
-              "source": "dragonfly_research"
-            }
-          ],
-          "articles_processed": 6135,
-          "deepseek_calls": 8935,
-          "top_coins": [],
-          "bottom_coins": [
-            "LINK",
-            "FIL"
-          ],
-          "short_coins": [],
-          "trailing_highs": {},
-          "trailing_lows": {},
-          "macro_regime": "BEAR",
-          "fear_greed": 8,
-          "stress_mode": false,
-          "btc_slope_24h": 2.84,
-          "btc_slope_4h": -0.94
-        },
-        "_position_counter": 0,
-        "_saved_at": "2026-06-08T20:52:18"
-      },
+      "state": null,
       "equity_curve": [
         {
           "ts": "2026-05-23T18:05:32",
@@ -12901,7 +12298,7 @@ window.BOT_DATA = {
     },
     {
       "key": "confluence_reverse",
-      "name": "Confluence",
+      "name": "Conflu Rev",
       "color": "#16a34a",
       "state": {
         "bot_id": "confluence_reverse",
@@ -13001,8 +12398,8 @@ window.BOT_DATA = {
         "total_trades": 4,
         "total_fees": 0.362574,
         "started_at": "2026-05-23T18:00:04",
-        "last_cycle": "2026-06-08T20:51:43",
-        "cycle_count": 2865,
+        "last_cycle": "2026-06-08T20:54:43",
+        "cycle_count": 2866,
         "custom": {
           "last_rebalance_ts": 1780946311.308992,
           "rebalance_count": 26,
@@ -13473,7 +12870,7 @@ window.BOT_DATA = {
           "local_streak_short_NEAR": 1
         },
         "_position_counter": 4,
-        "_saved_at": "2026-06-08T20:51:43"
+        "_saved_at": "2026-06-08T20:54:44"
       },
       "equity_curve": [
         {
@@ -33530,21 +32927,28 @@ window.BOT_DATA = {
           "cash": 183.6624,
           "invested": 0,
           "dd": 11.92
+        },
+        {
+          "ts": "2026-06-08T20:54:43",
+          "equity": 183.6624,
+          "cash": 183.6624,
+          "invested": 0,
+          "dd": 11.92
         }
       ],
       "heartbeat": {
         "pid": 2036,
-        "ts": 1780951903,
-        "ts_iso": "2026-06-08T20:51:43",
+        "ts": 1780952083,
+        "ts_iso": "2026-06-08T20:54:43",
         "status": "running",
         "bot_id": "confluence_reverse",
-        "cycle_count": 2865,
+        "cycle_count": 2866,
         "equity": 183.66
       }
     },
     {
       "key": "ultimate_v2_reverse",
-      "name": "Ultimate V2",
+      "name": "Ult.V2 Rev",
       "color": "#8b5cf6",
       "state": {
         "bot_id": "ultimate_v2_reverse",
@@ -40242,825 +39646,7 @@ window.BOT_DATA = {
       "key": "sentiment_ls_v3",
       "name": "LS V3",
       "color": "#eab308",
-      "state": {
-        "bot_id": "sentiment_ls_v3",
-        "cash": 245.5521,
-        "equity": 292.9808,
-        "peak_equity": 322.8934,
-        "initial_capital": 200.0,
-        "open_positions": [
-          {
-            "id": "SENTIMENT_LS_V3-0008",
-            "symbol": "SHORT-SUI",
-            "side": "buy",
-            "entry_price": 0.72071611,
-            "current_price": 0.759433,
-            "size_usd": 353.3534,
-            "quantity": 490.28095867,
-            "unrealized_pnl": -18.9822,
-            "fee_paid": 0.070671,
-            "margin_locked": 35.3353,
-            "leverage": 10.0,
-            "opened_at": "2026-06-06T15:10:00",
-            "reason": "SHORT Sentiment: 0.17 (6 articles)",
-            "metadata": {
-              "symbol": "SUI",
-              "direction": "short",
-              "sentiment_score": 0.175,
-              "article_count": 6,
-              "pair": "SUI/USDT"
-            }
-          },
-          {
-            "id": "SENTIMENT_LS_V3-0009",
-            "symbol": "SHORT-FIL",
-            "side": "buy",
-            "entry_price": 0.78161429,
-            "current_price": 0.786323,
-            "size_usd": 330.6762,
-            "quantity": 423.06826213,
-            "unrealized_pnl": -1.9921,
-            "fee_paid": 0.066135,
-            "margin_locked": 33.0676,
-            "leverage": 10.0,
-            "opened_at": "2026-06-08T16:11:23",
-            "reason": "SHORT Sentiment: 0.37 (9 articles)",
-            "metadata": {
-              "symbol": "FIL",
-              "direction": "short",
-              "sentiment_score": 0.3667,
-              "article_count": 9,
-              "pair": "FIL/USDT"
-            }
-          }
-        ],
-        "closed_trades": [
-          {
-            "id": "SENTIMENT_LS_V3-0002",
-            "symbol": "SHORT-NEAR",
-            "entry_price": 2.410482,
-            "exit_price": 2.590518,
-            "quantity": 92.78386024,
-            "size_usd": 223.6538,
-            "realized_pnl": -16.6564,
-            "pnl_pct": -7.49,
-            "fee_entry": 0.044731,
-            "fee_exit": 0.048072,
-            "total_fees": 0.092803,
-            "opened_at": "2026-05-25T00:21:43",
-            "closed_at": "2026-05-25T13:51:54",
-            "hold_reason": "SHORT Sentiment: 0.37 (12 articles)",
-            "close_reason": "SHORT_TRAIL_SL (+10.7% from $2.34)"
-          },
-          {
-            "id": "SENTIMENT_LS_V3-0004-p33",
-            "symbol": "NEAR",
-            "entry_price": 2.740548,
-            "exit_price": 2.829434,
-            "quantity": 24.78565455,
-            "size_usd": 67.9263,
-            "realized_pnl": 2.1891,
-            "pnl_pct": 3.22,
-            "fee_entry": 0.0,
-            "fee_exit": 0.014026,
-            "total_fees": 0.014026,
-            "opened_at": "2026-05-26T09:03:09",
-            "closed_at": "2026-05-26T10:43:13",
-            "hold_reason": "LONG Sentiment: 0.66 (9 articles)",
-            "close_reason": "TP1_PARTIAL_33% (+3.3%)",
-            "partial_pct": 0.33
-          },
-          {
-            "id": "SENTIMENT_LS_V3-0004-p50",
-            "symbol": "NEAR",
-            "entry_price": 2.740548,
-            "exit_price": 2.879424,
-            "quantity": 25.16119477,
-            "size_usd": 68.9555,
-            "realized_pnl": 3.4798,
-            "pnl_pct": 5.05,
-            "fee_entry": 0.0,
-            "fee_exit": 0.01449,
-            "total_fees": 0.01449,
-            "opened_at": "2026-05-26T09:03:09",
-            "closed_at": "2026-05-26T10:53:14",
-            "hold_reason": "LONG Sentiment: 0.66 (9 articles)",
-            "close_reason": "TP2_PARTIAL_50%rem (+5.1%)",
-            "partial_pct": 0.5
-          },
-          {
-            "id": "SENTIMENT_LS_V3-0004",
-            "symbol": "NEAR",
-            "entry_price": 2.740548,
-            "exit_price": 2.729454,
-            "quantity": 25.1611947668,
-            "size_usd": 68.955462,
-            "realized_pnl": -0.2929,
-            "pnl_pct": -0.42,
-            "fee_entry": 0.041167,
-            "fee_exit": 0.013735,
-            "total_fees": 0.054902,
-            "opened_at": "2026-05-26T09:03:09",
-            "closed_at": "2026-05-26T17:13:24",
-            "hold_reason": "LONG Sentiment: 0.66 (9 articles)",
-            "close_reason": "SENTIMENT_ROTATION"
-          },
-          {
-            "id": "SENTIMENT_LS_V3-0005",
-            "symbol": "SHORT-ONDO",
-            "entry_price": 0.42043107,
-            "exit_price": 0.40921183,
-            "quantity": 489.58608196,
-            "size_usd": 205.8372,
-            "realized_pnl": 5.5328,
-            "pnl_pct": 2.65,
-            "fee_entry": 0.041167,
-            "fee_exit": 0.040069,
-            "total_fees": 0.081236,
-            "opened_at": "2026-05-26T09:03:09",
-            "closed_at": "2026-05-26T17:43:26",
-            "hold_reason": "SHORT Sentiment: 0.31 (12 articles)",
-            "close_reason": "SHORT_TRAIL_TP (peak=+3.0% now=2.7%)"
-          },
-          {
-            "id": "SENTIMENT_LS_V3-0003",
-            "symbol": "SHORT-SUI",
-            "entry_price": 1.045209,
-            "exit_price": 1.015203,
-            "quantity": 199.677708,
-            "size_usd": 208.7049,
-            "realized_pnl": 6.0321,
-            "pnl_pct": 2.85,
-            "fee_entry": 0.041741,
-            "fee_exit": 0.040543,
-            "total_fees": 0.082284,
-            "opened_at": "2026-05-25T12:36:51",
-            "closed_at": "2026-05-26T18:23:28",
-            "hold_reason": "SHORT Sentiment: 0.37 (9 articles)",
-            "close_reason": "SHORT_TRAIL_TP (peak=+3.8% now=2.9%)"
-          },
-          {
-            "id": "SENTIMENT_LS_V3-0006",
-            "symbol": "SHORT-NEAR",
-            "entry_price": 2.730546,
-            "exit_price": 2.65053,
-            "quantity": 79.17835389,
-            "size_usd": 216.2001,
-            "realized_pnl": 6.3775,
-            "pnl_pct": 2.91,
-            "fee_entry": 0.04324,
-            "fee_exit": 0.041973,
-            "total_fees": 0.085213,
-            "opened_at": "2026-05-26T17:13:24",
-            "closed_at": "2026-05-26T19:58:35",
-            "hold_reason": "SHORT Sentiment: 0.38 (6 articles)",
-            "close_reason": "SHORT_TRAIL_TP (peak=+4.8% now=2.9%)"
-          },
-          {
-            "id": "SENTIMENT_LS_V3-0001",
-            "symbol": "SHORT-LINK",
-            "entry_price": 9.40188,
-            "exit_price": 7.391478,
-            "quantity": 23.93138394,
-            "size_usd": 225.0,
-            "realized_pnl": 48.1471,
-            "pnl_pct": 21.37,
-            "fee_entry": 0.045,
-            "fee_exit": 0.035378,
-            "total_fees": 0.080378,
-            "opened_at": "2026-05-24T20:17:01",
-            "closed_at": "2026-06-06T15:04:35",
-            "hold_reason": "SHORT Sentiment: 0.27 (9 articles)",
-            "close_reason": "SHORT_HARD_TP (+21.4%)"
-          },
-          {
-            "id": "SENTIMENT_LS_V3-0007",
-            "symbol": "SHORT-ARB",
-            "entry_price": 0.10806261,
-            "exit_price": 0.08027805,
-            "quantity": 2160.67036405,
-            "size_usd": 233.4877,
-            "realized_pnl": 60.068,
-            "pnl_pct": 25.7,
-            "fee_entry": 0.046698,
-            "fee_exit": 0.034691,
-            "total_fees": 0.081389,
-            "opened_at": "2026-05-27T13:39:42",
-            "closed_at": "2026-06-06T15:04:35",
-            "hold_reason": "SHORT Sentiment: 0.30 (6 articles)",
-            "close_reason": "SHORT_HARD_TP (+25.7%)"
-          }
-        ],
-        "total_trades": 9,
-        "total_fees": 0.977986,
-        "started_at": "2026-05-24T20:11:21",
-        "last_cycle": "2026-06-08T20:52:11",
-        "cycle_count": 1478,
-        "custom": {
-          "last_rebalance_ts": 1780949828.8574817,
-          "rebalance_count": 32,
-          "coin_sentiments": {
-            "BTC": {
-              "score": 0.5544,
-              "count": 123,
-              "scores": [
-                0.65,
-                0.65,
-                0.65,
-                0.15,
-                0.15,
-                0.15,
-                0.15,
-                0.15,
-                0.15,
-                0.75,
-                0.75,
-                0.75,
-                0.72,
-                0.72,
-                0.72,
-                0.5,
-                0.5,
-                0.5,
-                0.25,
-                0.25,
-                0.25,
-                0.65,
-                0.65,
-                0.65,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.75,
-                0.75,
-                0.75,
-                0.5,
-                0.5,
-                0.5,
-                0.72,
-                0.72,
-                0.72,
-                0.5,
-                0.5,
-                0.5,
-                0.45,
-                0.45,
-                0.45,
-                0.65,
-                0.65,
-                0.65,
-                0.25,
-                0.25,
-                0.25,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.35,
-                0.35,
-                0.35,
-                0.75,
-                0.75,
-                0.75,
-                0.65,
-                0.65,
-                0.65,
-                0.35,
-                0.35,
-                0.35,
-                0.35,
-                0.35,
-                0.35,
-                0.72,
-                0.72,
-                0.72,
-                0.85,
-                0.85,
-                0.85,
-                0.55,
-                0.55,
-                0.55,
-                0.75,
-                0.75,
-                0.75,
-                0.15,
-                0.15,
-                0.15,
-                0.72,
-                0.72,
-                0.72,
-                0.65,
-                0.65,
-                0.65,
-                0.72,
-                0.72,
-                0.72,
-                0.75,
-                0.75,
-                0.75,
-                0.75,
-                0.75,
-                0.75,
-                0.55,
-                0.55,
-                0.55,
-                0.05,
-                0.05,
-                0.05,
-                0.72,
-                0.72,
-                0.72,
-                0.82,
-                0.82,
-                0.82,
-                0.65,
-                0.65,
-                0.65,
-                0.15,
-                0.15,
-                0.15,
-                0.35,
-                0.35,
-                0.35
-              ]
-            },
-            "UNI": {
-              "score": 0.6,
-              "count": 6,
-              "scores": [
-                0.55,
-                0.55,
-                0.55,
-                0.65,
-                0.65,
-                0.65
-              ]
-            },
-            "OP": {
-              "score": 0.4926,
-              "count": 93,
-              "scores": [
-                0.55,
-                0.55,
-                0.55,
-                0.45,
-                0.45,
-                0.45,
-                0.55,
-                0.55,
-                0.55,
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.55,
-                0.55,
-                0.55,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.35,
-                0.35,
-                0.35,
-                0.15,
-                0.15,
-                0.15,
-                0.82,
-                0.82,
-                0.82,
-                0.65,
-                0.65,
-                0.65,
-                0.45,
-                0.45,
-                0.45,
-                0.65,
-                0.65,
-                0.65,
-                0.15,
-                0.15,
-                0.15,
-                0.45,
-                0.45,
-                0.45,
-                0.65,
-                0.65,
-                0.65,
-                0.35,
-                0.35,
-                0.35,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.35,
-                0.35,
-                0.35,
-                0.55,
-                0.55,
-                0.55,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.65,
-                0.65,
-                0.65,
-                0.25,
-                0.25,
-                0.25,
-                0.5,
-                0.5,
-                0.5,
-                0.45,
-                0.45,
-                0.45
-              ]
-            },
-            "ETH": {
-              "score": 0.6135,
-              "count": 60,
-              "scores": [
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.75,
-                0.75,
-                0.75,
-                0.72,
-                0.72,
-                0.72,
-                0.75,
-                0.75,
-                0.75,
-                0.72,
-                0.72,
-                0.72,
-                0.75,
-                0.75,
-                0.75,
-                0.45,
-                0.45,
-                0.45,
-                0.75,
-                0.75,
-                0.75,
-                0.72,
-                0.72,
-                0.72,
-                0.65,
-                0.65,
-                0.65,
-                0.72,
-                0.72,
-                0.72,
-                0.55,
-                0.55,
-                0.55,
-                0.72,
-                0.72,
-                0.72,
-                0.65,
-                0.65,
-                0.65,
-                0.5,
-                0.5,
-                0.5,
-                0.72,
-                0.72,
-                0.72,
-                0.65,
-                0.65,
-                0.65,
-                0.25,
-                0.25,
-                0.25,
-                0.75,
-                0.75,
-                0.75
-              ]
-            },
-            "XRP": {
-              "score": 0.5675,
-              "count": 12,
-              "scores": [
-                0.72,
-                0.72,
-                0.72,
-                0.35,
-                0.35,
-                0.35,
-                0.75,
-                0.75,
-                0.75,
-                0.45,
-                0.45,
-                0.45
-              ]
-            },
-            "SOL": {
-              "score": 0.4,
-              "count": 6,
-              "scores": [
-                0.65,
-                0.65,
-                0.65,
-                0.15,
-                0.15,
-                0.15
-              ]
-            },
-            "FIL": {
-              "score": 0.35,
-              "count": 15,
-              "scores": [
-                0.35,
-                0.35,
-                0.35,
-                0.5,
-                0.5,
-                0.5,
-                0.25,
-                0.25,
-                0.25,
-                0.15,
-                0.15,
-                0.15,
-                0.5,
-                0.5,
-                0.5
-              ]
-            },
-            "AAVE": {
-              "score": 0.45,
-              "count": 6,
-              "scores": [
-                0.25,
-                0.25,
-                0.25,
-                0.65,
-                0.65,
-                0.65
-              ]
-            },
-            "NEAR": {
-              "score": 0.55,
-              "count": 18,
-              "scores": [
-                0.85,
-                0.85,
-                0.85,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.55,
-                0.55,
-                0.55,
-                0.55,
-                0.55,
-                0.55,
-                0.35,
-                0.35,
-                0.35
-              ]
-            },
-            "LINK": {
-              "score": 0.375,
-              "count": 6,
-              "scores": [
-                0.25,
-                0.25,
-                0.25,
-                0.5,
-                0.5,
-                0.5
-              ]
-            }
-          },
-          "scored_articles": [
-            {
-              "coin": "OP",
-              "title": "Clear Signing: Making Transaction Approvals Safer on Ethereum",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "Protocol Cluster Updates: May 2026",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "Protocol Cluster Updates: May 2026",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "Sold\u00f8gn Interop Recap \u2600\ufe0f",
-              "llm_score": 0.72,
-              "community_score": null,
-              "final_score": 0.72,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ARB",
-              "title": "Sold\u00f8gn Interop Recap \u2600\ufe0f",
-              "llm_score": 0.55,
-              "community_score": null,
-              "final_score": 0.55,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "Sold\u00f8gn Interop Recap \u2600\ufe0f",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "Announcing Cohort 7 of the Ethereum Protocol Fellowship",
-              "llm_score": 0.55,
-              "community_score": null,
-              "final_score": 0.55,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "Announcing Cohort 7 of the Ethereum Protocol Fellowship",
-              "llm_score": 0.5,
-              "community_score": null,
-              "final_score": 0.5,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "Allocation Update - Q1 2026",
-              "llm_score": 0.72,
-              "community_score": null,
-              "final_score": 0.72,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "ETH Rangers Program Recap",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "Checkpoint #9: Apr 2026",
-              "llm_score": 0.5,
-              "community_score": null,
-              "final_score": 0.5,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "Checkpoint #9: Apr 2026",
-              "llm_score": 0.5,
-              "community_score": null,
-              "final_score": 0.5,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "How L1 and L2s can build the strongest possible Ethereum",
-              "llm_score": 0.72,
-              "community_score": null,
-              "final_score": 0.72,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "How L1 and L2s can build the strongest possible Ethereum",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "The Promise of Ethereum: Introducing the EF Mandate",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "This Is Fine (Until the Grant Runs Out)",
-              "llm_score": 0.25,
-              "community_score": null,
-              "final_score": 0.25,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "This Is Fine (Until the Grant Runs Out)",
-              "llm_score": 0.25,
-              "community_score": null,
-              "final_score": 0.25,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "ERC 4337: account abstraction without Ethereum protocol changes",
-              "llm_score": 0.75,
-              "community_score": null,
-              "final_score": 0.75,
-              "source": "vitalik_medium"
-            },
-            {
-              "coin": "OP",
-              "title": "A Proof of Stake Design Philosophy",
-              "llm_score": 0.5,
-              "community_score": null,
-              "final_score": 0.5,
-              "source": "vitalik_medium"
-            },
-            {
-              "coin": "OP",
-              "title": "The 2025 State of Airdrops Report: How the U.S. Got Sidelined\u200a\u2014\u200aAnd What Comes Next",
-              "llm_score": 0.45,
-              "community_score": null,
-              "final_score": 0.45,
-              "source": "dragonfly_research"
-            }
-          ],
-          "articles_processed": 14369,
-          "deepseek_calls": 21729,
-          "top_coins": [],
-          "bottom_coins": [
-            "LINK",
-            "FIL"
-          ],
-          "short_coins": [],
-          "trailing_highs": {},
-          "trailing_lows": {
-            "SENTIMENT_LS_V3-0008": 0.70262,
-            "SENTIMENT_LS_V3-0009": 0.778474
-          },
-          "macro_regime": "BEAR",
-          "fear_greed": 8,
-          "stress_mode": false,
-          "btc_slope_24h": 2.84,
-          "btc_slope_4h": -0.94,
-          "streak_short_NEAR": 0,
-          "streak_long_NEAR": 1,
-          "streak_short_ONDO": 0,
-          "local_streak_short_ONDO": 0,
-          "streak_short_SUI": 0,
-          "local_streak_short_SUI": 0,
-          "local_streak_short_NEAR": 0,
-          "streak_short_LINK": 0,
-          "local_streak_short_LINK": 0,
-          "streak_short_ARB": 0,
-          "local_streak_short_ARB": 0
-        },
-        "_position_counter": 9,
-        "_saved_at": "2026-06-08T20:52:11"
-      },
+      "state": null,
       "equity_curve": [
         {
           "ts": "2026-05-24T20:17:01",
@@ -51423,847 +50009,8 @@ window.BOT_DATA = {
       "key": "sentiment_ls_v3_tp",
       "name": "LS V3 TP",
       "color": "#ca8a04",
-      "state": {
-        "bot_id": "sentiment_ls_v3_tp",
-        "cash": 217.2172,
-        "equity": 242.4511,
-        "peak_equity": 261.8273,
-        "initial_capital": 200.0,
-        "open_positions": [
-          {
-            "id": "SENTIMENT_LS_V3_TP-0010",
-            "symbol": "SHORT-SUI",
-            "side": "buy",
-            "entry_price": 0.75312259,
-            "current_price": 0.759433,
-            "size_usd": 275.4155,
-            "quantity": 365.69813075,
-            "unrealized_pnl": -2.3077,
-            "fee_paid": 0.055083,
-            "margin_locked": 27.5416,
-            "leverage": 10.0,
-            "opened_at": "2026-06-08T12:13:03",
-            "reason": "SHORT Sentiment: 0.30 (6 articles)",
-            "metadata": {
-              "symbol": "SUI",
-              "direction": "short",
-              "sentiment_score": 0.3,
-              "article_count": 6,
-              "pair": "SUI/USDT"
-            }
-          }
-        ],
-        "closed_trades": [
-          {
-            "id": "SENTIMENT_LS_V3_TP-0002",
-            "symbol": "SHORT-NEAR",
-            "entry_price": 2.420484,
-            "exit_price": 2.35047,
-            "quantity": 92.40045586,
-            "size_usd": 223.6538,
-            "realized_pnl": 6.5128,
-            "pnl_pct": 2.87,
-            "fee_entry": 0.044731,
-            "fee_exit": 0.043437,
-            "total_fees": 0.088168,
-            "opened_at": "2026-05-25T00:21:53",
-            "closed_at": "2026-05-25T03:16:51",
-            "hold_reason": "SHORT Sentiment: 0.37 (12 articles)",
-            "close_reason": "SHORT_TRAIL_TP (peak=+3.3% now=2.9%)"
-          },
-          {
-            "id": "SENTIMENT_LS_V3_TP-0003",
-            "symbol": "SHORT-NEAR",
-            "entry_price": 2.35047,
-            "exit_price": 2.45049,
-            "quantity": 98.89429029,
-            "size_usd": 232.4481,
-            "realized_pnl": -9.843,
-            "pnl_pct": -4.28,
-            "fee_entry": 0.04649,
-            "fee_exit": 0.048468,
-            "total_fees": 0.094958,
-            "opened_at": "2026-05-25T04:28:11",
-            "closed_at": "2026-05-25T10:51:34",
-            "hold_reason": "SHORT Sentiment: 0.37 (12 articles)",
-            "close_reason": "SHORT_TRAIL_SL (+4.3% from $2.35)"
-          },
-          {
-            "id": "SENTIMENT_LS_V3_TP-0005-p50",
-            "symbol": "NEAR",
-            "entry_price": 2.740548,
-            "exit_price": 2.79944,
-            "quantity": 40.3596995,
-            "size_usd": 110.6077,
-            "realized_pnl": 2.3543,
-            "pnl_pct": 2.13,
-            "fee_entry": 0.0,
-            "fee_exit": 0.022597,
-            "total_fees": 0.022597,
-            "opened_at": "2026-05-26T09:12:50",
-            "closed_at": "2026-05-26T10:31:22",
-            "hold_reason": "LONG Sentiment: 0.66 (9 articles)",
-            "close_reason": "TP1_PARTIAL_50% (+2.2%)",
-            "partial_pct": 0.5
-          },
-          {
-            "id": "SENTIMENT_LS_V3_TP-0005-p60",
-            "symbol": "NEAR",
-            "entry_price": 2.740548,
-            "exit_price": 2.829434,
-            "quantity": 24.2158197,
-            "size_usd": 66.3646,
-            "realized_pnl": 2.1387,
-            "pnl_pct": 3.22,
-            "fee_entry": 0.0,
-            "fee_exit": 0.013703,
-            "total_fees": 0.013703,
-            "opened_at": "2026-05-26T09:12:50",
-            "closed_at": "2026-05-26T10:41:26",
-            "hold_reason": "LONG Sentiment: 0.66 (9 articles)",
-            "close_reason": "TP2_PARTIAL_60%rem (+3.3%)",
-            "partial_pct": 0.6
-          },
-          {
-            "id": "SENTIMENT_LS_V3_TP-0005",
-            "symbol": "NEAR",
-            "entry_price": 2.740548,
-            "exit_price": 2.84943,
-            "quantity": 16.1438798,
-            "size_usd": 44.243080000000006,
-            "realized_pnl": 1.7486,
-            "pnl_pct": 3.95,
-            "fee_entry": 0.044243,
-            "fee_exit": 0.0092,
-            "total_fees": 0.053443,
-            "opened_at": "2026-05-26T09:12:50",
-            "closed_at": "2026-05-26T12:04:03",
-            "hold_reason": "LONG Sentiment: 0.66 (9 articles)",
-            "close_reason": "TRAIL_SL (-4.0% from $2.97)"
-          },
-          {
-            "id": "SENTIMENT_LS_V3_TP-0001",
-            "symbol": "SHORT-LINK",
-            "entry_price": 9.40188,
-            "exit_price": 9.65193,
-            "quantity": 23.93138394,
-            "size_usd": 225.0,
-            "realized_pnl": -5.9379,
-            "pnl_pct": -2.68,
-            "fee_entry": 0.045,
-            "fee_exit": 0.046197,
-            "total_fees": 0.091197,
-            "opened_at": "2026-05-24T20:16:13",
-            "closed_at": "2026-05-26T14:30:22",
-            "hold_reason": "SHORT Sentiment: 0.27 (9 articles)",
-            "close_reason": "SHORT_TRAIL_SL (+4.1% from $9.27)"
-          },
-          {
-            "id": "SENTIMENT_LS_V3_TP-0006",
-            "symbol": "SHORT-ONDO",
-            "entry_price": 0.41838066,
-            "exit_price": 0.42764751,
-            "quantity": 528.74190651,
-            "size_usd": 221.2154,
-            "realized_pnl": -4.8546,
-            "pnl_pct": -2.24,
-            "fee_entry": 0.044243,
-            "fee_exit": 0.045223,
-            "total_fees": 0.089466,
-            "opened_at": "2026-05-26T09:12:50",
-            "closed_at": "2026-05-26T16:31:14",
-            "hold_reason": "SHORT Sentiment: 0.31 (12 articles)",
-            "close_reason": "SHORT_TRAIL_SL (+4.2% from $0.41)"
-          },
-          {
-            "id": "SENTIMENT_LS_V3_TP-0004",
-            "symbol": "SHORT-SUI",
-            "entry_price": 1.045209,
-            "exit_price": 1.015203,
-            "quantity": 207.52379428,
-            "size_usd": 216.9057,
-            "realized_pnl": 6.2691,
-            "pnl_pct": 2.85,
-            "fee_entry": 0.043381,
-            "fee_exit": 0.042136,
-            "total_fees": 0.085517,
-            "opened_at": "2026-05-25T12:41:15",
-            "closed_at": "2026-05-26T18:21:02",
-            "hold_reason": "SHORT Sentiment: 0.37 (9 articles)",
-            "close_reason": "SHORT_TRAIL_TP (peak=+3.8% now=2.9%)"
-          },
-          {
-            "id": "SENTIMENT_LS_V3_TP-0007",
-            "symbol": "SHORT-ARB",
-            "entry_price": 0.10797959,
-            "exit_price": 0.08027805,
-            "quantity": 2059.44229094,
-            "size_usd": 222.3777,
-            "realized_pnl": 57.0828,
-            "pnl_pct": 25.64,
-            "fee_entry": 0.044476,
-            "fee_exit": 0.033066,
-            "total_fees": 0.077542,
-            "opened_at": "2026-05-27T14:00:01",
-            "closed_at": "2026-06-06T15:03:47",
-            "hold_reason": "SHORT Sentiment: 0.30 (6 articles)",
-            "close_reason": "SHORT_HARD_TP (+25.7%)"
-          },
-          {
-            "id": "SENTIMENT_LS_V3_TP-0008",
-            "symbol": "SHORT-SUI",
-            "entry_price": 0.72071611,
-            "exit_price": 0.73599917,
-            "quantity": 397.48169463,
-            "size_usd": 286.4715,
-            "realized_pnl": -6.0162,
-            "pnl_pct": -2.14,
-            "fee_entry": 0.057294,
-            "fee_exit": 0.058509,
-            "total_fees": 0.115803,
-            "opened_at": "2026-06-06T15:09:32",
-            "closed_at": "2026-06-07T01:13:01",
-            "hold_reason": "SHORT Sentiment: 0.17 (6 articles)",
-            "close_reason": "SHORT_TRAIL_SL (+4.7% from $0.70)"
-          },
-          {
-            "id": "SENTIMENT_LS_V3_TP-0009",
-            "symbol": "SHORT-SUI",
-            "entry_price": 0.75095416,
-            "exit_price": 0.76042305,
-            "quantity": 372.20252858,
-            "size_usd": 279.507,
-            "realized_pnl": -3.4678,
-            "pnl_pct": -1.28,
-            "fee_entry": 0.055901,
-            "fee_exit": 0.056606,
-            "total_fees": 0.112507,
-            "opened_at": "2026-06-08T04:00:10",
-            "closed_at": "2026-06-08T11:37:54",
-            "hold_reason": "SHORT Sentiment: 0.30 (6 articles)",
-            "close_reason": "SHORT_TRAIL_SL (+4.1% from $0.73)"
-          }
-        ],
-        "total_trades": 10,
-        "total_fees": 1.282826,
-        "started_at": "2026-05-24T20:11:21",
-        "last_cycle": "2026-06-08T20:52:02",
-        "cycle_count": 3669,
-        "custom": {
-          "last_rebalance_ts": 1780950352.2696028,
-          "rebalance_count": 32,
-          "coin_sentiments": {
-            "BTC": {
-              "score": 0.5551,
-              "count": 123,
-              "scores": [
-                0.65,
-                0.65,
-                0.65,
-                0.15,
-                0.15,
-                0.15,
-                0.15,
-                0.15,
-                0.15,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.5,
-                0.5,
-                0.5,
-                0.25,
-                0.25,
-                0.25,
-                0.65,
-                0.65,
-                0.65,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.78,
-                0.78,
-                0.78,
-                0.5,
-                0.5,
-                0.5,
-                0.72,
-                0.72,
-                0.72,
-                0.5,
-                0.5,
-                0.5,
-                0.45,
-                0.45,
-                0.45,
-                0.65,
-                0.65,
-                0.65,
-                0.25,
-                0.25,
-                0.25,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.35,
-                0.35,
-                0.35,
-                0.75,
-                0.75,
-                0.75,
-                0.65,
-                0.65,
-                0.65,
-                0.35,
-                0.35,
-                0.35,
-                0.35,
-                0.35,
-                0.35,
-                0.72,
-                0.72,
-                0.72,
-                0.85,
-                0.85,
-                0.85,
-                0.55,
-                0.55,
-                0.55,
-                0.75,
-                0.75,
-                0.75,
-                0.25,
-                0.25,
-                0.25,
-                0.72,
-                0.72,
-                0.72,
-                0.65,
-                0.65,
-                0.65,
-                0.72,
-                0.72,
-                0.72,
-                0.65,
-                0.65,
-                0.65,
-                0.75,
-                0.75,
-                0.75,
-                0.55,
-                0.55,
-                0.55,
-                0.05,
-                0.05,
-                0.05,
-                0.72,
-                0.72,
-                0.72,
-                0.85,
-                0.85,
-                0.85,
-                0.65,
-                0.65,
-                0.65,
-                0.15,
-                0.15,
-                0.15,
-                0.35,
-                0.35,
-                0.35
-              ]
-            },
-            "UNI": {
-              "score": 0.6,
-              "count": 6,
-              "scores": [
-                0.55,
-                0.55,
-                0.55,
-                0.65,
-                0.65,
-                0.65
-              ]
-            },
-            "OP": {
-              "score": 0.491,
-              "count": 93,
-              "scores": [
-                0.55,
-                0.55,
-                0.55,
-                0.5,
-                0.5,
-                0.5,
-                0.55,
-                0.55,
-                0.55,
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.55,
-                0.55,
-                0.55,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.35,
-                0.35,
-                0.35,
-                0.15,
-                0.15,
-                0.15,
-                0.82,
-                0.82,
-                0.82,
-                0.65,
-                0.65,
-                0.65,
-                0.45,
-                0.45,
-                0.45,
-                0.65,
-                0.65,
-                0.65,
-                0.15,
-                0.15,
-                0.15,
-                0.35,
-                0.35,
-                0.35,
-                0.55,
-                0.55,
-                0.55,
-                0.35,
-                0.35,
-                0.35,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.35,
-                0.35,
-                0.35,
-                0.55,
-                0.55,
-                0.55,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.65,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.5,
-                0.65,
-                0.65,
-                0.65,
-                0.35,
-                0.35,
-                0.35,
-                0.5,
-                0.5,
-                0.5,
-                0.45,
-                0.45,
-                0.45
-              ]
-            },
-            "ETH": {
-              "score": 0.616,
-              "count": 60,
-              "scores": [
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.25,
-                0.75,
-                0.75,
-                0.75,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.72,
-                0.82,
-                0.82,
-                0.82,
-                0.45,
-                0.45,
-                0.45,
-                0.75,
-                0.75,
-                0.75,
-                0.75,
-                0.75,
-                0.75,
-                0.65,
-                0.65,
-                0.65,
-                0.7,
-                0.7,
-                0.7,
-                0.55,
-                0.55,
-                0.55,
-                0.72,
-                0.72,
-                0.72,
-                0.65,
-                0.65,
-                0.65,
-                0.5,
-                0.5,
-                0.5,
-                0.72,
-                0.72,
-                0.72,
-                0.65,
-                0.65,
-                0.65,
-                0.25,
-                0.25,
-                0.25,
-                0.75,
-                0.75,
-                0.75
-              ]
-            },
-            "XRP": {
-              "score": 0.56,
-              "count": 12,
-              "scores": [
-                0.72,
-                0.72,
-                0.72,
-                0.35,
-                0.35,
-                0.35,
-                0.72,
-                0.72,
-                0.72,
-                0.45,
-                0.45,
-                0.45
-              ]
-            },
-            "SOL": {
-              "score": 0.4,
-              "count": 6,
-              "scores": [
-                0.65,
-                0.65,
-                0.65,
-                0.15,
-                0.15,
-                0.15
-              ]
-            },
-            "FIL": {
-              "score": 0.36,
-              "count": 15,
-              "scores": [
-                0.45,
-                0.45,
-                0.45,
-                0.5,
-                0.5,
-                0.5,
-                0.25,
-                0.25,
-                0.25,
-                0.15,
-                0.15,
-                0.15,
-                0.45,
-                0.45,
-                0.45
-              ]
-            },
-            "AAVE": {
-              "score": 0.45,
-              "count": 6,
-              "scores": [
-                0.25,
-                0.25,
-                0.25,
-                0.65,
-                0.65,
-                0.65
-              ]
-            },
-            "NEAR": {
-              "score": 0.56,
-              "count": 15,
-              "scores": [
-                0.85,
-                0.85,
-                0.85,
-                0.5,
-                0.5,
-                0.5,
-                0.55,
-                0.55,
-                0.55,
-                0.55,
-                0.55,
-                0.55,
-                0.35,
-                0.35,
-                0.35
-              ]
-            },
-            "LINK": {
-              "score": 0.375,
-              "count": 6,
-              "scores": [
-                0.25,
-                0.25,
-                0.25,
-                0.5,
-                0.5,
-                0.5
-              ]
-            }
-          },
-          "scored_articles": [
-            {
-              "coin": "OP",
-              "title": "Clear Signing: Making Transaction Approvals Safer on Ethereum",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "Protocol Cluster Updates: May 2026",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "Protocol Cluster Updates: May 2026",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "Sold\u00f8gn Interop Recap \u2600\ufe0f",
-              "llm_score": 0.7,
-              "community_score": null,
-              "final_score": 0.7,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ARB",
-              "title": "Sold\u00f8gn Interop Recap \u2600\ufe0f",
-              "llm_score": 0.55,
-              "community_score": null,
-              "final_score": 0.55,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "Sold\u00f8gn Interop Recap \u2600\ufe0f",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "Announcing Cohort 7 of the Ethereum Protocol Fellowship",
-              "llm_score": 0.55,
-              "community_score": null,
-              "final_score": 0.55,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "Announcing Cohort 7 of the Ethereum Protocol Fellowship",
-              "llm_score": 0.5,
-              "community_score": null,
-              "final_score": 0.5,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "Allocation Update - Q1 2026",
-              "llm_score": 0.72,
-              "community_score": null,
-              "final_score": 0.72,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "ETH Rangers Program Recap",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "Checkpoint #9: Apr 2026",
-              "llm_score": 0.5,
-              "community_score": null,
-              "final_score": 0.5,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "Checkpoint #9: Apr 2026",
-              "llm_score": 0.5,
-              "community_score": null,
-              "final_score": 0.5,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "How L1 and L2s can build the strongest possible Ethereum",
-              "llm_score": 0.72,
-              "community_score": null,
-              "final_score": 0.72,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "How L1 and L2s can build the strongest possible Ethereum",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "The Promise of Ethereum: Introducing the EF Mandate",
-              "llm_score": 0.65,
-              "community_score": null,
-              "final_score": 0.65,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "This Is Fine (Until the Grant Runs Out)",
-              "llm_score": 0.25,
-              "community_score": null,
-              "final_score": 0.25,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "OP",
-              "title": "This Is Fine (Until the Grant Runs Out)",
-              "llm_score": 0.35,
-              "community_score": null,
-              "final_score": 0.35,
-              "source": "ethereum_foundation"
-            },
-            {
-              "coin": "ETH",
-              "title": "ERC 4337: account abstraction without Ethereum protocol changes",
-              "llm_score": 0.75,
-              "community_score": null,
-              "final_score": 0.75,
-              "source": "vitalik_medium"
-            },
-            {
-              "coin": "OP",
-              "title": "A Proof of Stake Design Philosophy",
-              "llm_score": 0.5,
-              "community_score": null,
-              "final_score": 0.5,
-              "source": "vitalik_medium"
-            },
-            {
-              "coin": "OP",
-              "title": "The 2025 State of Airdrops Report: How the U.S. Got Sidelined\u200a\u2014\u200aAnd What Comes Next",
-              "llm_score": 0.45,
-              "community_score": null,
-              "final_score": 0.45,
-              "source": "dragonfly_research"
-            }
-          ],
-          "articles_processed": 14377,
-          "deepseek_calls": 21747,
-          "top_coins": [],
-          "bottom_coins": [
-            "LINK",
-            "FIL"
-          ],
-          "short_coins": [],
-          "trailing_highs": {},
-          "trailing_lows": {
-            "SENTIMENT_LS_V3_TP-0010": 0.752972
-          },
-          "macro_regime": "BEAR",
-          "fear_greed": 8,
-          "stress_mode": false,
-          "btc_slope_24h": 2.28,
-          "btc_slope_4h": -1.03,
-          "streak_short_NEAR": 1,
-          "local_streak_short_NEAR": 0,
-          "streak_long_NEAR": 0,
-          "local_streak_long_NEAR": 0,
-          "streak_short_LINK": 1,
-          "streak_short_ONDO": 1,
-          "streak_short_SUI": 2,
-          "local_streak_short_SUI": 0,
-          "streak_short_ARB": 0,
-          "local_streak_short_ARB": 0
-        },
-        "_position_counter": 10,
-        "_saved_at": "2026-06-08T20:52:02"
-      },
+      "state": null,
       "equity_curve": [
-        {
-          "ts": "2026-05-25T23:11:50",
-          "equity": 196.1723,
-          "cash": 152.1158,
-          "invested": 442.0399,
-          "dd": 5.63
-        },
-        {
-          "ts": "2026-05-25T23:13:51",
-          "equity": 196.1723,
-          "cash": 152.1158,
-          "invested": 442.0399,
-          "dd": 5.63
-        },
         {
           "ts": "2026-05-25T23:15:52",
           "equity": 196.1723,
@@ -72409,16 +70156,2601 @@ window.BOT_DATA = {
           "cash": 217.2172,
           "invested": 277.7232,
           "dd": 7.4
+        },
+        {
+          "ts": "2026-06-08T20:54:03",
+          "equity": 242.5088,
+          "cash": 217.2172,
+          "invested": 277.6654,
+          "dd": 7.38
+        },
+        {
+          "ts": "2026-06-08T20:56:04",
+          "equity": 242.5674,
+          "cash": 217.2172,
+          "invested": 277.6069,
+          "dd": 7.36
         }
       ],
       "heartbeat": {
         "pid": 1500,
-        "ts": 1780951922,
-        "ts_iso": "2026-06-08T20:52:02",
+        "ts": 1780952164,
+        "ts_iso": "2026-06-08T20:56:04",
         "status": "running",
         "bot_id": "sentiment_ls_v3_tp",
-        "cycle_count": 3669,
-        "equity": 242.44
+        "cycle_count": 3671,
+        "equity": 242.51
+      }
+    }
+  ]
+};
+vested": 280.0563,
+          "dd": 5.34
+        },
+        {
+          "ts": "2026-06-08T08:26:28",
+          "equity": 248.0971,
+          "cash": 220.4441,
+          "invested": 279.8047,
+          "dd": 5.24
+        },
+        {
+          "ts": "2026-06-08T08:28:29",
+          "equity": 248.1421,
+          "cash": 220.4441,
+          "invested": 279.7597,
+          "dd": 5.23
+        },
+        {
+          "ts": "2026-06-08T08:30:30",
+          "equity": 248.122,
+          "cash": 220.4441,
+          "invested": 279.7798,
+          "dd": 5.23
+        },
+        {
+          "ts": "2026-06-08T08:32:31",
+          "equity": 248.1209,
+          "cash": 220.4441,
+          "invested": 279.7809,
+          "dd": 5.23
+        },
+        {
+          "ts": "2026-06-08T08:34:32",
+          "equity": 248.3356,
+          "cash": 220.4441,
+          "invested": 279.5662,
+          "dd": 5.15
+        },
+        {
+          "ts": "2026-06-08T08:36:33",
+          "equity": 248.3755,
+          "cash": 220.4441,
+          "invested": 279.5263,
+          "dd": 5.14
+        },
+        {
+          "ts": "2026-06-08T08:38:34",
+          "equity": 248.4607,
+          "cash": 220.4441,
+          "invested": 279.4411,
+          "dd": 5.11
+        },
+        {
+          "ts": "2026-06-08T08:40:35",
+          "equity": 248.5709,
+          "cash": 220.4441,
+          "invested": 279.3309,
+          "dd": 5.06
+        },
+        {
+          "ts": "2026-06-08T08:42:36",
+          "equity": 248.7659,
+          "cash": 220.4441,
+          "invested": 279.1359,
+          "dd": 4.99
+        },
+        {
+          "ts": "2026-06-08T08:44:36",
+          "equity": 249.0071,
+          "cash": 220.4441,
+          "invested": 278.8947,
+          "dd": 4.9
+        },
+        {
+          "ts": "2026-06-08T08:46:37",
+          "equity": 248.9401,
+          "cash": 220.4441,
+          "invested": 278.9617,
+          "dd": 4.92
+        },
+        {
+          "ts": "2026-06-08T08:48:38",
+          "equity": 249.0335,
+          "cash": 220.4441,
+          "invested": 278.8683,
+          "dd": 4.89
+        },
+        {
+          "ts": "2026-06-08T08:50:39",
+          "equity": 249.2237,
+          "cash": 220.4441,
+          "invested": 278.6781,
+          "dd": 4.81
+        },
+        {
+          "ts": "2026-06-08T08:52:40",
+          "equity": 249.7552,
+          "cash": 220.4441,
+          "invested": 278.1466,
+          "dd": 4.61
+        },
+        {
+          "ts": "2026-06-08T08:54:41",
+          "equity": 249.8144,
+          "cash": 220.4441,
+          "invested": 278.0874,
+          "dd": 4.59
+        },
+        {
+          "ts": "2026-06-08T08:56:42",
+          "equity": 249.8862,
+          "cash": 220.4441,
+          "invested": 278.0156,
+          "dd": 4.56
+        },
+        {
+          "ts": "2026-06-08T08:58:43",
+          "equity": 249.897,
+          "cash": 220.4441,
+          "invested": 278.0048,
+          "dd": 4.56
+        },
+        {
+          "ts": "2026-06-08T09:00:44",
+          "equity": 249.651,
+          "cash": 220.4441,
+          "invested": 278.2508,
+          "dd": 4.65
+        },
+        {
+          "ts": "2026-06-08T09:02:45",
+          "equity": 249.3838,
+          "cash": 220.4441,
+          "invested": 278.518,
+          "dd": 4.75
+        },
+        {
+          "ts": "2026-06-08T09:04:46",
+          "equity": 249.2308,
+          "cash": 220.4441,
+          "invested": 278.671,
+          "dd": 4.81
+        },
+        {
+          "ts": "2026-06-08T09:06:46",
+          "equity": 248.8355,
+          "cash": 220.4441,
+          "invested": 279.0663,
+          "dd": 4.96
+        },
+        {
+          "ts": "2026-06-08T09:08:47",
+          "equity": 248.9334,
+          "cash": 220.4441,
+          "invested": 278.9684,
+          "dd": 4.92
+        },
+        {
+          "ts": "2026-06-08T09:10:48",
+          "equity": 249.4068,
+          "cash": 220.4441,
+          "invested": 278.495,
+          "dd": 4.74
+        },
+        {
+          "ts": "2026-06-08T09:12:49",
+          "equity": 249.5959,
+          "cash": 220.4441,
+          "invested": 278.3059,
+          "dd": 4.67
+        },
+        {
+          "ts": "2026-06-08T09:14:50",
+          "equity": 249.3302,
+          "cash": 220.4441,
+          "invested": 278.5716,
+          "dd": 4.77
+        },
+        {
+          "ts": "2026-06-08T09:16:51",
+          "equity": 249.0536,
+          "cash": 220.4441,
+          "invested": 278.8482,
+          "dd": 4.88
+        },
+        {
+          "ts": "2026-06-08T09:18:52",
+          "equity": 248.5973,
+          "cash": 220.4441,
+          "invested": 279.3045,
+          "dd": 5.05
+        },
+        {
+          "ts": "2026-06-08T09:20:53",
+          "equity": 247.9218,
+          "cash": 220.4441,
+          "invested": 279.98,
+          "dd": 5.31
+        },
+        {
+          "ts": "2026-06-08T09:22:54",
+          "equity": 247.9817,
+          "cash": 220.4441,
+          "invested": 279.9201,
+          "dd": 5.29
+        },
+        {
+          "ts": "2026-06-08T09:24:54",
+          "equity": 247.8112,
+          "cash": 220.4441,
+          "invested": 280.0906,
+          "dd": 5.35
+        },
+        {
+          "ts": "2026-06-08T09:26:55",
+          "equity": 247.8693,
+          "cash": 220.4441,
+          "invested": 280.0325,
+          "dd": 5.33
+        },
+        {
+          "ts": "2026-06-08T09:28:56",
+          "equity": 247.8075,
+          "cash": 220.4441,
+          "invested": 280.0943,
+          "dd": 5.35
+        },
+        {
+          "ts": "2026-06-08T09:30:57",
+          "equity": 247.9013,
+          "cash": 220.4441,
+          "invested": 280.0005,
+          "dd": 5.32
+        },
+        {
+          "ts": "2026-06-08T09:32:58",
+          "equity": 248.0531,
+          "cash": 220.4441,
+          "invested": 279.8487,
+          "dd": 5.26
+        },
+        {
+          "ts": "2026-06-08T09:34:59",
+          "equity": 248.2921,
+          "cash": 220.4441,
+          "invested": 279.6097,
+          "dd": 5.17
+        },
+        {
+          "ts": "2026-06-08T09:37:00",
+          "equity": 248.8947,
+          "cash": 220.4441,
+          "invested": 279.0071,
+          "dd": 4.94
+        },
+        {
+          "ts": "2026-06-08T09:39:01",
+          "equity": 248.7499,
+          "cash": 220.4441,
+          "invested": 279.1519,
+          "dd": 4.99
+        },
+        {
+          "ts": "2026-06-08T09:41:02",
+          "equity": 248.5716,
+          "cash": 220.4441,
+          "invested": 279.3302,
+          "dd": 5.06
+        },
+        {
+          "ts": "2026-06-08T09:43:02",
+          "equity": 248.6628,
+          "cash": 220.4441,
+          "invested": 279.239,
+          "dd": 5.03
+        },
+        {
+          "ts": "2026-06-08T09:45:03",
+          "equity": 248.6412,
+          "cash": 220.4441,
+          "invested": 279.2606,
+          "dd": 5.04
+        },
+        {
+          "ts": "2026-06-08T09:47:04",
+          "equity": 248.3427,
+          "cash": 220.4441,
+          "invested": 279.5591,
+          "dd": 5.15
+        },
+        {
+          "ts": "2026-06-08T09:49:05",
+          "equity": 248.3449,
+          "cash": 220.4441,
+          "invested": 279.5569,
+          "dd": 5.15
+        },
+        {
+          "ts": "2026-06-08T09:51:06",
+          "equity": 248.256,
+          "cash": 220.4441,
+          "invested": 279.6458,
+          "dd": 5.18
+        },
+        {
+          "ts": "2026-06-08T09:53:07",
+          "equity": 247.9441,
+          "cash": 220.4441,
+          "invested": 279.9577,
+          "dd": 5.3
+        },
+        {
+          "ts": "2026-06-08T09:55:08",
+          "equity": 247.9333,
+          "cash": 220.4441,
+          "invested": 279.9685,
+          "dd": 5.31
+        },
+        {
+          "ts": "2026-06-08T09:57:09",
+          "equity": 247.8012,
+          "cash": 220.4441,
+          "invested": 280.1006,
+          "dd": 5.36
+        },
+        {
+          "ts": "2026-06-08T09:59:10",
+          "equity": 247.7651,
+          "cash": 220.4441,
+          "invested": 280.1367,
+          "dd": 5.37
+        },
+        {
+          "ts": "2026-06-08T10:01:11",
+          "equity": 247.6705,
+          "cash": 220.4441,
+          "invested": 280.2313,
+          "dd": 5.41
+        },
+        {
+          "ts": "2026-06-08T10:03:12",
+          "equity": 247.5964,
+          "cash": 220.4441,
+          "invested": 280.3054,
+          "dd": 5.44
+        },
+        {
+          "ts": "2026-06-08T10:05:13",
+          "equity": 247.6768,
+          "cash": 220.4441,
+          "invested": 280.225,
+          "dd": 5.4
+        },
+        {
+          "ts": "2026-06-08T10:07:14",
+          "equity": 247.7174,
+          "cash": 220.4441,
+          "invested": 280.1844,
+          "dd": 5.39
+        },
+        {
+          "ts": "2026-06-08T10:09:14",
+          "equity": 247.7777,
+          "cash": 220.4441,
+          "invested": 280.1241,
+          "dd": 5.37
+        },
+        {
+          "ts": "2026-06-08T10:11:15",
+          "equity": 247.9381,
+          "cash": 220.4441,
+          "invested": 279.9637,
+          "dd": 5.3
+        },
+        {
+          "ts": "2026-06-08T10:13:16",
+          "equity": 248.1972,
+          "cash": 220.4441,
+          "invested": 279.7046,
+          "dd": 5.21
+        },
+        {
+          "ts": "2026-06-08T10:15:17",
+          "equity": 248.2329,
+          "cash": 220.4441,
+          "invested": 279.6689,
+          "dd": 5.19
+        },
+        {
+          "ts": "2026-06-08T10:17:18",
+          "equity": 248.3788,
+          "cash": 220.4441,
+          "invested": 279.523,
+          "dd": 5.14
+        },
+        {
+          "ts": "2026-06-08T10:19:19",
+          "equity": 248.4574,
+          "cash": 220.4441,
+          "invested": 279.4444,
+          "dd": 5.11
+        },
+        {
+          "ts": "2026-06-08T10:21:19",
+          "equity": 248.5809,
+          "cash": 220.4441,
+          "invested": 279.3209,
+          "dd": 5.06
+        },
+        {
+          "ts": "2026-06-08T10:23:20",
+          "equity": 248.515,
+          "cash": 220.4441,
+          "invested": 279.3868,
+          "dd": 5.08
+        },
+        {
+          "ts": "2026-06-08T10:25:21",
+          "equity": 248.6732,
+          "cash": 220.4441,
+          "invested": 279.2286,
+          "dd": 5.02
+        },
+        {
+          "ts": "2026-06-08T10:27:22",
+          "equity": 249.1009,
+          "cash": 220.4441,
+          "invested": 278.8009,
+          "dd": 4.86
+        },
+        {
+          "ts": "2026-06-08T10:29:23",
+          "equity": 249.2743,
+          "cash": 220.4441,
+          "invested": 278.6275,
+          "dd": 4.79
+        },
+        {
+          "ts": "2026-06-08T10:31:24",
+          "equity": 249.4463,
+          "cash": 220.4441,
+          "invested": 278.4555,
+          "dd": 4.73
+        },
+        {
+          "ts": "2026-06-08T10:33:25",
+          "equity": 249.5174,
+          "cash": 220.4441,
+          "invested": 278.3844,
+          "dd": 4.7
+        },
+        {
+          "ts": "2026-06-08T10:35:26",
+          "equity": 249.5338,
+          "cash": 220.4441,
+          "invested": 278.368,
+          "dd": 4.7
+        },
+        {
+          "ts": "2026-06-08T10:37:27",
+          "equity": 248.5631,
+          "cash": 220.4441,
+          "invested": 279.3387,
+          "dd": 5.07
+        },
+        {
+          "ts": "2026-06-08T10:39:28",
+          "equity": 248.218,
+          "cash": 220.4441,
+          "invested": 279.6838,
+          "dd": 5.2
+        },
+        {
+          "ts": "2026-06-08T10:41:29",
+          "equity": 248.2485,
+          "cash": 220.4441,
+          "invested": 279.6533,
+          "dd": 5.19
+        },
+        {
+          "ts": "2026-06-08T10:43:29",
+          "equity": 248.2262,
+          "cash": 220.4441,
+          "invested": 279.6756,
+          "dd": 5.19
+        },
+        {
+          "ts": "2026-06-08T10:45:30",
+          "equity": 248.416,
+          "cash": 220.4441,
+          "invested": 279.4858,
+          "dd": 5.12
+        },
+        {
+          "ts": "2026-06-08T10:47:31",
+          "equity": 248.7421,
+          "cash": 220.4441,
+          "invested": 279.1597,
+          "dd": 5.0
+        },
+        {
+          "ts": "2026-06-08T10:49:32",
+          "equity": 248.9434,
+          "cash": 220.4441,
+          "invested": 278.9584,
+          "dd": 4.92
+        },
+        {
+          "ts": "2026-06-08T10:51:33",
+          "equity": 248.8794,
+          "cash": 220.4441,
+          "invested": 279.0224,
+          "dd": 4.95
+        },
+        {
+          "ts": "2026-06-08T10:53:34",
+          "equity": 249.2032,
+          "cash": 220.4441,
+          "invested": 278.6986,
+          "dd": 4.82
+        },
+        {
+          "ts": "2026-06-08T10:55:35",
+          "equity": 249.0626,
+          "cash": 220.4441,
+          "invested": 278.8392,
+          "dd": 4.88
+        },
+        {
+          "ts": "2026-06-08T10:57:36",
+          "equity": 248.9777,
+          "cash": 220.4441,
+          "invested": 278.9241,
+          "dd": 4.91
+        },
+        {
+          "ts": "2026-06-08T10:59:37",
+          "equity": 248.9542,
+          "cash": 220.4441,
+          "invested": 278.9476,
+          "dd": 4.92
+        },
+        {
+          "ts": "2026-06-08T11:01:38",
+          "equity": 248.8135,
+          "cash": 220.4441,
+          "invested": 279.0882,
+          "dd": 4.97
+        },
+        {
+          "ts": "2026-06-08T11:03:39",
+          "equity": 249.0335,
+          "cash": 220.4441,
+          "invested": 278.8683,
+          "dd": 4.89
+        },
+        {
+          "ts": "2026-06-08T11:05:40",
+          "equity": 249.0853,
+          "cash": 220.4441,
+          "invested": 278.8165,
+          "dd": 4.87
+        },
+        {
+          "ts": "2026-06-08T11:07:40",
+          "equity": 248.9613,
+          "cash": 220.4441,
+          "invested": 278.9405,
+          "dd": 4.91
+        },
+        {
+          "ts": "2026-06-08T11:09:41",
+          "equity": 248.5876,
+          "cash": 220.4441,
+          "invested": 279.3142,
+          "dd": 5.06
+        },
+        {
+          "ts": "2026-06-08T11:11:42",
+          "equity": 248.6345,
+          "cash": 220.4441,
+          "invested": 279.2673,
+          "dd": 5.04
+        },
+        {
+          "ts": "2026-06-08T11:13:43",
+          "equity": 247.7978,
+          "cash": 220.4441,
+          "invested": 280.104,
+          "dd": 5.36
+        },
+        {
+          "ts": "2026-06-08T11:15:44",
+          "equity": 247.5082,
+          "cash": 220.4441,
+          "invested": 280.3936,
+          "dd": 5.47
+        },
+        {
+          "ts": "2026-06-08T11:17:45",
+          "equity": 246.8904,
+          "cash": 220.4441,
+          "invested": 281.0114,
+          "dd": 5.7
+        },
+        {
+          "ts": "2026-06-08T11:19:46",
+          "equity": 246.5215,
+          "cash": 220.4441,
+          "invested": 281.3803,
+          "dd": 5.85
+        },
+        {
+          "ts": "2026-06-08T11:21:47",
+          "equity": 246.2707,
+          "cash": 220.4441,
+          "invested": 281.6311,
+          "dd": 5.94
+        },
+        {
+          "ts": "2026-06-08T11:23:48",
+          "equity": 245.8869,
+          "cash": 220.4441,
+          "invested": 282.0149,
+          "dd": 6.09
+        },
+        {
+          "ts": "2026-06-08T11:25:49",
+          "equity": 245.8024,
+          "cash": 220.4441,
+          "invested": 282.0994,
+          "dd": 6.12
+        },
+        {
+          "ts": "2026-06-08T11:27:50",
+          "equity": 245.6375,
+          "cash": 220.4441,
+          "invested": 282.2643,
+          "dd": 6.18
+        },
+        {
+          "ts": "2026-06-08T11:29:51",
+          "equity": 245.4019,
+          "cash": 220.4441,
+          "invested": 282.4999,
+          "dd": 6.27
+        },
+        {
+          "ts": "2026-06-08T11:31:52",
+          "equity": 245.4194,
+          "cash": 220.4441,
+          "invested": 282.4824,
+          "dd": 6.27
+        },
+        {
+          "ts": "2026-06-08T11:33:53",
+          "equity": 245.2426,
+          "cash": 220.4441,
+          "invested": 282.6592,
+          "dd": 6.33
+        },
+        {
+          "ts": "2026-06-08T11:35:54",
+          "equity": 245.3249,
+          "cash": 220.4441,
+          "invested": 282.5769,
+          "dd": 6.3
+        },
+        {
+          "ts": "2026-06-08T11:37:54",
+          "equity": 244.8138,
+          "cash": 244.8138,
+          "invested": 0,
+          "dd": 6.5
+        },
+        {
+          "ts": "2026-06-08T11:39:55",
+          "equity": 244.8138,
+          "cash": 244.8138,
+          "invested": 0,
+          "dd": 6.5
+        },
+        {
+          "ts": "2026-06-08T11:41:56",
+          "equity": 244.8138,
+          "cash": 244.8138,
+          "invested": 0,
+          "dd": 6.5
+        },
+        {
+          "ts": "2026-06-08T11:43:57",
+          "equity": 244.8138,
+          "cash": 244.8138,
+          "invested": 0,
+          "dd": 6.5
+        },
+        {
+          "ts": "2026-06-08T11:45:58",
+          "equity": 244.8138,
+          "cash": 244.8138,
+          "invested": 0,
+          "dd": 6.5
+        },
+        {
+          "ts": "2026-06-08T11:47:59",
+          "equity": 244.8138,
+          "cash": 244.8138,
+          "invested": 0,
+          "dd": 6.5
+        },
+        {
+          "ts": "2026-06-08T11:50:00",
+          "equity": 244.8138,
+          "cash": 244.8138,
+          "invested": 0,
+          "dd": 6.5
+        },
+        {
+          "ts": "2026-06-08T11:52:01",
+          "equity": 244.8138,
+          "cash": 244.8138,
+          "invested": 0,
+          "dd": 6.5
+        },
+        {
+          "ts": "2026-06-08T11:54:02",
+          "equity": 244.8138,
+          "cash": 244.8138,
+          "invested": 0,
+          "dd": 6.5
+        },
+        {
+          "ts": "2026-06-08T11:56:03",
+          "equity": 244.8138,
+          "cash": 244.8138,
+          "invested": 0,
+          "dd": 6.5
+        },
+        {
+          "ts": "2026-06-08T11:58:04",
+          "equity": 244.8138,
+          "cash": 244.8138,
+          "invested": 0,
+          "dd": 6.5
+        },
+        {
+          "ts": "2026-06-08T12:00:05",
+          "equity": 244.8138,
+          "cash": 244.8138,
+          "invested": 0,
+          "dd": 6.5
+        },
+        {
+          "ts": "2026-06-08T12:02:05",
+          "equity": 244.8138,
+          "cash": 244.8138,
+          "invested": 0,
+          "dd": 6.5
+        },
+        {
+          "ts": "2026-06-08T12:04:06",
+          "equity": 244.8138,
+          "cash": 244.8138,
+          "invested": 0,
+          "dd": 6.5
+        },
+        {
+          "ts": "2026-06-08T12:06:07",
+          "equity": 244.8138,
+          "cash": 244.8138,
+          "invested": 0,
+          "dd": 6.5
+        },
+        {
+          "ts": "2026-06-08T12:13:03",
+          "equity": 244.7588,
+          "cash": 217.2172,
+          "invested": 275.4155,
+          "dd": 6.52
+        },
+        {
+          "ts": "2026-06-08T12:15:04",
+          "equity": 244.4895,
+          "cash": 217.2172,
+          "invested": 275.6848,
+          "dd": 6.62
+        },
+        {
+          "ts": "2026-06-08T12:17:04",
+          "equity": 244.394,
+          "cash": 217.2172,
+          "invested": 275.7803,
+          "dd": 6.66
+        },
+        {
+          "ts": "2026-06-08T12:19:05",
+          "equity": 244.514,
+          "cash": 217.2172,
+          "invested": 275.6603,
+          "dd": 6.61
+        },
+        {
+          "ts": "2026-06-08T12:21:06",
+          "equity": 244.5988,
+          "cash": 217.2172,
+          "invested": 275.5755,
+          "dd": 6.58
+        },
+        {
+          "ts": "2026-06-08T12:23:07",
+          "equity": 244.6548,
+          "cash": 217.2172,
+          "invested": 275.5195,
+          "dd": 6.56
+        },
+        {
+          "ts": "2026-06-08T12:25:08",
+          "equity": 244.1647,
+          "cash": 217.2172,
+          "invested": 276.0096,
+          "dd": 6.75
+        },
+        {
+          "ts": "2026-06-08T12:27:09",
+          "equity": 243.9632,
+          "cash": 217.2172,
+          "invested": 276.2111,
+          "dd": 6.82
+        },
+        {
+          "ts": "2026-06-08T12:29:10",
+          "equity": 243.818,
+          "cash": 217.2172,
+          "invested": 276.3562,
+          "dd": 6.88
+        },
+        {
+          "ts": "2026-06-08T12:31:11",
+          "equity": 243.6326,
+          "cash": 217.2172,
+          "invested": 276.5417,
+          "dd": 6.95
+        },
+        {
+          "ts": "2026-06-08T12:33:12",
+          "equity": 243.2172,
+          "cash": 217.2172,
+          "invested": 276.9571,
+          "dd": 7.11
+        },
+        {
+          "ts": "2026-06-08T12:35:13",
+          "equity": 243.2929,
+          "cash": 217.2172,
+          "invested": 276.8814,
+          "dd": 7.08
+        },
+        {
+          "ts": "2026-06-08T12:37:14",
+          "equity": 243.1759,
+          "cash": 217.2172,
+          "invested": 276.9984,
+          "dd": 7.12
+        },
+        {
+          "ts": "2026-06-08T12:39:15",
+          "equity": 242.458,
+          "cash": 217.2172,
+          "invested": 277.7163,
+          "dd": 7.4
+        },
+        {
+          "ts": "2026-06-08T12:41:16",
+          "equity": 242.2719,
+          "cash": 217.2172,
+          "invested": 277.9024,
+          "dd": 7.47
+        },
+        {
+          "ts": "2026-06-08T12:43:17",
+          "equity": 242.0693,
+          "cash": 217.2172,
+          "invested": 278.105,
+          "dd": 7.55
+        },
+        {
+          "ts": "2026-06-08T12:45:18",
+          "equity": 241.1901,
+          "cash": 217.2172,
+          "invested": 278.9842,
+          "dd": 7.88
+        },
+        {
+          "ts": "2026-06-08T12:47:19",
+          "equity": 241.1576,
+          "cash": 217.2172,
+          "invested": 279.0167,
+          "dd": 7.89
+        },
+        {
+          "ts": "2026-06-08T12:49:20",
+          "equity": 240.9704,
+          "cash": 217.2172,
+          "invested": 279.2039,
+          "dd": 7.97
+        },
+        {
+          "ts": "2026-06-08T12:51:21",
+          "equity": 240.6292,
+          "cash": 217.2172,
+          "invested": 279.5451,
+          "dd": 8.1
+        },
+        {
+          "ts": "2026-06-08T12:53:21",
+          "equity": 240.914,
+          "cash": 217.2172,
+          "invested": 279.2603,
+          "dd": 7.99
+        },
+        {
+          "ts": "2026-06-08T12:55:22",
+          "equity": 240.9747,
+          "cash": 217.2172,
+          "invested": 279.1996,
+          "dd": 7.96
+        },
+        {
+          "ts": "2026-06-08T12:57:23",
+          "equity": 240.8895,
+          "cash": 217.2172,
+          "invested": 279.2848,
+          "dd": 8.0
+        },
+        {
+          "ts": "2026-06-08T12:59:24",
+          "equity": 240.3373,
+          "cash": 217.2172,
+          "invested": 279.837,
+          "dd": 8.21
+        },
+        {
+          "ts": "2026-06-08T13:01:26",
+          "equity": 240.1483,
+          "cash": 217.2172,
+          "invested": 280.026,
+          "dd": 8.28
+        },
+        {
+          "ts": "2026-06-08T13:03:27",
+          "equity": 240.2017,
+          "cash": 217.2172,
+          "invested": 279.9726,
+          "dd": 8.26
+        },
+        {
+          "ts": "2026-06-08T13:05:28",
+          "equity": 240.4006,
+          "cash": 217.2172,
+          "invested": 279.7737,
+          "dd": 8.18
+        },
+        {
+          "ts": "2026-06-08T13:07:28",
+          "equity": 240.5059,
+          "cash": 217.2172,
+          "invested": 279.6684,
+          "dd": 8.14
+        },
+        {
+          "ts": "2026-06-08T13:09:29",
+          "equity": 240.4481,
+          "cash": 217.2172,
+          "invested": 279.7262,
+          "dd": 8.17
+        },
+        {
+          "ts": "2026-06-08T13:11:30",
+          "equity": 240.4906,
+          "cash": 217.2172,
+          "invested": 279.6837,
+          "dd": 8.15
+        },
+        {
+          "ts": "2026-06-08T13:13:31",
+          "equity": 240.9693,
+          "cash": 217.2172,
+          "invested": 279.205,
+          "dd": 7.97
+        },
+        {
+          "ts": "2026-06-08T13:15:32",
+          "equity": 240.842,
+          "cash": 217.2172,
+          "invested": 279.3323,
+          "dd": 8.01
+        },
+        {
+          "ts": "2026-06-08T13:17:33",
+          "equity": 240.8164,
+          "cash": 217.2172,
+          "invested": 279.3579,
+          "dd": 8.02
+        },
+        {
+          "ts": "2026-06-08T13:19:34",
+          "equity": 240.9272,
+          "cash": 217.2172,
+          "invested": 279.2471,
+          "dd": 7.98
+        },
+        {
+          "ts": "2026-06-08T13:21:35",
+          "equity": 240.966,
+          "cash": 217.2172,
+          "invested": 279.2083,
+          "dd": 7.97
+        },
+        {
+          "ts": "2026-06-08T13:23:36",
+          "equity": 240.6262,
+          "cash": 217.2172,
+          "invested": 279.5481,
+          "dd": 8.1
+        },
+        {
+          "ts": "2026-06-08T13:25:37",
+          "equity": 240.5436,
+          "cash": 217.2172,
+          "invested": 279.6307,
+          "dd": 8.13
+        },
+        {
+          "ts": "2026-06-08T13:27:38",
+          "equity": 240.8255,
+          "cash": 217.2172,
+          "invested": 279.3488,
+          "dd": 8.02
+        },
+        {
+          "ts": "2026-06-08T13:29:39",
+          "equity": 241.2322,
+          "cash": 217.2172,
+          "invested": 278.9421,
+          "dd": 7.87
+        },
+        {
+          "ts": "2026-06-08T13:31:40",
+          "equity": 241.5591,
+          "cash": 217.2172,
+          "invested": 278.6152,
+          "dd": 7.74
+        },
+        {
+          "ts": "2026-06-08T13:33:41",
+          "equity": 241.7244,
+          "cash": 217.2172,
+          "invested": 278.4499,
+          "dd": 7.68
+        },
+        {
+          "ts": "2026-06-08T13:35:42",
+          "equity": 242.0605,
+          "cash": 217.2172,
+          "invested": 278.1138,
+          "dd": 7.55
+        },
+        {
+          "ts": "2026-06-08T13:37:43",
+          "equity": 241.5211,
+          "cash": 217.2172,
+          "invested": 278.6532,
+          "dd": 7.76
+        },
+        {
+          "ts": "2026-06-08T13:39:44",
+          "equity": 241.5109,
+          "cash": 217.2172,
+          "invested": 278.6634,
+          "dd": 7.76
+        },
+        {
+          "ts": "2026-06-08T13:41:45",
+          "equity": 241.6454,
+          "cash": 217.2172,
+          "invested": 278.5289,
+          "dd": 7.71
+        },
+        {
+          "ts": "2026-06-08T13:43:46",
+          "equity": 241.6462,
+          "cash": 217.2172,
+          "invested": 278.5281,
+          "dd": 7.71
+        },
+        {
+          "ts": "2026-06-08T13:45:47",
+          "equity": 241.5306,
+          "cash": 217.2172,
+          "invested": 278.6437,
+          "dd": 7.75
+        },
+        {
+          "ts": "2026-06-08T13:47:48",
+          "equity": 241.5606,
+          "cash": 217.2172,
+          "invested": 278.6137,
+          "dd": 7.74
+        },
+        {
+          "ts": "2026-06-08T13:49:49",
+          "equity": 241.3262,
+          "cash": 217.2172,
+          "invested": 278.8481,
+          "dd": 7.83
+        },
+        {
+          "ts": "2026-06-08T13:51:50",
+          "equity": 241.2918,
+          "cash": 217.2172,
+          "invested": 278.8825,
+          "dd": 7.84
+        },
+        {
+          "ts": "2026-06-08T13:53:51",
+          "equity": 241.0069,
+          "cash": 217.2172,
+          "invested": 279.1674,
+          "dd": 7.95
+        },
+        {
+          "ts": "2026-06-08T13:55:52",
+          "equity": 240.605,
+          "cash": 217.2172,
+          "invested": 279.5693,
+          "dd": 8.11
+        },
+        {
+          "ts": "2026-06-08T13:57:53",
+          "equity": 240.4609,
+          "cash": 217.2172,
+          "invested": 279.7134,
+          "dd": 8.16
+        },
+        {
+          "ts": "2026-06-08T13:59:54",
+          "equity": 240.4299,
+          "cash": 217.2172,
+          "invested": 279.7444,
+          "dd": 8.17
+        },
+        {
+          "ts": "2026-06-08T14:01:55",
+          "equity": 240.3311,
+          "cash": 217.2172,
+          "invested": 279.8432,
+          "dd": 8.21
+        },
+        {
+          "ts": "2026-06-08T14:03:56",
+          "equity": 240.375,
+          "cash": 217.2172,
+          "invested": 279.7993,
+          "dd": 8.19
+        },
+        {
+          "ts": "2026-06-08T14:05:57",
+          "equity": 240.7118,
+          "cash": 217.2172,
+          "invested": 279.4625,
+          "dd": 8.06
+        },
+        {
+          "ts": "2026-06-08T14:07:58",
+          "equity": 241.5416,
+          "cash": 217.2172,
+          "invested": 278.6327,
+          "dd": 7.75
+        },
+        {
+          "ts": "2026-06-08T14:09:58",
+          "equity": 241.8755,
+          "cash": 217.2172,
+          "invested": 278.2988,
+          "dd": 7.62
+        },
+        {
+          "ts": "2026-06-08T14:11:59",
+          "equity": 241.7511,
+          "cash": 217.2172,
+          "invested": 278.4232,
+          "dd": 7.67
+        },
+        {
+          "ts": "2026-06-08T14:14:01",
+          "equity": 241.7343,
+          "cash": 217.2172,
+          "invested": 278.44,
+          "dd": 7.67
+        },
+        {
+          "ts": "2026-06-08T14:16:02",
+          "equity": 241.7851,
+          "cash": 217.2172,
+          "invested": 278.3892,
+          "dd": 7.65
+        },
+        {
+          "ts": "2026-06-08T14:18:03",
+          "equity": 241.9051,
+          "cash": 217.2172,
+          "invested": 278.2692,
+          "dd": 7.61
+        },
+        {
+          "ts": "2026-06-08T14:20:03",
+          "equity": 242.0108,
+          "cash": 217.2172,
+          "invested": 278.1635,
+          "dd": 7.57
+        },
+        {
+          "ts": "2026-06-08T14:22:04",
+          "equity": 242.0038,
+          "cash": 217.2172,
+          "invested": 278.1705,
+          "dd": 7.57
+        },
+        {
+          "ts": "2026-06-08T14:24:05",
+          "equity": 241.7742,
+          "cash": 217.2172,
+          "invested": 278.4001,
+          "dd": 7.66
+        },
+        {
+          "ts": "2026-06-08T14:26:06",
+          "equity": 241.6864,
+          "cash": 217.2172,
+          "invested": 278.4879,
+          "dd": 7.69
+        },
+        {
+          "ts": "2026-06-08T14:28:07",
+          "equity": 241.7617,
+          "cash": 217.2172,
+          "invested": 278.4126,
+          "dd": 7.66
+        },
+        {
+          "ts": "2026-06-08T14:30:08",
+          "equity": 241.6396,
+          "cash": 217.2172,
+          "invested": 278.5347,
+          "dd": 7.71
+        },
+        {
+          "ts": "2026-06-08T14:32:09",
+          "equity": 241.6447,
+          "cash": 217.2172,
+          "invested": 278.5296,
+          "dd": 7.71
+        },
+        {
+          "ts": "2026-06-08T14:34:10",
+          "equity": 241.5006,
+          "cash": 217.2172,
+          "invested": 278.6737,
+          "dd": 7.76
+        },
+        {
+          "ts": "2026-06-08T14:36:11",
+          "equity": 241.2863,
+          "cash": 217.2172,
+          "invested": 278.888,
+          "dd": 7.85
+        },
+        {
+          "ts": "2026-06-08T14:38:12",
+          "equity": 241.4728,
+          "cash": 217.2172,
+          "invested": 278.7015,
+          "dd": 7.77
+        },
+        {
+          "ts": "2026-06-08T14:40:13",
+          "equity": 241.5909,
+          "cash": 217.2172,
+          "invested": 278.5834,
+          "dd": 7.73
+        },
+        {
+          "ts": "2026-06-08T14:42:14",
+          "equity": 241.8627,
+          "cash": 217.2172,
+          "invested": 278.3116,
+          "dd": 7.63
+        },
+        {
+          "ts": "2026-06-08T14:44:15",
+          "equity": 242.1128,
+          "cash": 217.2172,
+          "invested": 278.0615,
+          "dd": 7.53
+        },
+        {
+          "ts": "2026-06-08T14:46:16",
+          "equity": 242.081,
+          "cash": 217.2172,
+          "invested": 278.0933,
+          "dd": 7.54
+        },
+        {
+          "ts": "2026-06-08T14:48:17",
+          "equity": 241.8897,
+          "cash": 217.2172,
+          "invested": 278.2846,
+          "dd": 7.61
+        },
+        {
+          "ts": "2026-06-08T14:50:18",
+          "equity": 241.6374,
+          "cash": 217.2172,
+          "invested": 278.5369,
+          "dd": 7.71
+        },
+        {
+          "ts": "2026-06-08T14:52:19",
+          "equity": 241.5112,
+          "cash": 217.2172,
+          "invested": 278.6631,
+          "dd": 7.76
+        },
+        {
+          "ts": "2026-06-08T14:54:19",
+          "equity": 241.3869,
+          "cash": 217.2172,
+          "invested": 278.7874,
+          "dd": 7.81
+        },
+        {
+          "ts": "2026-06-08T14:56:20",
+          "equity": 241.2567,
+          "cash": 217.2172,
+          "invested": 278.9176,
+          "dd": 7.86
+        },
+        {
+          "ts": "2026-06-08T14:58:21",
+          "equity": 241.1086,
+          "cash": 217.2172,
+          "invested": 279.0657,
+          "dd": 7.91
+        },
+        {
+          "ts": "2026-06-08T15:00:22",
+          "equity": 240.9268,
+          "cash": 217.2172,
+          "invested": 279.2475,
+          "dd": 7.98
+        },
+        {
+          "ts": "2026-06-08T15:02:23",
+          "equity": 240.6694,
+          "cash": 217.2172,
+          "invested": 279.5049,
+          "dd": 8.08
+        },
+        {
+          "ts": "2026-06-08T15:04:25",
+          "equity": 240.3403,
+          "cash": 217.2172,
+          "invested": 279.834,
+          "dd": 8.21
+        },
+        {
+          "ts": "2026-06-08T15:06:26",
+          "equity": 240.1823,
+          "cash": 217.2172,
+          "invested": 279.992,
+          "dd": 8.27
+        },
+        {
+          "ts": "2026-06-08T15:08:27",
+          "equity": 239.7295,
+          "cash": 217.2172,
+          "invested": 280.4448,
+          "dd": 8.44
+        },
+        {
+          "ts": "2026-06-08T15:10:28",
+          "equity": 239.3218,
+          "cash": 217.2172,
+          "invested": 280.8525,
+          "dd": 8.6
+        },
+        {
+          "ts": "2026-06-08T15:12:29",
+          "equity": 239.1675,
+          "cash": 217.2172,
+          "invested": 281.0068,
+          "dd": 8.65
+        },
+        {
+          "ts": "2026-06-08T15:14:30",
+          "equity": 238.5842,
+          "cash": 217.2172,
+          "invested": 281.5901,
+          "dd": 8.88
+        },
+        {
+          "ts": "2026-06-08T15:16:31",
+          "equity": 238.3757,
+          "cash": 217.2172,
+          "invested": 281.7986,
+          "dd": 8.96
+        },
+        {
+          "ts": "2026-06-08T15:18:32",
+          "equity": 238.4818,
+          "cash": 217.2172,
+          "invested": 281.6925,
+          "dd": 8.92
+        },
+        {
+          "ts": "2026-06-08T15:20:33",
+          "equity": 238.1168,
+          "cash": 217.2172,
+          "invested": 282.0575,
+          "dd": 9.06
+        },
+        {
+          "ts": "2026-06-08T15:22:34",
+          "equity": 238.1859,
+          "cash": 217.2172,
+          "invested": 281.9884,
+          "dd": 9.03
+        },
+        {
+          "ts": "2026-06-08T15:24:35",
+          "equity": 238.5575,
+          "cash": 217.2172,
+          "invested": 281.6168,
+          "dd": 8.89
+        },
+        {
+          "ts": "2026-06-08T15:26:36",
+          "equity": 238.3918,
+          "cash": 217.2172,
+          "invested": 281.7825,
+          "dd": 8.95
+        },
+        {
+          "ts": "2026-06-08T15:28:37",
+          "equity": 238.481,
+          "cash": 217.2172,
+          "invested": 281.6932,
+          "dd": 8.92
+        },
+        {
+          "ts": "2026-06-08T15:30:38",
+          "equity": 238.5747,
+          "cash": 217.2172,
+          "invested": 281.5996,
+          "dd": 8.88
+        },
+        {
+          "ts": "2026-06-08T15:32:39",
+          "equity": 239.0248,
+          "cash": 217.2172,
+          "invested": 281.1495,
+          "dd": 8.71
+        },
+        {
+          "ts": "2026-06-08T15:34:40",
+          "equity": 240.0232,
+          "cash": 217.2172,
+          "invested": 280.1511,
+          "dd": 8.33
+        },
+        {
+          "ts": "2026-06-08T15:36:41",
+          "equity": 240.3812,
+          "cash": 217.2172,
+          "invested": 279.7931,
+          "dd": 8.19
+        },
+        {
+          "ts": "2026-06-08T15:38:42",
+          "equity": 240.9221,
+          "cash": 217.2172,
+          "invested": 279.2522,
+          "dd": 7.98
+        },
+        {
+          "ts": "2026-06-08T15:40:43",
+          "equity": 240.7593,
+          "cash": 217.2172,
+          "invested": 279.4149,
+          "dd": 8.05
+        },
+        {
+          "ts": "2026-06-08T15:42:44",
+          "equity": 240.7433,
+          "cash": 217.2172,
+          "invested": 279.431,
+          "dd": 8.05
+        },
+        {
+          "ts": "2026-06-08T15:44:45",
+          "equity": 240.7071,
+          "cash": 217.2172,
+          "invested": 279.4672,
+          "dd": 8.07
+        },
+        {
+          "ts": "2026-06-08T15:46:46",
+          "equity": 240.5443,
+          "cash": 217.2172,
+          "invested": 279.63,
+          "dd": 8.13
+        },
+        {
+          "ts": "2026-06-08T15:48:47",
+          "equity": 240.3816,
+          "cash": 217.2172,
+          "invested": 279.7927,
+          "dd": 8.19
+        },
+        {
+          "ts": "2026-06-08T15:50:48",
+          "equity": 240.5132,
+          "cash": 217.2172,
+          "invested": 279.6611,
+          "dd": 8.14
+        },
+        {
+          "ts": "2026-06-08T15:52:49",
+          "equity": 240.8307,
+          "cash": 217.2172,
+          "invested": 279.3436,
+          "dd": 8.02
+        },
+        {
+          "ts": "2026-06-08T15:54:50",
+          "equity": 240.8873,
+          "cash": 217.2172,
+          "invested": 279.287,
+          "dd": 8.0
+        },
+        {
+          "ts": "2026-06-08T15:56:51",
+          "equity": 241.1883,
+          "cash": 217.2172,
+          "invested": 278.986,
+          "dd": 7.88
+        },
+        {
+          "ts": "2026-06-08T15:58:52",
+          "equity": 241.6059,
+          "cash": 217.2172,
+          "invested": 278.5684,
+          "dd": 7.72
+        },
+        {
+          "ts": "2026-06-08T16:00:53",
+          "equity": 241.6996,
+          "cash": 217.2172,
+          "invested": 278.4747,
+          "dd": 7.69
+        },
+        {
+          "ts": "2026-06-08T16:02:54",
+          "equity": 241.7252,
+          "cash": 217.2172,
+          "invested": 278.4491,
+          "dd": 7.68
+        },
+        {
+          "ts": "2026-06-08T16:04:55",
+          "equity": 241.6271,
+          "cash": 217.2172,
+          "invested": 278.5471,
+          "dd": 7.72
+        },
+        {
+          "ts": "2026-06-08T16:07:57",
+          "equity": 241.0179,
+          "cash": 217.2172,
+          "invested": 279.1564,
+          "dd": 7.95
+        },
+        {
+          "ts": "2026-06-08T16:09:58",
+          "equity": 240.7948,
+          "cash": 217.2172,
+          "invested": 279.3795,
+          "dd": 8.03
+        },
+        {
+          "ts": "2026-06-08T16:11:59",
+          "equity": 240.7359,
+          "cash": 217.2172,
+          "invested": 279.4384,
+          "dd": 8.06
+        },
+        {
+          "ts": "2026-06-08T16:18:57",
+          "equity": 240.5531,
+          "cash": 217.2172,
+          "invested": 279.6212,
+          "dd": 8.13
+        },
+        {
+          "ts": "2026-06-08T16:20:57",
+          "equity": 240.138,
+          "cash": 217.2172,
+          "invested": 280.0363,
+          "dd": 8.28
+        },
+        {
+          "ts": "2026-06-08T16:22:58",
+          "equity": 239.4882,
+          "cash": 217.2172,
+          "invested": 280.6861,
+          "dd": 8.53
+        },
+        {
+          "ts": "2026-06-08T16:24:59",
+          "equity": 238.9488,
+          "cash": 217.2172,
+          "invested": 281.2255,
+          "dd": 8.74
+        },
+        {
+          "ts": "2026-06-08T16:27:00",
+          "equity": 238.7915,
+          "cash": 217.2172,
+          "invested": 281.3828,
+          "dd": 8.8
+        },
+        {
+          "ts": "2026-06-08T16:29:01",
+          "equity": 238.8069,
+          "cash": 217.2172,
+          "invested": 281.3674,
+          "dd": 8.79
+        },
+        {
+          "ts": "2026-06-08T16:31:02",
+          "equity": 239.5357,
+          "cash": 217.2172,
+          "invested": 280.6386,
+          "dd": 8.51
+        },
+        {
+          "ts": "2026-06-08T16:33:03",
+          "equity": 239.7771,
+          "cash": 217.2172,
+          "invested": 280.3972,
+          "dd": 8.42
+        },
+        {
+          "ts": "2026-06-08T16:35:03",
+          "equity": 240.1271,
+          "cash": 217.2172,
+          "invested": 280.0472,
+          "dd": 8.29
+        },
+        {
+          "ts": "2026-06-08T16:37:04",
+          "equity": 240.8552,
+          "cash": 217.2172,
+          "invested": 279.3191,
+          "dd": 8.01
+        },
+        {
+          "ts": "2026-06-08T16:39:05",
+          "equity": 240.9195,
+          "cash": 217.2172,
+          "invested": 279.2548,
+          "dd": 7.99
+        },
+        {
+          "ts": "2026-06-08T16:41:06",
+          "equity": 241.1532,
+          "cash": 217.2172,
+          "invested": 279.0211,
+          "dd": 7.9
+        },
+        {
+          "ts": "2026-06-08T16:43:07",
+          "equity": 240.9177,
+          "cash": 217.2172,
+          "invested": 279.2566,
+          "dd": 7.99
+        },
+        {
+          "ts": "2026-06-08T16:45:08",
+          "equity": 240.6672,
+          "cash": 217.2172,
+          "invested": 279.5071,
+          "dd": 8.08
+        },
+        {
+          "ts": "2026-06-08T16:47:09",
+          "equity": 240.7001,
+          "cash": 217.2172,
+          "invested": 279.4742,
+          "dd": 8.07
+        },
+        {
+          "ts": "2026-06-08T16:49:10",
+          "equity": 240.8475,
+          "cash": 217.2172,
+          "invested": 279.3268,
+          "dd": 8.01
+        },
+        {
+          "ts": "2026-06-08T16:51:11",
+          "equity": 240.9952,
+          "cash": 217.2172,
+          "invested": 279.1791,
+          "dd": 7.96
+        },
+        {
+          "ts": "2026-06-08T16:53:12",
+          "equity": 240.8643,
+          "cash": 217.2172,
+          "invested": 279.31,
+          "dd": 8.01
+        },
+        {
+          "ts": "2026-06-08T16:55:13",
+          "equity": 241.0172,
+          "cash": 217.2172,
+          "invested": 279.1571,
+          "dd": 7.95
+        },
+        {
+          "ts": "2026-06-08T16:57:14",
+          "equity": 241.3225,
+          "cash": 217.2172,
+          "invested": 278.8518,
+          "dd": 7.83
+        },
+        {
+          "ts": "2026-06-08T16:59:15",
+          "equity": 241.381,
+          "cash": 217.2172,
+          "invested": 278.7933,
+          "dd": 7.81
+        },
+        {
+          "ts": "2026-06-08T17:01:16",
+          "equity": 241.5719,
+          "cash": 217.2172,
+          "invested": 278.6024,
+          "dd": 7.74
+        },
+        {
+          "ts": "2026-06-08T17:03:17",
+          "equity": 242.0422,
+          "cash": 217.2172,
+          "invested": 278.1321,
+          "dd": 7.56
+        },
+        {
+          "ts": "2026-06-08T17:05:18",
+          "equity": 242.4101,
+          "cash": 217.2172,
+          "invested": 277.7642,
+          "dd": 7.42
+        },
+        {
+          "ts": "2026-06-08T17:07:19",
+          "equity": 242.0938,
+          "cash": 217.2172,
+          "invested": 278.0805,
+          "dd": 7.54
+        },
+        {
+          "ts": "2026-06-08T17:09:20",
+          "equity": 242.0203,
+          "cash": 217.2172,
+          "invested": 278.154,
+          "dd": 7.56
+        },
+        {
+          "ts": "2026-06-08T17:11:21",
+          "equity": 242.1647,
+          "cash": 217.2172,
+          "invested": 278.0096,
+          "dd": 7.51
+        },
+        {
+          "ts": "2026-06-08T17:13:22",
+          "equity": 242.3041,
+          "cash": 217.2172,
+          "invested": 277.8702,
+          "dd": 7.46
+        },
+        {
+          "ts": "2026-06-08T17:15:23",
+          "equity": 242.4767,
+          "cash": 217.2172,
+          "invested": 277.6976,
+          "dd": 7.39
+        },
+        {
+          "ts": "2026-06-08T17:17:24",
+          "equity": 242.6785,
+          "cash": 217.2172,
+          "invested": 277.4958,
+          "dd": 7.31
+        },
+        {
+          "ts": "2026-06-08T17:19:25",
+          "equity": 242.8508,
+          "cash": 217.2172,
+          "invested": 277.3235,
+          "dd": 7.25
+        },
+        {
+          "ts": "2026-06-08T17:21:26",
+          "equity": 242.9214,
+          "cash": 217.2172,
+          "invested": 277.2529,
+          "dd": 7.22
+        },
+        {
+          "ts": "2026-06-08T17:23:27",
+          "equity": 242.8054,
+          "cash": 217.2172,
+          "invested": 277.3689,
+          "dd": 7.27
+        },
+        {
+          "ts": "2026-06-08T17:25:28",
+          "equity": 242.7144,
+          "cash": 217.2172,
+          "invested": 277.4599,
+          "dd": 7.3
+        },
+        {
+          "ts": "2026-06-08T17:27:28",
+          "equity": 242.1358,
+          "cash": 217.2172,
+          "invested": 278.0385,
+          "dd": 7.52
+        },
+        {
+          "ts": "2026-06-08T17:29:29",
+          "equity": 241.844,
+          "cash": 217.2172,
+          "invested": 278.3303,
+          "dd": 7.63
+        },
+        {
+          "ts": "2026-06-08T17:31:30",
+          "equity": 241.3902,
+          "cash": 217.2172,
+          "invested": 278.7841,
+          "dd": 7.81
+        },
+        {
+          "ts": "2026-06-08T17:33:32",
+          "equity": 241.4465,
+          "cash": 217.2172,
+          "invested": 278.7278,
+          "dd": 7.78
+        },
+        {
+          "ts": "2026-06-08T17:35:33",
+          "equity": 242.1347,
+          "cash": 217.2172,
+          "invested": 278.0396,
+          "dd": 7.52
+        },
+        {
+          "ts": "2026-06-08T17:37:34",
+          "equity": 242.4701,
+          "cash": 217.2172,
+          "invested": 277.7042,
+          "dd": 7.39
+        },
+        {
+          "ts": "2026-06-08T17:39:35",
+          "equity": 242.5249,
+          "cash": 217.2172,
+          "invested": 277.6494,
+          "dd": 7.37
+        },
+        {
+          "ts": "2026-06-08T17:41:36",
+          "equity": 242.586,
+          "cash": 217.2172,
+          "invested": 277.5883,
+          "dd": 7.35
+        },
+        {
+          "ts": "2026-06-08T17:43:37",
+          "equity": 242.7751,
+          "cash": 217.2172,
+          "invested": 277.3992,
+          "dd": 7.28
+        },
+        {
+          "ts": "2026-06-08T17:45:38",
+          "equity": 242.5692,
+          "cash": 217.2172,
+          "invested": 277.6051,
+          "dd": 7.36
+        },
+        {
+          "ts": "2026-06-08T17:47:39",
+          "equity": 242.2598,
+          "cash": 217.2172,
+          "invested": 277.9145,
+          "dd": 7.47
+        },
+        {
+          "ts": "2026-06-08T17:49:39",
+          "equity": 242.1366,
+          "cash": 217.2172,
+          "invested": 278.0377,
+          "dd": 7.52
+        },
+        {
+          "ts": "2026-06-08T17:51:40",
+          "equity": 241.6586,
+          "cash": 217.2172,
+          "invested": 278.5157,
+          "dd": 7.7
+        },
+        {
+          "ts": "2026-06-08T17:53:41",
+          "equity": 241.418,
+          "cash": 217.2172,
+          "invested": 278.7563,
+          "dd": 7.79
+        },
+        {
+          "ts": "2026-06-08T17:55:42",
+          "equity": 241.3214,
+          "cash": 217.2172,
+          "invested": 278.8529,
+          "dd": 7.83
+        },
+        {
+          "ts": "2026-06-08T17:57:43",
+          "equity": 241.2552,
+          "cash": 217.2172,
+          "invested": 278.9191,
+          "dd": 7.86
+        },
+        {
+          "ts": "2026-06-08T17:59:44",
+          "equity": 241.1287,
+          "cash": 217.2172,
+          "invested": 279.0456,
+          "dd": 7.91
+        },
+        {
+          "ts": "2026-06-08T18:01:45",
+          "equity": 240.3611,
+          "cash": 217.2172,
+          "invested": 279.8132,
+          "dd": 8.2
+        },
+        {
+          "ts": "2026-06-08T18:03:46",
+          "equity": 239.802,
+          "cash": 217.2172,
+          "invested": 280.3723,
+          "dd": 8.41
+        },
+        {
+          "ts": "2026-06-08T18:05:47",
+          "equity": 239.882,
+          "cash": 217.2172,
+          "invested": 280.2923,
+          "dd": 8.38
+        },
+        {
+          "ts": "2026-06-08T18:07:48",
+          "equity": 239.8188,
+          "cash": 217.2172,
+          "invested": 280.3555,
+          "dd": 8.41
+        },
+        {
+          "ts": "2026-06-08T18:09:49",
+          "equity": 239.8184,
+          "cash": 217.2172,
+          "invested": 280.3559,
+          "dd": 8.41
+        },
+        {
+          "ts": "2026-06-08T18:11:50",
+          "equity": 239.867,
+          "cash": 217.2172,
+          "invested": 280.3073,
+          "dd": 8.39
+        },
+        {
+          "ts": "2026-06-08T18:13:50",
+          "equity": 240.0389,
+          "cash": 217.2172,
+          "invested": 280.1354,
+          "dd": 8.32
+        },
+        {
+          "ts": "2026-06-08T18:15:51",
+          "equity": 240.2137,
+          "cash": 217.2172,
+          "invested": 279.9606,
+          "dd": 8.25
+        },
+        {
+          "ts": "2026-06-08T18:17:52",
+          "equity": 240.2185,
+          "cash": 217.2172,
+          "invested": 279.9558,
+          "dd": 8.25
+        },
+        {
+          "ts": "2026-06-08T18:19:53",
+          "equity": 240.1951,
+          "cash": 217.2172,
+          "invested": 279.9792,
+          "dd": 8.26
+        },
+        {
+          "ts": "2026-06-08T18:21:54",
+          "equity": 240.2942,
+          "cash": 217.2172,
+          "invested": 279.8801,
+          "dd": 8.22
+        },
+        {
+          "ts": "2026-06-08T18:23:55",
+          "equity": 240.1768,
+          "cash": 217.2172,
+          "invested": 279.9975,
+          "dd": 8.27
+        },
+        {
+          "ts": "2026-06-08T18:25:56",
+          "equity": 240.2024,
+          "cash": 217.2172,
+          "invested": 279.9719,
+          "dd": 8.26
+        },
+        {
+          "ts": "2026-06-08T18:27:57",
+          "equity": 240.2006,
+          "cash": 217.2172,
+          "invested": 279.9737,
+          "dd": 8.26
+        },
+        {
+          "ts": "2026-06-08T18:29:57",
+          "equity": 240.281,
+          "cash": 217.2172,
+          "invested": 279.8933,
+          "dd": 8.23
+        },
+        {
+          "ts": "2026-06-08T18:31:58",
+          "equity": 239.8908,
+          "cash": 217.2172,
+          "invested": 280.2835,
+          "dd": 8.38
+        },
+        {
+          "ts": "2026-06-08T18:33:59",
+          "equity": 240.13,
+          "cash": 217.2172,
+          "invested": 280.0443,
+          "dd": 8.29
+        },
+        {
+          "ts": "2026-06-08T18:36:00",
+          "equity": 240.3278,
+          "cash": 217.2172,
+          "invested": 279.8465,
+          "dd": 8.21
+        },
+        {
+          "ts": "2026-06-08T18:38:01",
+          "equity": 240.5549,
+          "cash": 217.2172,
+          "invested": 279.6194,
+          "dd": 8.12
+        },
+        {
+          "ts": "2026-06-08T18:40:02",
+          "equity": 240.7155,
+          "cash": 217.2172,
+          "invested": 279.4588,
+          "dd": 8.06
+        },
+        {
+          "ts": "2026-06-08T18:42:03",
+          "equity": 241.0925,
+          "cash": 217.2172,
+          "invested": 279.0818,
+          "dd": 7.92
+        },
+        {
+          "ts": "2026-06-08T18:44:04",
+          "equity": 241.1016,
+          "cash": 217.2172,
+          "invested": 279.0727,
+          "dd": 7.92
+        },
+        {
+          "ts": "2026-06-08T18:46:05",
+          "equity": 241.1269,
+          "cash": 217.2172,
+          "invested": 279.0474,
+          "dd": 7.91
+        },
+        {
+          "ts": "2026-06-08T18:48:06",
+          "equity": 241.4414,
+          "cash": 217.2172,
+          "invested": 278.7329,
+          "dd": 7.79
+        },
+        {
+          "ts": "2026-06-08T18:50:07",
+          "equity": 241.7654,
+          "cash": 217.2172,
+          "invested": 278.4089,
+          "dd": 7.66
+        },
+        {
+          "ts": "2026-06-08T18:52:08",
+          "equity": 242.0813,
+          "cash": 217.2172,
+          "invested": 278.0929,
+          "dd": 7.54
+        },
+        {
+          "ts": "2026-06-08T18:54:09",
+          "equity": 242.1706,
+          "cash": 217.2172,
+          "invested": 278.0037,
+          "dd": 7.51
+        },
+        {
+          "ts": "2026-06-08T18:56:09",
+          "equity": 242.2192,
+          "cash": 217.2172,
+          "invested": 277.9551,
+          "dd": 7.49
+        },
+        {
+          "ts": "2026-06-08T18:58:10",
+          "equity": 241.9095,
+          "cash": 217.2172,
+          "invested": 278.2648,
+          "dd": 7.61
+        },
+        {
+          "ts": "2026-06-08T19:00:11",
+          "equity": 241.9453,
+          "cash": 217.2172,
+          "invested": 278.229,
+          "dd": 7.59
+        },
+        {
+          "ts": "2026-06-08T19:02:12",
+          "equity": 241.9278,
+          "cash": 217.2172,
+          "invested": 278.2465,
+          "dd": 7.6
+        },
+        {
+          "ts": "2026-06-08T19:04:13",
+          "equity": 241.9076,
+          "cash": 217.2172,
+          "invested": 278.2667,
+          "dd": 7.61
+        },
+        {
+          "ts": "2026-06-08T19:06:14",
+          "equity": 241.697,
+          "cash": 217.2172,
+          "invested": 278.4773,
+          "dd": 7.69
+        },
+        {
+          "ts": "2026-06-08T19:08:15",
+          "equity": 241.7193,
+          "cash": 217.2172,
+          "invested": 278.455,
+          "dd": 7.68
+        },
+        {
+          "ts": "2026-06-08T19:10:16",
+          "equity": 241.6981,
+          "cash": 217.2172,
+          "invested": 278.4762,
+          "dd": 7.69
+        },
+        {
+          "ts": "2026-06-08T19:12:17",
+          "equity": 242.006,
+          "cash": 217.2172,
+          "invested": 278.1683,
+          "dd": 7.57
+        },
+        {
+          "ts": "2026-06-08T19:14:18",
+          "equity": 241.9958,
+          "cash": 217.2172,
+          "invested": 278.1785,
+          "dd": 7.57
+        },
+        {
+          "ts": "2026-06-08T19:16:19",
+          "equity": 241.8564,
+          "cash": 217.2172,
+          "invested": 278.3179,
+          "dd": 7.63
+        },
+        {
+          "ts": "2026-06-08T19:18:19",
+          "equity": 241.9727,
+          "cash": 217.2172,
+          "invested": 278.2016,
+          "dd": 7.58
+        },
+        {
+          "ts": "2026-06-08T19:20:20",
+          "equity": 241.9779,
+          "cash": 217.2172,
+          "invested": 278.1964,
+          "dd": 7.58
+        },
+        {
+          "ts": "2026-06-08T19:22:21",
+          "equity": 241.7175,
+          "cash": 217.2172,
+          "invested": 278.4568,
+          "dd": 7.68
+        },
+        {
+          "ts": "2026-06-08T19:24:22",
+          "equity": 241.5562,
+          "cash": 217.2172,
+          "invested": 278.6181,
+          "dd": 7.74
+        },
+        {
+          "ts": "2026-06-08T19:26:23",
+          "equity": 241.5653,
+          "cash": 217.2172,
+          "invested": 278.6089,
+          "dd": 7.74
+        },
+        {
+          "ts": "2026-06-08T19:28:24",
+          "equity": 241.6794,
+          "cash": 217.2172,
+          "invested": 278.4949,
+          "dd": 7.7
+        },
+        {
+          "ts": "2026-06-08T19:30:25",
+          "equity": 241.6783,
+          "cash": 217.2172,
+          "invested": 278.4959,
+          "dd": 7.7
+        },
+        {
+          "ts": "2026-06-08T19:32:26",
+          "equity": 241.7921,
+          "cash": 217.2172,
+          "invested": 278.3822,
+          "dd": 7.65
+        },
+        {
+          "ts": "2026-06-08T19:34:27",
+          "equity": 241.7818,
+          "cash": 217.2172,
+          "invested": 278.3925,
+          "dd": 7.66
+        },
+        {
+          "ts": "2026-06-08T19:36:28",
+          "equity": 241.7464,
+          "cash": 217.2172,
+          "invested": 278.4279,
+          "dd": 7.67
+        },
+        {
+          "ts": "2026-06-08T19:38:29",
+          "equity": 241.7614,
+          "cash": 217.2172,
+          "invested": 278.4129,
+          "dd": 7.66
+        },
+        {
+          "ts": "2026-06-08T19:40:29",
+          "equity": 241.8535,
+          "cash": 217.2172,
+          "invested": 278.3208,
+          "dd": 7.63
+        },
+        {
+          "ts": "2026-06-08T19:42:30",
+          "equity": 242.0298,
+          "cash": 217.2172,
+          "invested": 278.1445,
+          "dd": 7.56
+        },
+        {
+          "ts": "2026-06-08T19:44:31",
+          "equity": 242.1135,
+          "cash": 217.2172,
+          "invested": 278.0608,
+          "dd": 7.53
+        },
+        {
+          "ts": "2026-06-08T19:46:32",
+          "equity": 242.1629,
+          "cash": 217.2172,
+          "invested": 278.0114,
+          "dd": 7.51
+        },
+        {
+          "ts": "2026-06-08T19:48:33",
+          "equity": 242.1552,
+          "cash": 217.2172,
+          "invested": 278.0191,
+          "dd": 7.51
+        },
+        {
+          "ts": "2026-06-08T19:50:34",
+          "equity": 242.2119,
+          "cash": 217.2172,
+          "invested": 277.9624,
+          "dd": 7.49
+        },
+        {
+          "ts": "2026-06-08T19:52:35",
+          "equity": 242.1431,
+          "cash": 217.2172,
+          "invested": 278.0311,
+          "dd": 7.52
+        },
+        {
+          "ts": "2026-06-08T19:54:36",
+          "equity": 242.2156,
+          "cash": 217.2172,
+          "invested": 277.9587,
+          "dd": 7.49
+        },
+        {
+          "ts": "2026-06-08T19:56:37",
+          "equity": 242.2839,
+          "cash": 217.2172,
+          "invested": 277.8904,
+          "dd": 7.46
+        },
+        {
+          "ts": "2026-06-08T19:58:38",
+          "equity": 242.3574,
+          "cash": 217.2172,
+          "invested": 277.8168,
+          "dd": 7.44
+        },
+        {
+          "ts": "2026-06-08T20:00:38",
+          "equity": 242.5231,
+          "cash": 217.2172,
+          "invested": 277.6512,
+          "dd": 7.37
+        },
+        {
+          "ts": "2026-06-08T20:02:39",
+          "equity": 242.5681,
+          "cash": 217.2172,
+          "invested": 277.6062,
+          "dd": 7.36
+        },
+        {
+          "ts": "2026-06-08T20:04:40",
+          "equity": 242.7012,
+          "cash": 217.2172,
+          "invested": 277.4731,
+          "dd": 7.3
+        },
+        {
+          "ts": "2026-06-08T20:06:41",
+          "equity": 242.8742,
+          "cash": 217.2172,
+          "invested": 277.3001,
+          "dd": 7.24
+        },
+        {
+          "ts": "2026-06-08T20:08:42",
+          "equity": 243.027,
+          "cash": 217.2172,
+          "invested": 277.1473,
+          "dd": 7.18
+        },
+        {
+          "ts": "2026-06-08T20:10:43",
+          "equity": 243.034,
+          "cash": 217.2172,
+          "invested": 277.1403,
+          "dd": 7.18
+        },
+        {
+          "ts": "2026-06-08T20:12:44",
+          "equity": 243.4037,
+          "cash": 217.2172,
+          "invested": 276.7706,
+          "dd": 7.04
+        },
+        {
+          "ts": "2026-06-08T20:14:45",
+          "equity": 243.6491,
+          "cash": 217.2172,
+          "invested": 276.5252,
+          "dd": 6.94
+        },
+        {
+          "ts": "2026-06-08T20:16:46",
+          "equity": 243.8411,
+          "cash": 217.2172,
+          "invested": 276.3332,
+          "dd": 6.87
+        },
+        {
+          "ts": "2026-06-08T20:18:47",
+          "equity": 244.0199,
+          "cash": 217.2172,
+          "invested": 276.1544,
+          "dd": 6.8
+        },
+        {
+          "ts": "2026-06-08T20:25:52",
+          "equity": 244.0686,
+          "cash": 217.2172,
+          "invested": 276.1057,
+          "dd": 6.78
+        },
+        {
+          "ts": "2026-06-08T20:27:52",
+          "equity": 243.32,
+          "cash": 217.2172,
+          "invested": 276.8543,
+          "dd": 7.07
+        },
+        {
+          "ts": "2026-06-08T20:29:53",
+          "equity": 243.0223,
+          "cash": 217.2172,
+          "invested": 277.152,
+          "dd": 7.18
+        },
+        {
+          "ts": "2026-06-08T20:31:54",
+          "equity": 243.2143,
+          "cash": 217.2172,
+          "invested": 276.96,
+          "dd": 7.11
+        },
+        {
+          "ts": "2026-06-08T20:33:54",
+          "equity": 243.1894,
+          "cash": 217.2172,
+          "invested": 276.9849,
+          "dd": 7.12
+        },
+        {
+          "ts": "2026-06-08T20:35:55",
+          "equity": 243.1188,
+          "cash": 217.2172,
+          "invested": 277.0555,
+          "dd": 7.15
+        },
+        {
+          "ts": "2026-06-08T20:37:56",
+          "equity": 243.027,
+          "cash": 217.2172,
+          "invested": 277.1473,
+          "dd": 7.18
+        },
+        {
+          "ts": "2026-06-08T20:39:57",
+          "equity": 242.9908,
+          "cash": 217.2172,
+          "invested": 277.1835,
+          "dd": 7.19
+        },
+        {
+          "ts": "2026-06-08T20:41:58",
+          "equity": 242.8544,
+          "cash": 217.2172,
+          "invested": 277.3199,
+          "dd": 7.25
+        },
+        {
+          "ts": "2026-06-08T20:43:59",
+          "equity": 242.5352,
+          "cash": 217.2172,
+          "invested": 277.6391,
+          "dd": 7.37
+        },
+        {
+          "ts": "2026-06-08T20:46:00",
+          "equity": 242.5564,
+          "cash": 217.2172,
+          "invested": 277.6179,
+          "dd": 7.36
+        },
+        {
+          "ts": "2026-06-08T20:48:01",
+          "equity": 242.4379,
+          "cash": 217.2172,
+          "invested": 277.7364,
+          "dd": 7.41
+        },
+        {
+          "ts": "2026-06-08T20:50:01",
+          "equity": 242.4401,
+          "cash": 217.2172,
+          "invested": 277.7342,
+          "dd": 7.4
+        },
+        {
+          "ts": "2026-06-08T20:52:02",
+          "equity": 242.4511,
+          "cash": 217.2172,
+          "invested": 277.7232,
+          "dd": 7.4
+        },
+        {
+          "ts": "2026-06-08T20:54:03",
+          "equity": 242.5088,
+          "cash": 217.2172,
+          "invested": 277.6654,
+          "dd": 7.38
+        },
+        {
+          "ts": "2026-06-08T20:56:04",
+          "equity": 242.5674,
+          "cash": 217.2172,
+          "invested": 277.6069,
+          "dd": 7.36
+        }
+      ],
+      "heartbeat": {
+        "pid": 1500,
+        "ts": 1780952164,
+        "ts_iso": "2026-06-08T20:56:04",
+        "status": "running",
+        "bot_id": "sentiment_ls_v3_tp",
+        "cycle_count": 3671,
+        "equity": 242.51
       }
     }
   ]
