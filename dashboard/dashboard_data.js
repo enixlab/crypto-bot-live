@@ -1,5 +1,5 @@
 window.BOT_DATA = {
-  "updated_at": "2026-07-25T22:03:21Z",
+  "updated_at": "2026-07-25T22:06:25Z",
   "bots": [
     {
       "key": "sentiment_ls_v3_lo",
@@ -20920,12 +20920,12 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 408,
-        "ts": 1785016761,
-        "ts_iso": "2026-07-25T21:59:21",
+        "ts": 1785017184,
+        "ts_iso": "2026-07-25T22:06:24",
         "status": "running",
         "bot_id": "sentiment_ls_v3_lo",
-        "cycle_count": 14870,
-        "equity": 157.31
+        "cycle_count": 14871,
+        "equity": 157.48
       }
     },
     {
@@ -43005,12 +43005,12 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 688,
-        "ts": 1785016860,
-        "ts_iso": "2026-07-25T22:01:00",
+        "ts": 1785017041,
+        "ts_iso": "2026-07-25T22:04:01",
         "status": "running",
         "bot_id": "confluence_reverse",
-        "cycle_count": 24513,
-        "equity": 130.8
+        "cycle_count": 24514,
+        "equity": 130.97
       }
     },
     {
@@ -85837,12 +85837,12 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 7944,
-        "ts": 1785016761,
-        "ts_iso": "2026-07-25T21:59:21",
+        "ts": 1785017184,
+        "ts_iso": "2026-07-25T22:06:24",
         "status": "running",
         "bot_id": "sentiment_ls_v3",
-        "cycle_count": 14593,
-        "equity": 414.48
+        "cycle_count": 14594,
+        "equity": 415.93
       }
     },
     {
@@ -107866,12 +107866,12 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 792,
-        "ts": 1785016922,
-        "ts_iso": "2026-07-25T22:02:02",
+        "ts": 1785017184,
+        "ts_iso": "2026-07-25T22:06:24",
         "status": "running",
         "bot_id": "sentiment_ls_v3_tp",
-        "cycle_count": 36022,
-        "equity": 257.33
+        "cycle_count": 36023,
+        "equity": 257.89
       }
     }
   ]
