@@ -1,5 +1,5 @@
 window.BOT_DATA = {
-  "updated_at": "2026-07-26T04:15:59Z",
+  "updated_at": "2026-07-26T04:19:02Z",
   "bots": [
     {
       "key": "sentiment_ls_v3_lo",
@@ -107866,11 +107866,11 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 792,
-        "ts": 1785039352,
-        "ts_iso": "2026-07-26T04:15:52",
+        "ts": 1785039473,
+        "ts_iso": "2026-07-26T04:17:53",
         "status": "running",
         "bot_id": "sentiment_ls_v3_tp",
-        "cycle_count": 36094,
+        "cycle_count": 36095,
         "equity": 259.94
       }
     }
