@@ -1,5 +1,5 @@
 window.BOT_DATA = {
-  "updated_at": "2026-08-14T04:47:20Z",
+  "updated_at": "2026-08-14T04:50:24Z",
   "bots": [
     {
       "key": "sentiment_ls_v3_lo",
@@ -8,7 +8,7 @@ window.BOT_DATA = {
       "state": {
         "bot_id": "sentiment_ls_v3_lo",
         "cash": 106.5223,
-        "equity": 137.3037,
+        "equity": 137.3717,
         "peak_equity": 264.6516,
         "initial_capital": 200.0,
         "open_positions": [
@@ -17,10 +17,10 @@ window.BOT_DATA = {
             "symbol": "FIL",
             "side": "buy",
             "entry_price": 0.72340365,
-            "current_price": 0.671722,
+            "current_price": 0.671913,
             "size_usd": 186.4164,
             "quantity": 257.69352565,
-            "unrealized_pnl": -13.318,
+            "unrealized_pnl": -13.2688,
             "fee_paid": 0.037283,
             "margin_locked": 18.6416,
             "leverage": 10.0,
@@ -39,10 +39,10 @@ window.BOT_DATA = {
             "symbol": "AAVE",
             "side": "buy",
             "entry_price": 91.378272,
-            "current_price": 87.68,
+            "current_price": 87.69,
             "size_usd": 171.1241,
             "quantity": 1.87269997,
-            "unrealized_pnl": -6.9258,
+            "unrealized_pnl": -6.907,
             "fee_paid": 0.034225,
             "margin_locked": 17.1124,
             "leverage": 10.0,
@@ -797,8 +797,8 @@ window.BOT_DATA = {
         "total_trades": 28,
         "total_fees": 3.797248,
         "started_at": "2026-05-23T18:00:03",
-        "last_cycle": "2026-08-14T04:42:59",
-        "cycle_count": 20244,
+        "last_cycle": "2026-08-14T04:47:59",
+        "cycle_count": 20245,
         "custom": {
           "last_rebalance_ts": 1786681677.707632,
           "rebalance_count": 393,
@@ -1443,16 +1443,9 @@ window.BOT_DATA = {
           "local_streak_long_BTC": 1
         },
         "_position_counter": 28,
-        "_saved_at": "2026-08-14T04:42:59"
+        "_saved_at": "2026-08-14T04:47:59"
       },
       "equity_curve": [
-        {
-          "ts": "2026-08-03T23:12:13",
-          "equity": 164.1329,
-          "cash": 128.3749,
-          "invested": 371.0448,
-          "dd": 37.98
-        },
         {
           "ts": "2026-08-03T23:17:14",
           "equity": 164.0118,
@@ -21605,15 +21598,22 @@ window.BOT_DATA = {
           "cash": 106.5223,
           "invested": 494.366,
           "dd": 48.12
+        },
+        {
+          "ts": "2026-08-14T04:47:59",
+          "equity": 137.3717,
+          "cash": 106.5223,
+          "invested": 494.434,
+          "dd": 48.09
         }
       ],
       "heartbeat": {
         "pid": 7704,
-        "ts": 1786682579,
-        "ts_iso": "2026-08-14T04:42:59",
+        "ts": 1786682879,
+        "ts_iso": "2026-08-14T04:47:59",
         "status": "running",
         "bot_id": "sentiment_ls_v3_lo",
-        "cycle_count": 20244,
+        "cycle_count": 20245,
         "equity": 137.3
       }
     },
@@ -21624,7 +21624,7 @@ window.BOT_DATA = {
       "state": {
         "bot_id": "confluence_reverse",
         "cash": 62.7823,
-        "equity": 122.5509,
+        "equity": 122.5648,
         "peak_equity": 245.6242,
         "initial_capital": 200.0,
         "open_positions": [
@@ -21633,10 +21633,10 @@ window.BOT_DATA = {
             "symbol": "ETH",
             "side": "buy",
             "entry_price": 1621.664268,
-            "current_price": 1884.26,
+            "current_price": 1884.42,
             "size_usd": 46.370767,
             "quantity": 0.02859454475,
-            "unrealized_pnl": 7.5088,
+            "unrealized_pnl": 7.5134,
             "fee_paid": 0.027684,
             "margin_locked": 4.63707,
             "leverage": 10.0,
@@ -21656,10 +21656,10 @@ window.BOT_DATA = {
             "symbol": "BTC",
             "side": "buy",
             "entry_price": 64791.9558,
-            "current_price": 63342,
+            "current_price": 63341,
             "size_usd": 99.1168,
             "quantity": 0.00152977,
-            "unrealized_pnl": -2.2181,
+            "unrealized_pnl": -2.2196,
             "fee_paid": 0.019823,
             "margin_locked": 9.9117,
             "leverage": 10.0,
@@ -21740,10 +21740,10 @@ window.BOT_DATA = {
             "symbol": "AAVE",
             "side": "buy",
             "entry_price": 88.687734,
-            "current_price": 87.68,
+            "current_price": 87.69,
             "size_usd": 95.6837,
             "quantity": 1.07888257,
-            "unrealized_pnl": -1.0872,
+            "unrealized_pnl": -1.0764,
             "fee_paid": 0.019137,
             "margin_locked": 9.5684,
             "leverage": 10.0,
@@ -23492,8 +23492,8 @@ window.BOT_DATA = {
         "total_trades": 140,
         "total_fees": 11.121841,
         "started_at": "2026-05-23T18:00:04",
-        "last_cycle": "2026-08-14T04:44:33",
-        "cycle_count": 33378,
+        "last_cycle": "2026-08-14T04:47:33",
+        "cycle_count": 33379,
         "custom": {
           "last_rebalance_ts": 1786678700.3893883,
           "rebalance_count": 789,
@@ -24076,16 +24076,9 @@ window.BOT_DATA = {
           "cooldown_long_FIL": 1786742804.0644572
         },
         "_position_counter": 140,
-        "_saved_at": "2026-08-14T04:44:33"
+        "_saved_at": "2026-08-14T04:47:33"
       },
       "equity_curve": [
-        {
-          "ts": "2026-08-07T22:05:06",
-          "equity": 126.9315,
-          "cash": 54.8513,
-          "invested": 668.0653,
-          "dd": 48.32
-        },
         {
           "ts": "2026-08-07T22:08:07",
           "equity": 126.9243,
@@ -44238,16 +44231,23 @@ window.BOT_DATA = {
           "cash": 62.7823,
           "invested": 573.4805,
           "dd": 50.11
+        },
+        {
+          "ts": "2026-08-14T04:47:33",
+          "equity": 122.5648,
+          "cash": 62.7823,
+          "invested": 573.4943,
+          "dd": 50.1
         }
       ],
       "heartbeat": {
         "pid": 7780,
-        "ts": 1786682673,
-        "ts_iso": "2026-08-14T04:44:33",
+        "ts": 1786682853,
+        "ts_iso": "2026-08-14T04:47:33",
         "status": "running",
         "bot_id": "confluence_reverse",
-        "cycle_count": 33378,
-        "equity": 122.51
+        "cycle_count": 33379,
+        "equity": 122.55
       }
     },
     {
@@ -65661,7 +65661,7 @@ window.BOT_DATA = {
       "state": {
         "bot_id": "sentiment_ls_v3",
         "cash": 226.9823,
-        "equity": 415.1155,
+        "equity": 415.0482,
         "peak_equity": 528.1174,
         "initial_capital": 200.0,
         "open_positions": [
@@ -65670,10 +65670,10 @@ window.BOT_DATA = {
             "symbol": "SHORT-SUI",
             "side": "buy",
             "entry_price": 0.68171832,
-            "current_price": 0.684089,
+            "current_price": 0.683895,
             "size_usd": 486.9898,
             "quantity": 714.35630125,
-            "unrealized_pnl": -1.6935,
+            "unrealized_pnl": -1.5549,
             "fee_paid": 0.097398,
             "margin_locked": 48.699,
             "leverage": 10.0,
@@ -65692,10 +65692,10 @@ window.BOT_DATA = {
             "symbol": "FIL",
             "side": "buy",
             "entry_price": 0.71735244,
-            "current_price": 0.671722,
+            "current_price": 0.671424,
             "size_usd": 495.7652,
             "quantity": 691.10411579,
-            "unrealized_pnl": -31.5354,
+            "unrealized_pnl": -31.7413,
             "fee_paid": 0.099153,
             "margin_locked": 49.5765,
             "leverage": 10.0,
@@ -67498,8 +67498,8 @@ window.BOT_DATA = {
         "total_trades": 95,
         "total_fees": 22.932122,
         "started_at": "2026-05-24T20:11:21",
-        "last_cycle": "2026-08-14T04:44:37",
-        "cycle_count": 19969,
+        "last_cycle": "2026-08-14T04:49:37",
+        "cycle_count": 19970,
         "custom": {
           "last_rebalance_ts": 1786681475.3897288,
           "rebalance_count": 411,
@@ -68173,16 +68173,9 @@ window.BOT_DATA = {
           "local_streak_long_LINK": 0
         },
         "_position_counter": 95,
-        "_saved_at": "2026-08-14T04:44:37"
+        "_saved_at": "2026-08-14T04:49:37"
       },
       "equity_curve": [
-        {
-          "ts": "2026-08-03T23:17:07",
-          "equity": 416.2994,
-          "cash": 243.9425,
-          "invested": 1912.4987,
-          "dd": 21.17
-        },
         {
           "ts": "2026-08-03T23:22:07",
           "equity": 416.3613,
@@ -88335,16 +88328,23 @@ window.BOT_DATA = {
           "cash": 226.9823,
           "invested": 2378.1563,
           "dd": 21.4
+        },
+        {
+          "ts": "2026-08-14T04:49:37",
+          "equity": 415.0482,
+          "cash": 226.9823,
+          "invested": 2377.8118,
+          "dd": 21.41
         }
       ],
       "heartbeat": {
         "pid": 1812,
-        "ts": 1786682677,
-        "ts_iso": "2026-08-14T04:44:37",
+        "ts": 1786682977,
+        "ts_iso": "2026-08-14T04:49:37",
         "status": "running",
         "bot_id": "sentiment_ls_v3",
-        "cycle_count": 19969,
-        "equity": 416.22
+        "cycle_count": 19970,
+        "equity": 415.12
       }
     },
     {
@@ -88354,7 +88354,7 @@ window.BOT_DATA = {
       "state": {
         "bot_id": "sentiment_ls_v3_tp",
         "cash": 181.5134,
-        "equity": 277.5302,
+        "equity": 277.4943,
         "peak_equity": 330.4456,
         "initial_capital": 200.0,
         "open_positions": [
@@ -88385,10 +88385,10 @@ window.BOT_DATA = {
             "symbol": "AAVE",
             "side": "buy",
             "entry_price": 87.957588,
-            "current_price": 87.69,
+            "current_price": 87.68,
             "size_usd": 315.2223,
             "quantity": 3.58379882,
-            "unrealized_pnl": -0.959,
+            "unrealized_pnl": -0.9948,
             "fee_paid": 0.063044,
             "margin_locked": 31.5222,
             "leverage": 10.0,
@@ -90149,8 +90149,8 @@ window.BOT_DATA = {
         "total_trades": 111,
         "total_fees": 19.515467,
         "started_at": "2026-05-24T20:11:21",
-        "last_cycle": "2026-08-14T04:46:48",
-        "cycle_count": 49274,
+        "last_cycle": "2026-08-14T04:48:50",
+        "cycle_count": 49275,
         "custom": {
           "last_rebalance_ts": 1786680994.0753708,
           "rebalance_count": 411,
@@ -90822,16 +90822,9 @@ window.BOT_DATA = {
           "local_streak_short_ONDO": 0
         },
         "_position_counter": 111,
-        "_saved_at": "2026-08-14T04:46:49"
+        "_saved_at": "2026-08-14T04:48:50"
       },
       "equity_curve": [
-        {
-          "ts": "2026-08-10T01:41:51",
-          "equity": 272.257,
-          "cash": 247.7183,
-          "invested": 307.2186,
-          "dd": 17.61
-        },
         {
           "ts": "2026-08-10T01:43:52",
           "equity": 272.2443,
@@ -110984,16 +110977,23 @@ window.BOT_DATA = {
           "cash": 181.5134,
           "invested": 935.2466,
           "dd": 16.01
+        },
+        {
+          "ts": "2026-08-14T04:48:50",
+          "equity": 277.4943,
+          "cash": 181.5134,
+          "invested": 935.2108,
+          "dd": 16.02
         }
       ],
       "heartbeat": {
         "pid": 5364,
-        "ts": 1786682808,
-        "ts_iso": "2026-08-14T04:46:48",
+        "ts": 1786682930,
+        "ts_iso": "2026-08-14T04:48:50",
         "status": "running",
         "bot_id": "sentiment_ls_v3_tp",
-        "cycle_count": 49274,
-        "equity": 277.49
+        "cycle_count": 49275,
+        "equity": 277.53
       }
     }
   ]
