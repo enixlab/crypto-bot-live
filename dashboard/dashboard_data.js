@@ -1,5 +1,5 @@
 window.BOT_DATA = {
-  "updated_at": "2026-09-22T20:42:35Z",
+  "updated_at": "2026-09-22T20:45:39Z",
   "bots": [
     {
       "key": "sentiment_ls_v3_lo",
@@ -23824,8 +23824,8 @@ window.BOT_DATA = {
         "total_trades": 231,
         "total_fees": 19.08176,
         "started_at": "2026-05-23T18:00:04",
-        "last_cycle": "2026-09-22T20:40:50",
-        "cycle_count": 51596,
+        "last_cycle": "2026-09-22T20:43:51",
+        "cycle_count": 51597,
         "custom": {
           "last_rebalance_ts": 1790102954.0149314,
           "rebalance_count": 1244,
@@ -23930,16 +23930,9 @@ window.BOT_DATA = {
           "cooldown_long_NEAR": 1789934891.3670795
         },
         "_position_counter": 231,
-        "_saved_at": "2026-09-22T20:40:51"
+        "_saved_at": "2026-09-22T20:43:52"
       },
       "equity_curve": [
-        {
-          "ts": "2026-09-16T14:07:43",
-          "equity": 233.845,
-          "cash": 233.845,
-          "invested": 0,
-          "dd": 17.78
-        },
         {
           "ts": "2026-09-16T14:10:43",
           "equity": 233.845,
@@ -44092,16 +44085,23 @@ window.BOT_DATA = {
           "cash": 274.1414,
           "invested": 148.5726,
           "dd": 0.52
+        },
+        {
+          "ts": "2026-09-22T20:43:52",
+          "equity": 300.8698,
+          "cash": 274.1414,
+          "invested": 148.5726,
+          "dd": 0.52
         }
       ],
       "heartbeat": {
         "pid": 5320,
-        "ts": 1790109650,
-        "ts_iso": "2026-09-22T20:40:50",
+        "ts": 1790109831,
+        "ts_iso": "2026-09-22T20:43:51",
         "status": "running",
         "bot_id": "confluence_reverse",
-        "cycle_count": 51596,
-        "equity": 300.85
+        "cycle_count": 51597,
+        "equity": 300.87
       }
     },
     {
@@ -89278,15 +89278,15 @@ window.BOT_DATA = {
         "total_trades": 153,
         "total_fees": 27.835692,
         "started_at": "2026-05-24T20:11:21",
-        "last_cycle": "2026-09-22T20:31:39",
-        "cycle_count": 75944,
+        "last_cycle": "2026-09-22T20:38:20",
+        "cycle_count": 75945,
         "custom": {
           "last_rebalance_ts": 1789922112.6412573,
           "rebalance_count": 631,
           "coin_sentiments": {},
           "scored_articles": [],
-          "articles_processed": 641595,
-          "deepseek_calls": 957178,
+          "articles_processed": 642020,
+          "deepseek_calls": 957816,
           "top_coins": [
             "XRP"
           ],
@@ -89297,8 +89297,8 @@ window.BOT_DATA = {
           "macro_regime": "BULL",
           "fear_greed": 78,
           "stress_mode": false,
-          "btc_slope_24h": -0.79,
-          "btc_slope_4h": 0.22,
+          "btc_slope_24h": -0.71,
+          "btc_slope_4h": 0,
           "streak_short_NEAR": 3,
           "local_streak_short_NEAR": 0,
           "streak_long_NEAR": 0,
@@ -89349,16 +89349,9 @@ window.BOT_DATA = {
           "cooldown_long_AVAX": 1789254967.8607907
         },
         "_position_counter": 153,
-        "_saved_at": "2026-09-22T20:36:19"
+        "_saved_at": "2026-09-22T20:43:08"
       },
       "equity_curve": [
-        {
-          "ts": "2026-09-17T07:46:56",
-          "equity": 281.5911,
-          "cash": 273.2336,
-          "invested": 63.8455,
-          "dd": 29.33
-        },
         {
           "ts": "2026-09-17T07:48:57",
           "equity": 281.6759,
@@ -109511,15 +109504,22 @@ window.BOT_DATA = {
           "cash": 312.1509,
           "invested": 0,
           "dd": 21.66
+        },
+        {
+          "ts": "2026-09-22T20:43:08",
+          "equity": 312.1509,
+          "cash": 312.1509,
+          "invested": 0,
+          "dd": 21.66
         }
       ],
       "heartbeat": {
         "pid": 2092,
-        "ts": 1790109755,
-        "ts_iso": "2026-09-22T20:42:35",
+        "ts": 1790109909,
+        "ts_iso": "2026-09-22T20:45:09",
         "status": "running",
         "bot_id": "sentiment_ls_v3_tp",
-        "cycle_count": 75945,
+        "cycle_count": 75946,
         "equity": 312.15
       }
     }
