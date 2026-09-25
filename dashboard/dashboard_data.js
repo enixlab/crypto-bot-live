@@ -1,5 +1,5 @@
 window.BOT_DATA = {
-  "updated_at": "2026-09-25T12:21:17Z",
+  "updated_at": "2026-09-25T12:24:22Z",
   "bots": [
     {
       "key": "sentiment_ls_v3_lo",
@@ -44045,12 +44045,12 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 2144,
-        "ts": 1790338871,
-        "ts_iso": "2026-09-25T12:21:11",
+        "ts": 1790339052,
+        "ts_iso": "2026-09-25T12:24:12",
         "status": "running",
         "bot_id": "confluence_reverse",
-        "cycle_count": 52813,
-        "equity": 295.65
+        "cycle_count": 52814,
+        "equity": 295.51
       }
     },
     {
@@ -109437,8 +109437,8 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 3596,
-        "ts": 1790338775,
-        "ts_iso": "2026-09-25T12:19:35",
+        "ts": 1790339054,
+        "ts_iso": "2026-09-25T12:24:14",
         "status": "running",
         "bot_id": "sentiment_ls_v3_tp",
         "cycle_count": 76515,
