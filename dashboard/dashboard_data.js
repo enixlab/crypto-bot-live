@@ -1,5 +1,5 @@
 window.BOT_DATA = {
-  "updated_at": "2026-09-27T11:38:24Z",
+  "updated_at": "2026-09-27T11:41:27Z",
   "bots": [
     {
       "key": "sentiment_ls_v3_lo",
@@ -21978,8 +21978,8 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 4884,
-        "ts": 1790509053,
-        "ts_iso": "2026-09-27T11:37:33",
+        "ts": 1790509286,
+        "ts_iso": "2026-09-27T11:41:26",
         "status": "running",
         "bot_id": "sentiment_ls_v3_lo",
         "cycle_count": 31811,
@@ -44045,12 +44045,12 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 7464,
-        "ts": 1790508988,
-        "ts_iso": "2026-09-27T11:36:28",
+        "ts": 1790509169,
+        "ts_iso": "2026-09-27T11:39:29",
         "status": "running",
         "bot_id": "confluence_reverse",
-        "cycle_count": 53720,
-        "equity": 296.27
+        "cycle_count": 53721,
+        "equity": 296.23
       }
     },
     {
@@ -87431,8 +87431,8 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 3940,
-        "ts": 1790509066,
-        "ts_iso": "2026-09-27T11:37:46",
+        "ts": 1790509287,
+        "ts_iso": "2026-09-27T11:41:27",
         "status": "running",
         "bot_id": "sentiment_ls_v3",
         "cycle_count": 31537,
@@ -109437,8 +109437,8 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 6672,
-        "ts": 1790509027,
-        "ts_iso": "2026-09-27T11:37:07",
+        "ts": 1790509286,
+        "ts_iso": "2026-09-27T11:41:26",
         "status": "running",
         "bot_id": "sentiment_ls_v3_tp",
         "cycle_count": 76955,
