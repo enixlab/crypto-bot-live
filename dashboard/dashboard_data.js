@@ -1,5 +1,5 @@
 window.BOT_DATA = {
-  "updated_at": "2026-09-29T10:54:07Z",
+  "updated_at": "2026-09-29T10:57:11Z",
   "bots": [
     {
       "key": "sentiment_ls_v3_lo",
@@ -21978,8 +21978,8 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 5200,
-        "ts": 1790679212,
-        "ts_iso": "2026-09-29T10:53:32",
+        "ts": 1790679430,
+        "ts_iso": "2026-09-29T10:57:10",
         "status": "running",
         "bot_id": "sentiment_ls_v3_lo",
         "cycle_count": 32100,
@@ -44045,11 +44045,11 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 8292,
-        "ts": 1790679149,
-        "ts_iso": "2026-09-29T10:52:29",
+        "ts": 1790679360,
+        "ts_iso": "2026-09-29T10:56:00",
         "status": "running",
         "bot_id": "confluence_reverse",
-        "cycle_count": 54608,
+        "cycle_count": 54609,
         "equity": 295.37
       }
     },
@@ -65431,11 +65431,11 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 3472,
-        "ts": 1790678691,
-        "ts_iso": "2026-09-29T10:44:51",
+        "ts": 1790679362,
+        "ts_iso": "2026-09-29T10:56:02",
         "status": "running",
         "bot_id": "ultimate_v2_reverse",
-        "cycle_count": 16872,
+        "cycle_count": 16873,
         "equity": 39.61
       }
     },
@@ -87431,11 +87431,11 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 6980,
-        "ts": 1790679060,
-        "ts_iso": "2026-09-29T10:51:00",
+        "ts": 1790679361,
+        "ts_iso": "2026-09-29T10:56:01",
         "status": "running",
         "bot_id": "sentiment_ls_v3",
-        "cycle_count": 31825,
+        "cycle_count": 31826,
         "equity": 948.28
       }
     },
@@ -109437,11 +109437,11 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 5480,
-        "ts": 1790679238,
-        "ts_iso": "2026-09-29T10:53:58",
+        "ts": 1790679359,
+        "ts_iso": "2026-09-29T10:55:59",
         "status": "running",
         "bot_id": "sentiment_ls_v3_tp",
-        "cycle_count": 77379,
+        "cycle_count": 77380,
         "equity": 312.15
       }
     }
