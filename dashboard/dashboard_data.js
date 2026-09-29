@@ -1,5 +1,5 @@
 window.BOT_DATA = {
-  "updated_at": "2026-09-29T11:33:57Z",
+  "updated_at": "2026-09-29T11:37:02Z",
   "bots": [
     {
       "key": "sentiment_ls_v3_lo",
@@ -23774,8 +23774,8 @@ window.BOT_DATA = {
         "total_trades": 231,
         "total_fees": 19.110555,
         "started_at": "2026-05-23T18:00:04",
-        "last_cycle": "2026-09-29T11:32:36",
-        "cycle_count": 54618,
+        "last_cycle": "2026-09-29T11:36:07",
+        "cycle_count": 54619,
         "custom": {
           "last_rebalance_ts": 1790675089.4482253,
           "rebalance_count": 1320,
@@ -23879,16 +23879,9 @@ window.BOT_DATA = {
           "cooldown_long_NEAR": 1789934891.3670795
         },
         "_position_counter": 231,
-        "_saved_at": "2026-09-29T11:33:07"
+        "_saved_at": "2026-09-29T11:36:39"
       },
       "equity_curve": [
-        {
-          "ts": "2026-09-23T04:09:45",
-          "equity": 302.5649,
-          "cash": 274.1414,
-          "invested": 150.2677,
-          "dd": 0.22
-        },
         {
           "ts": "2026-09-23T04:12:47",
           "equity": 303.1681,
@@ -44041,15 +44034,22 @@ window.BOT_DATA = {
           "cash": 285.5921,
           "invested": 71.1046,
           "dd": 3.14
+        },
+        {
+          "ts": "2026-09-29T11:36:39",
+          "equity": 295.3743,
+          "cash": 285.5921,
+          "invested": 71.1046,
+          "dd": 3.14
         }
       ],
       "heartbeat": {
         "pid": 8292,
-        "ts": 1790681556,
-        "ts_iso": "2026-09-29T11:32:36",
+        "ts": 1790681767,
+        "ts_iso": "2026-09-29T11:36:07",
         "status": "running",
         "bot_id": "confluence_reverse",
-        "cycle_count": 54618,
+        "cycle_count": 54619,
         "equity": 295.37
       }
     },
@@ -109437,8 +109437,8 @@ window.BOT_DATA = {
       ],
       "heartbeat": {
         "pid": 5480,
-        "ts": 1790681603,
-        "ts_iso": "2026-09-29T11:33:23",
+        "ts": 1790681821,
+        "ts_iso": "2026-09-29T11:37:01",
         "status": "running",
         "bot_id": "sentiment_ls_v3_tp",
         "cycle_count": 77385,
